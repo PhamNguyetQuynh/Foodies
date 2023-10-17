@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+body {
+    font-family: 'Sora', sans-serif;
+}
+.btn {
+    background-color: #ffffff;
+    color: #F1AC00;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 8px 12px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
