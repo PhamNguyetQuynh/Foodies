@@ -3,6 +3,7 @@ IS207 final project
 <br />
 <br />
 ## IMPORTANT RULES: 
+-Follow camel case to name function ,variable,... <br />
 -Commit often so that our professor can see we worked hard <br />
 -ONE branch for ONE feature <br />
 -ALWAYS make sure to CREATE new branch FROM DEVELOP branch (NOT from MASTER) <br />
