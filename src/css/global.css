@@ -1,12 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+:root{
+    --orange: #F9BD29;
+    --white: #FFFFFF;
+    --black: #000000;
+}
 body {
     font-family: 'Sora', sans-serif;
 }
 .btn {
-    background-color: #ffffff;
-    color: #F1AC00;
+    background-color: var(--white);
+    color: var(--orange);
     font-weight: bold;
+    border: 1px solid var(--black);
     border-radius: 15px;
     padding: 8px 12px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: var(--orange);
+    color: var(--white);
 }
