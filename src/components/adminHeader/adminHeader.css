@@ -59,6 +59,38 @@
 .viewProfileBtn {
   margin-bottom: 6px;
 }
+.navBar ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
 .sideBar{
-    /* background-image: ; */
+    background-image: url(../../img/sideBarImg.svg);
+    width: 18vw;
+    height: 100vh;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+    justify-content: flex-start; /* Start from the top */
+    overflow: hidden;
+}
+.sideBarProfile{
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} /*set sidebar profile center*/
+
+.liCon {
+    width: 18vw; /* Make the width of liCon the same as the sidebar */
+    margin: 8px 0; /* Add spacing above and below liCon */
+}
+
+.liCon a {
+    display: flex;
+    justify-content: space-between; /* Add space between icon and text */
+}
+.icon {
+    margin-right: 10px; /* Adjust the spacing between the icon and text */
 }
