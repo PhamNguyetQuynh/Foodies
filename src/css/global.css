@@ -1,24 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
-:root{
-    --orange: #F9BD29;
-    --white: #FFFFFF;
-    --black: #000000;
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap");
+:root {
+  --orange: #f9bd29;
+  --white: #ffffff;
+  --black: #000000;
+  --box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.663);
 }
 body {
-    font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+} */
 .btn {
-    background-color: var(--white);
-    color: var(--orange);
-    font-weight: bold;
-    border: 1px solid var(--black);
-    border-radius: 15px;
-    padding: 8px 12px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    transition-duration: 0.4s;
-    cursor: pointer;
+  background-color: var(--white);
+  color: var(--orange);
+  font-weight: bold;
+  border: 1px solid var(--black);
+  border-radius: 15px;
+  padding: 8px 12px;
+  box-shadow: var(--box-shadow);
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
 }
-.btn:hover{
-    background-color: var(--orange);
-    color: var(--white);
+.btn:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+.container {
+background-color: var(--white);
+  color: var(--orange);
+  font-weight: bold;
+  box-shadow:2px 2px 4px #B6B6B6;
+  border-radius: 15px;
+  padding: 8px 12px;  
 }
