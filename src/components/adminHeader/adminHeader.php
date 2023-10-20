@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="adminHeader.css">
     <script src="../../js/adminScript.js"></script>
-    <title>Your Page Title</title>
+    <title>Foodies</title>
 </head>
 
 <body>
@@ -29,13 +29,7 @@
                         <a href="../../components/adminLogout.php" onclick="return confirm('Logout from this website?');" class="btn navBtn logoutBtn">Logout</a>
                     </div>
                 </div>
-
             </div>
-
-
-
-
-
             <div class="sideBar">
                 <div class="sideBarContent">
                     <div class="sideBarProfile">
