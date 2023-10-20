@@ -39,9 +39,9 @@
                     <div class="navBar">
                         <ul>
                             <li class="liCon "><a href="../../adminPanel/adminDashboard/dashboard.php"><i class="icon fa-solid fa-house"></i>DASHBOARD</a></li>
-                            <li class="liCon "><a href="addProduct.php"><i class="icon fa-solid fa-square-plus"></i>Add Product</a></li>
-                            <li class="liCon "><a href="viewProduct.php"><i class="icon fa-brands fa-product-hunt"></i>View Product</a></li>
-                            <li class="liCon "><a href="userAccount.php"><i class="icon fa-solid fa-address-card"></i>User Account</a></li>
+                            <li class="liCon "><a href="../../adminPanel/addProduct/addProduct.php"><i class="icon fa-solid fa-square-plus"></i>Add Product</a></li>
+                            <li class="liCon "><a href="../../adminPanel/viewProduct/viewProduct.php"><i class="icon fa-brands fa-product-hunt"></i>View Product</a></li>
+                            <li class="liCon "><a href="../../adminPanel/userAccount/userAccount.php"><i class="icon fa-solid fa-address-card"></i>User Account</a></li>
                             <li class="liCon "><a href="../adminLogout.php"><i class="icon fa-solid fa-right-from-bracket"></i>Logout</a></li>
                         </ul>
                     </div>
