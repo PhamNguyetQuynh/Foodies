@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="adminHeader.css">
+    <script src="../../js/adminScript.js"></script>
     <title>Your Page Title</title>
 </head>
+
 <body>
     <header>
         <div class="headerContainer">
             <div class="floater container">
                 <img src="./../../img/logo.svg">
-                <i class="fa-solid fa-user rightFloater"></i>
+                <div class="fa-solid fa-user rightFloater" id="userIcon"></div>
             </div>
-            <div class="accountHoverContainer">
-                <div class="container accountHover">
+
+            <div class=" accountHover">
+                <div class=" container accountContent">
                     <div class="avatar">
                         <img src="../../img/exavt.svg" />
                     </div>
@@ -25,7 +29,13 @@
                         <a href="../../components/adminLogout.php" onclick="return confirm('Logout from this website?');" class="btn navBtn logoutBtn">Logout</a>
                     </div>
                 </div>
+
             </div>
+
+
+
+
+
             <div class="sideBar">
                 <div class="sideBarContent">
                     <div class="sideBarProfile">
@@ -50,4 +60,5 @@
         </div>
     </header>
 </body>
+
 </html>

@@ -17,7 +17,8 @@
   margin-right: 15px;
   cursor: pointer;
 }
-.accountHover {
+.accountContent {
+  margin-top: 5px;
   width: 369px;
   height: 165px;
   justify-content: center;
@@ -27,6 +28,22 @@
   align-items: center;
   justify-content: flex-end;
   float: right;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+.accountHover.active .accountContent{
+  width: 369px;
+  height: 165px;
+  justify-content: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  float: right;
+  visibility: visible;
+  opacity: 1;
 }
 .avatar {
   margin-right: 20px;
@@ -132,6 +149,8 @@ background-color: var(--orange);
 .socialLink i:hover {
   background-color: var(--lightOrange);
   border-radius: 15px;
+  width: 30px;
+  height: 30px;
 }
 .sideBarContent {
   margin-top: 50px;
