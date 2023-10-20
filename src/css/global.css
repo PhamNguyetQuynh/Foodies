@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap");
 :root {
   --orange: #f9bd29;
+  --lightOrange: #FCE09B;
   --white: #ffffff;
   --black: #000000;
   --box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.663);

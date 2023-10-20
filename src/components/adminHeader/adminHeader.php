@@ -15,7 +15,7 @@
                 <img src="./../../img/logo.svg">
                 <i class="fa-solid fa-user rightFloater"></i>
             </div>
-            <div class="accountHoverConatiner">
+            <div class="accountHoverContainer">
                 <div class="container accountHover">
                     <div class="avatar">
                         <img src="../../img/exavt.svg" />
@@ -42,8 +42,8 @@
                         </ul>
                     </div>
                     <div class="socialLink">
-                        <i class="facebookIcon fa-brands fa-facebook"></i>
-                        <i class="instagramIcon fa-brands fa-instagram"></i>
+                        <i class="socialIcon fa-brands fa-facebook"></i>
+                        <i class="socialIcon fa-brands fa-instagram"></i>
                     </div>
                 </div>
             </div>

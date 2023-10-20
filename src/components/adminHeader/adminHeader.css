@@ -6,6 +6,7 @@
 .floater {
   display: flex;
   position: relative;
+  border-radius: 0px;
 }
 .rightFloater {
   position: absolute;
@@ -39,27 +40,45 @@
   flex-direction: column;
   align-items: center;
 }
-/* .navBtn {
+.navBtn {
   width: 122px;
   height: auto;
   text-align: center;
   justify-content: center;
   display: flex;
-} */
+}
 .viewProfileBtn {
   margin-bottom: 6px;
 }
-.sideBar ul li {
-  color: black; /* Set the text color inside <li> elements to black */
+
+.sideBar ul li:hover {
+background-color: var(--orange);
+
 }
 
 .sideBar ul li a {
-  color: black; /* Set the anchor text color inside <li> elements to black */
-  text-decoration: none; /* Remove underlines from the anchor text */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  color: black;
 }
 
-.sideBar ul li i {
-  color: black; /* Set the icon color inside <li> elements to black */
+.sideBar ul li a:hover {
+  color: var(--white);
+  background-color: var(--orange);
+}
+
+.sideBar ul li i:hover {
+  color: var(--white);
+  background-color: var(--orange);
+}
+.sideBar ul li a i:hover{
+  color: var(--white);
+  background-color: var(--orange);
+}
+.sideBar ul li a i {
+  margin-right: 15px;
 }
 
 .sideBar {
@@ -73,6 +92,13 @@
   justify-content: flex-start;
   overflow: hidden;
 }
+.sideBar ul {
+  margin: 0; /* Remove the default margin on the <ul> element */
+  padding: 0; /* Remove the default padding on the <ul> element */
+  list-style: none; /* Remove the list-style */
+}
+
+
 .sideBarProfile {
   display: flex;
   flex-direction: column;
@@ -81,17 +107,36 @@
 }
 .liCon {
   width: 18vw;
-  margin: 8px 0;
+  margin: 18px 0;
   text-transform: capitalize;
   color: var(--black);
   background-color: var(--white);
   font-weight: bold;
   box-shadow: 2px 2px 4px #b6b6b6;
   border-radius: 15px;
-  padding: 8px 12px;
+  padding: 16px 12px;
   text-transform: uppercase;
 }
-/* .icon {
-  margin-right: 10px;
-} */
 
+.socialLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  /* color: var(--white); */
+}
+
+.socialLink i {
+  margin: 0 10px;
+}
+.socialLink i:hover {
+  background-color: var(--lightOrange);
+  border-radius: 15px;
+}
+.sideBarContent {
+  margin-top: 50px;
+}
+.socialIcon {
+  font-size: 25px;
+  cursor: pointer;
+}
