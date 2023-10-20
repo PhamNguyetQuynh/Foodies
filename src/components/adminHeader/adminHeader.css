@@ -1,9 +1,3 @@
-/* .headerContainer {
-  display: flex;
-  flex-direction: column; 
-  justify-content: space-between;
-} */
-
 .floater img {
   max-height: 40px;
   width: 176px;
@@ -28,69 +22,76 @@
   justify-content: center;
   z-index: 5;
   display: flex;
-  flex-direction: row; /* Horizontal layout */
-  align-items: center; /* Vertically center items */
+  flex-direction: row;
+  align-items: center;
   justify-content: flex-end;
   float: right;
-  /* display: none; */
 }
-
 .avatar {
-  margin-right: 20px; /* Adjust the spacing between the columns */
+  margin-right: 20px;
 }
-
 .avatar img {
   width: 129px;
   height: 129px;
 }
-
 .hoverOption {
   display: flex;
-  flex-direction: column; /* Vertical layout for profile and logout */
+  flex-direction: column;
   align-items: center;
 }
-.navBtn {
+/* .navBtn {
   width: 122px;
   height: auto;
   text-align: center;
   justify-content: center;
   display: flex;
-}
+} */
 .viewProfileBtn {
   margin-bottom: 6px;
 }
-.navBar ul {
-    list-style: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding */
+.sideBar ul li {
+  color: black; /* Set the text color inside <li> elements to black */
 }
-.sideBar{
-    background-image: url(../../img/sideBarImg.svg);
-    width: 18vw;
-    height: 100vh;
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items vertically */
-    justify-content: flex-start; /* Start from the top */
-    overflow: hidden;
-}
-.sideBarProfile{
- 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-} /*set sidebar profile center*/
 
+.sideBar ul li a {
+  color: black; /* Set the anchor text color inside <li> elements to black */
+  text-decoration: none; /* Remove underlines from the anchor text */
+}
+
+.sideBar ul li i {
+  color: black; /* Set the icon color inside <li> elements to black */
+}
+
+.sideBar {
+  background-image: url(../../img/sideBarImg.svg);
+  width: 18vw;
+  height: 100vh;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.sideBarProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .liCon {
-    width: 18vw; /* Make the width of liCon the same as the sidebar */
-    margin: 8px 0; /* Add spacing above and below liCon */
+  width: 18vw;
+  margin: 8px 0;
+  text-transform: capitalize;
+  color: var(--black);
+  background-color: var(--white);
+  font-weight: bold;
+  box-shadow: 2px 2px 4px #b6b6b6;
+  border-radius: 15px;
+  padding: 8px 12px;
+  text-transform: uppercase;
 }
+/* .icon {
+  margin-right: 10px;
+} */
 
-.liCon a {
-    display: flex;
-    justify-content: space-between; /* Add space between icon and text */
-}
-.icon {
-    margin-right: 10px; /* Adjust the spacing between the icon and text */
-}

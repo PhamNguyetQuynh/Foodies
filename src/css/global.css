@@ -8,6 +8,7 @@
 * {
   text-decoration: none;
   list-style-type: none;
+  list-style: none;
 }
 body {
   font-family: "Sora", sans-serif;
@@ -40,3 +41,6 @@ html {
   border-radius: 15px;
   padding: 8px 12px;
 }
+/* ul li{
+  color: var(--black);
+} */
