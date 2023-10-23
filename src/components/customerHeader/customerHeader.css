@@ -1,0 +1,64 @@
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    margin: 0 15px; 
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; 
+}
+
+.userIcon {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; 
+    cursor: pointer;
+}
+
+.userIcon a {
+    text-decoration: none;
+    margin-right: 10px;
+}
+.accountContent {
+    margin-top: 5px;
+    width: 369px;
+    height: 165px;
+    justify-content: center;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    float: right;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+  }
+  .accountHover.active .accountContent{
+    width: 369px;
+    height: 165px;
+    justify-content: center;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    float: right;
+    visibility: visible;
+    opacity: 1;
+  }
