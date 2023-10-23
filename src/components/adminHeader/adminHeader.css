@@ -101,27 +101,31 @@ background-color: var(--orange);
 .sideBar {
   background-image: url(../../img/sideBarImg.svg);
   width: 18vw;
-  height: 100vh;
+  height: 120vh;
   position: sticky;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
+
 .sideBar ul {
   margin: 0; /* Remove the default margin on the <ul> element */
   padding: 0; /* Remove the default padding on the <ul> element */
   list-style: none; /* Remove the list-style */
 }
 
-
 .sideBarProfile {
+  
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .liCon {
   width: 18vw;
   margin: 18px 0;
