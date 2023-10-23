@@ -1,64 +1,130 @@
-
+.logo {
+  margin-left: 20px;
+}
 .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: auto;
 }
 
 .navbar {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  padding-right: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar a {
-    text-decoration: none;
-    margin: 0 15px; 
+  text-decoration: none;
+  margin: 0 15px;
+  color: var(--black);
 }
-
+.navbar a:hover{
+    color: var(--orange);
+}
 .search-form {
-    display: flex;
-    align-items: center;
-    margin-left: 20px; 
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
 }
 
-.userIcon {
+.user {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 25px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.user a {
+  text-decoration: none;
+  padding: 0px 15px;
+  color: var(--orange);
+  margin: 0px;
+}
+.user a:hover{
+    color: var(--black);
+}
+
+.accountContent {
+  margin-top: 5px;
+  width: 369px;
+  height: 165px;
+  justify-content: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  float: right;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+.accountHover.active .accountContent {
+  width: 369px;
+  height: 165px;
+  justify-content: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  float: right;
+  visibility: visible;
+  opacity: 1;
+}
+.navBtn {
+  display: inline-block;
+  width: 115px;
+  text-align: center;
+  justify-content: center;
+  margin: 15px;
+}
+.someText {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: var(--black);
+}
+.searchForm {
     display: flex;
     align-items: center;
-    margin-left: 20px; 
+    margin-left: 20px; /* Adjust the margin as needed */
+}
+
+.searchInputContainer {
+    position: relative;
+   
+}
+
+.searchInputContainer input[type="text"] {
+    width: 300px; 
+    height: 40px; 
+    padding-right: 40px;
+    
+    border-radius: 15px;
+    border: 1px solid var(--grey);
+}
+.searchArea{
+    padding-left: 15px;
+}
+
+.searchInputContainer button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 10px;
+    background: transparent;
+    border: none;
     cursor: pointer;
 }
 
-.userIcon a {
-    text-decoration: none;
-    margin-right: 10px;
+.userIcon
+{
+    padding: 15px;
 }
-.accountContent {
-    margin-top: 5px;
-    width: 369px;
-    height: 165px;
-    justify-content: center;
-    z-index: 5;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    float: right;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s;
-  }
-  .accountHover.active .accountContent{
-    width: 369px;
-    height: 165px;
-    justify-content: center;
-    z-index: 5;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    float: right;
-    visibility: visible;
-    opacity: 1;
-  }
