@@ -1,3 +1,6 @@
+.btn{
+    text-align: center;
+}
 .heading{
     text-align: left;
     line-height: 1.5;
@@ -16,6 +19,27 @@
     padding: 4%;
     margin: 8% 5%;
     margin-bottom: 2%;
+  }
+
+  .post-editor input[type='submit']{
+    font-size: 17px;
+    width: 50%;
+    text-align: center; 
+    height: 4rem; 
+    margin-top: .7rem;
+    justify-content: center;
+    text-transform: capitalize;
+  }
+
+  .post-editor a{
+    width: 49%;
+    text-align: center; 
+    height: 3rem; 
+    margin-top: .7rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .flex-btn{

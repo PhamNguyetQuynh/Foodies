@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../components/adminHeader/adminHeader.css">
-    <link rel="stylesheet" href="./addProduct.css">
+    <link rel="stylesheet" href="./addProduct_after.css">
     <title>Foodies-Admin Dashboard page</title>
 </head>
 <body>
@@ -35,9 +35,9 @@
                         <input type="number" name="stock" maxlength="10" min="0" max="9999999999" placeholder="add product stock" required class="box">
                     </div>
                     <div class="input-field">
-                            <p>product image <span>*</span></p>
-                            <input type="file" name="image" accept="image/*" class="box">
-                            <?php if($fetch_product['image'] != ''){?>
+                        <p>product image <span>*</span> </p>
+                        <input type="file" name="image" accept="image/*" required class="box">
+                        <?php if($fetch_product['image'] != ''){?>
                             <img src="../../uploadedFiles/<?= $fetch_product['image']; ?>" class="image">
                             <?php } ?>
                         </div>
@@ -46,8 +46,8 @@
                             <a href="viewProduct.php" class="btn">go back</a>
                         </div>
                     <div class="flex-btn">
-                        <input type="submit" name="save" value="save post" class="btn">
-                        <input type="submit" name="delete_post" value="delete post" class="btn">
+                        <input type="submit" name="publish" value="Publish Now" class="btn">
+                        <input type="submit" name="cancel" value="Cancel" class="btn">
                     </div>
                 </form>
             </div>
