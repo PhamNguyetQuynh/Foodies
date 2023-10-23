@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../components/adminHeader/adminHeader.css">
-    <link rel="stylesheet" href="./editProduct.css">
+    <link rel="stylesheet" href="./editProduct_before.css">
     <title>Foodies-Admin Dashboard page</title>
 </head>
-
 <body>
     <?php include '../../components/adminHeader/adminHeader.php'; ?>
-
     <div class="main-container">
         <section class="post-editor">
             <div class="heading">
@@ -51,17 +48,12 @@
                         <div class="input-field">
                             <p>product image <span>*</span></p>
                             <input type="file" name="image" accept="image/*" class="box">
-                            <?php if($fetch_product['image'] != ''){?>
-                            <img src="../../uploadedFiles/<?= $fetch_product['image']; ?>" class="image">
-                            <?php } ?>
-                        </div>
                     <div class="flex-btn">
                         <input type="submit" name="save" value="save post" class="btn">
                         <input type="submit" name="delete_post" value="delete post" class="btn">
                     </div>
                     </form>
                 </div>
-                
             </div>
         </section>
     </div>
