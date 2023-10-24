@@ -49,6 +49,7 @@
     color: var(--black);
 }
 
+
 .accountContent {
   margin-top: 15px;
   width: 369px;
@@ -127,4 +128,7 @@
 .userIcon
 {
     padding: 15px;
+}
+.userIcon:hover{
+  color: var(--black);
 }
