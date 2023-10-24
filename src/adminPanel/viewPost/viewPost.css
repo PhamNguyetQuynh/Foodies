@@ -74,6 +74,7 @@
 .viewProduct .divWrapper-1 {
   position: relative;
   width: 80px;
+  margin-left: 75px;
   /* height: 65px; */
   left: -4px;
   background-image: url(./img/group-2.png);
@@ -93,7 +94,7 @@
   width: 90px;
   /* height: 65px; */
   left: -4px;
-
+  margin-left: 40px;
   background-size: 100% 100%;
 }
 
@@ -152,4 +153,10 @@
   font-weight: 700;
   color: #000000;
   font-size: 20px;
+}
+.btn {
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
