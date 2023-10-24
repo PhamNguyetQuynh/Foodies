@@ -37,9 +37,6 @@
                     <div class="input-field">
                         <p>product image <span>*</span> </p>
                         <input type="file" name="image" accept="image/*" required class="box">
-                        <?php if($fetch_product['image'] != ''){?>
-                            <img src="../../uploadedFiles/<?= $fetch_product['image']; ?>" class="image">
-                            <?php } ?>
                         </div>
                         <div class="flex-btn">
                             <input type="submit" name="delete_image" class="btn" value="delete image">

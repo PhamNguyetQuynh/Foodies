@@ -19,31 +19,28 @@
             <div class="box-container">
                 <div class="form-container">
                     <form action="" method="post" enctype="multipart/form-data" class="register">
-                        <input type="hidden" name="old_image" value="<?= $fetch_product['image']; ?>">
-                        <input type="hidden" name="product_id" value="<?= $fetch_product['id']; ?>">
                         <div class="input-field">
                             <p>post status <span>*</span></p>
                             <select name="status" class="box">
-                                <option value="<?= $fetch_product['status']; ?>" selected><?= $fetch_product['status']; ?></option>
                                 <option value="active">active</option>
                                 <option value="deactive">deactive</option>
                             </select>
                         </div>
                         <div class="input-field">
                             <p>product name <span>*</span></p>
-                            <input type="text" name="name" value="<?= $fetch_product['name']; ?>" class="box">
+                            <input type="text" name="name" class="box">
                         </div>
                         <div class="input-field">
                             <p>product price <span>*</span></p>
-                            <input type="number" name="price" value="<?= $fetch_product['price']; ?>" class="box">
+                            <input type="number" name="price" class="box">
                         </div>
                         <div class="input-field">
                             <p>product detail <span>*</span></p>
-                            <textarea name="product_detail" class="box"><?= $fetch_product['product_detail']; ?></textarea>
+                            <textarea name="product_detail" class="box"></textarea>
                         </div>
                         <div class="input-field">
                             <p>total stock <span>*</span></p>
-                            <input type="number" name="stock" value="<?= $fetch_product['stock']; ?>" class="box" min="0" max="9999999999" maxlength="10">
+                            <input type="number" name="stock" class="box" min="0" max="9999999999" maxlength="10">
                         </div>
                         <div class="input-field">
                             <p>product image <span>*</span></p>

@@ -14,8 +14,8 @@
 <body>
     <?php include '../../components/adminHeader/adminHeader.php'; ?>
 
-    <div class="main-container">
-        <section class="post-editor">
+    <div class="mainContainer">
+        <section class="postEditor">
             <div class="heading">
                 <h1>add product</h1>
             </div>
@@ -49,8 +49,5 @@
             </div>
         </section>
     </div>
-
 </body>
-
-
 </html>

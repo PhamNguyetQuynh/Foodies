@@ -10,55 +10,31 @@ h1 {
     flex-direction: column;
     top: 80px;
     left: 300px;
-    margin-left: 40px;
+    margin-left: 50px;
     margin-top: 10px;
-}
-
-.registeredUsers {
-    height: 70vh;
     overflow: auto;
 }
 
-.user {
+.orderPlaced {
     border: solid black 1px;
     border-radius: 10px;
-    width: 75%;
-    height: 80px;
     position: relative;
-    display: flex;
     float: left;
     margin-bottom: 20px;
     margin-right: 50px;
     padding: 20px;
     box-shadow: 2px 2px 4px #b6b6b6;
-    align-items: center;
 }
 
-.userName img {
-    height: 100px;
-    float: left;
-}
-
-.userName p {
-    float: left;
-    margin-left: 20px;
-}
-
-.userName {
-    width: 300px;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    align-items: center;
-}
-
-.userInfo {
-    display: flex;
-    position: absolute;
-
-    right: 20px;
-    flex-direction: column;
-    text-align: right;
+.status {
+    box-shadow: 2px 2px 4px #b6b6b6;
+    width: 100%;
+    height: 40px;
+    font-size: 100%;
+    border: solid black 1px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .updateOrder {
