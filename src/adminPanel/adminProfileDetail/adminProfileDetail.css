@@ -1,0 +1,166 @@
+.profile-details {
+    position: absolute;
+    top: 113px;
+    left: 310px;
+    font-size: 50px;
+    display: inline-block;
+    color: #F1AC00;
+    width: 392px;
+    height: 68px;
+  }
+  .admin-profile-details-child {
+    position: absolute;
+    top: 203px;
+    left: 310px;
+    bottom: 100px;
+    border-radius: 20deg;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.41);
+    box-sizing: border-box;
+    width: 989px;
+    height: 589px;
+  }
+  .name{
+      position: absolute;
+      top: 65%;
+      left: 57.5%;
+    
+  }
+  .seller {
+    position: absolute;
+    top: 700px;
+    left: 57.5%;
+  }
+  .seller {
+    top: 69%;
+    left: 57.5;
+  }
+  .admin-profile-avt {
+    position: absolute;
+    width: 129px;
+    height: 129px;
+    top: 42%;
+    right: 39%;
+    bottom: 57.42%;
+    left: 54.5%;
+    border-radius: 50%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .group-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-mini);
+    background-color: var(--color-white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 440px;
+    height: 159px;
+  }
+  .products-added,
+  .view-details {
+    position: absolute;
+    top: 14.47%;
+    left: 9.09%;
+  }
+  .view-details {
+    top: 119px;
+    left: 257px;
+    color: var(--color-goldenrod);
+    cursor: pointer;
+  }
+  .b {
+    position: absolute;
+    top: 12px;
+    left: 359px;
+    font-size: var(--font-size-31xl);
+    display: inline-block;
+    width: 81px;
+    height: 68px;
+  }
+  .rectangle-group {
+    position: absolute;
+    top: 530px;
+    left: 340px;
+    width: 400px;
+    height: 159px;
+  }
+  .total-orders,
+  .view-details1 {
+    position: absolute;
+    top: 15.72%;
+    left: 9.09%;
+  }
+  .view-details1 {
+    top: 122px;
+    left: 251px;
+    color: var(--color-goldenrod);
+    cursor: pointer;
+  }
+  .b1 {
+    position: absolute;
+    top: 20px;
+    left: 351px;
+    font-size: var(--font-size-31xl);
+    display: inline-block;
+    width: 86px;
+    height: 68px;
+  }
+  .group-inner,
+  .rectangle-container {
+    position: absolute;
+    top: 530px;
+    left: 830px;
+    width: 400px;
+    height: 159px;
+  }
+  .group-inner {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--br-mini);
+    background-color: var(--color-white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .group-div,
+  .update-profile {
+    position: absolute;
+    cursor: pointer;
+  }
+  .update-profile {
+    top: 12.5%;
+    left: 6%;
+    font-weight: 600;
+  }
+  .group-div {
+    height: 4.01%;
+    width: 9.35%;
+    top: 74%;
+    right: 32%;
+    bottom: 45.9%;
+    left: 54.6%;
+    font-size: 15px;
+  }
+  .admin-profile-details {
+    position: relative;
+    background-color: var(--color-white);
+    width: 100%;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-xl);
+    color: var(--color-black);
+    font-family: var(--font-sora);
+  }
+
+

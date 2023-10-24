@@ -1,0 +1,104 @@
+#update-button {
+  display: inline-block;
+  margin: 20px auto;
+  width: 700px;
+  height: 57px;
+  border-radius: var(--br-mini);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  color: #F1AC00;
+  font-family: var(--font-sora);
+  font-weight: 600;
+  cursor: pointer; /* Đổi con trỏ khi di chuột vào nút */
+  transition: transform 0.2s;
+}
+#update-button :active{
+  transform: scale(0.95);
+}
+.adminUpdateProfileItem {
+  position: absolute;
+  border-radius: var(--br-mini);
+  background-color: var(--color-white);
+  box-sizing: border-box;
+}
+.adminUpdateProfileChild {
+  position: absolute;
+  top: 100px;
+  left: 310px;
+  bottom: 100px;
+  border-radius: 20deg;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.41);
+  box-sizing: border-box;
+  width: 989px;
+  height: 620px;
+}
+.admin-profile-avt {
+  position: absolute;
+    width: 129px;
+    height: 129px;
+    top: 26%;
+    right: 39%;
+    bottom: 57.42%;
+    left: 54.5%;
+    border-radius: 50%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+.b1 {
+    left: 111px;
+    color: red;
+}
+
+.UpdateProfile {
+  position: absolute;
+  top: 50%;
+  left: 50.7%;
+  font-size: 32px;
+  font-family: var(--font-sora);
+  color: var(--color-black);
+}
+table {
+  position: absolute;
+  top:60%;
+  left: 32%;
+  border-collapse: separate;
+  border-spacing: 34px 8px; /* Đặt khoảng cách giữa các cột thành 10px */
+    
+  }
+label {
+    font-size: 18px;
+  font-family: var(--font-sora);
+
+}
+
+input[type="text"]{
+  width: 300px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.41);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.10);
+  border-radius: 10px;
+  padding-left: 10px;
+}
+.input.selectpic input[type="file"] {
+  /* Chọn nút "Chọn tệp" */
+ 
+  color: #999;
+  cursor: pointer;
+  font-family: Arial, sans-serif ; /* Đặt font-family */
+}
+.box{
+  padding: 10px;
+  width: 285px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.41);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.10);
+  border-radius: 10px;
+  padding-left: 10px;
+}

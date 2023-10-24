@@ -17,6 +17,28 @@ body {
 html {
   scroll-behavior: smooth;
 }
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-sora: Sora;
+  
+
+  /* font sizes */
+  --font-size-31xl: 50px;
+  --font-size-xl: 20px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-goldenrod: #f9bd29;
+
+  /* Border radiuses */
+  --br-mini: 15px;
+}
 
 .btn {
   background-color: var(--white);
@@ -42,6 +64,7 @@ html {
   border-radius: 15px;
   padding: 8px 12px;
 }
+
 /* ul li{
   color: var(--black);
 } */
