@@ -44,8 +44,8 @@ html {
   transition-duration: 0.4s;
   cursor: pointer;
   text-decoration: none;
-  margin-right: -500%;
-  margin-left: 500%;
+  margin-right: -350%;
+  margin-left: 350%;
 
 }
 .btn2:hover {

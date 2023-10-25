@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="adminMessage.css" />
     <title>Mesage</title></head>
     <body>
-    <div class="wrapper">
+
             <?php include '../../components/adminHeader/adminHeader.php' ?>
-        </div> 
-        <div class="mainContent">
+    
+        
+ <div class="column-right">
+    <div class="mainContent">
         <h1 class="contentTitle">Message</h1>
         <div class="scrollContainer">
             <div class="user">
@@ -42,6 +44,8 @@
             </div>
         </div>
     </div>
+</div>
+   
 </body>
 </html>
 

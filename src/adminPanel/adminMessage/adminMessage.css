@@ -2,21 +2,34 @@ h1 {
   color: var(--orange)
 }
 
+
+/* Định dạng cột phải */
+.column-right {
+  width: 80%; /* Độ rộng của cột phải */
+  float: right; /* Đảm bảo cột phải nằm bên phải */
+}
+
+/* Xóa float và đảm bảo chiều cao của container chứa cột */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .mainContent {
   width: 90%;
   display: flex;
-  position: absolute;
+
   float: left;
   flex-direction: column;
-  top: 80px;
-  left: 300px;
-  margin-left: 40px;
-  margin-top: 10px;
+  margin-top: 7%;
+  margin-left: 10%;
+ 
 }
 
 .scrollContainer {
+ 
   height: 500px;
-  overflow: auto;
+  overflow-y: auto;
 }
 .group{
   margin-left: 500px;
