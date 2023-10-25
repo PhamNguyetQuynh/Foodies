@@ -15,33 +15,31 @@
     <?php include '../../components/adminHeader/adminHeader.php'; ?>
 
     <div class="mainContainer">
-        <section class="postEditor">
-            <div class="heading">
-                <h1>add product</h1>
-            </div>
-            <div class="form-container">
+    <div class="postEditor">
+        <h1 class="contentTitle">Add Product</h1>
+            <div class="formContainer">
                 <form action="" method="post" enctype="multipart/form-data" class="register">
-                    <div class="input-field">
+                    <div class="inputField">
                         <p>product name <span>*</span> </p>
                         <input type="text" name="name" maxlength="100" placeholder="add product name" required class="box">
                     </div>
-                    <div class="input-field">
+                    <div class="inputField">
                         <p>product price <span>*</span> </p>
                         <input type="number" name="price" maxlength="100" placeholder="add product price" required class="box">
                     </div>
-                    <div class="input-field">
+                    <div class="inputField">
                         <p>product detail <span>*</span> </p>
                         <textarea name="description" required maxlength="1000" placeholder="add product detail" class="box"></textarea>
                     </div>
-                    <div class="input-field">
+                    <div class="inputField">
                         <p>total stock <span>*</span> </p>
                         <input type="number" name="stock" maxlength="10" min="0" max="9999999999" placeholder="add product stock" required class="box">
                     </div>
-                    <div class="input-field">
+                    <div class="inputField">
                         <p>product image <span>*</span> </p>
                         <input type="file" name="image" accept="image/*" required class="box">
                     </div>
-                    <div class="flex-btn">
+                    <div class="flexBtn">
                         <input type="submit" name="publish" value="Publish Now" class="btn">
                         <input type="submit" name="cancel" value="Cancel" class="btn">
                     </div>

@@ -11,41 +11,39 @@
 </head>
 <body>
     <?php include '../../components/adminHeader/adminHeader.php'; ?>
-    <div class="main-container">
-        <section class="post-editor">
-            <div class="heading">
-                <h1>edit product</h1>
-            </div>
-            <div class="box-container">
-                <div class="form-container">
+    <div class="mainContainer">
+        <div class="postEditor">
+        <h1 class="contentTitle">Edit Product</h1>
+            <div class="boxContainer">
+                <div class="formContainer">
                     <form action="" method="post" enctype="multipart/form-data" class="register">
-                        <div class="input-field">
+                        <div class="inputField">
                             <p>post status <span>*</span></p>
                             <select name="status" class="box">
                                 <option value="active">active</option>
                                 <option value="deactive">deactive</option>
                             </select>
                         </div>
-                        <div class="input-field">
+                        <div class="inputField">
                             <p>product name <span>*</span></p>
                             <input type="text" name="name" class="box">
                         </div>
-                        <div class="input-field">
+                        <div class="inputField">
                             <p>product price <span>*</span></p>
                             <input type="number" name="price" class="box">
                         </div>
-                        <div class="input-field">
+                        <div class="inputField">
                             <p>product detail <span>*</span></p>
-                            <textarea name="product_detail" class="box"></textarea>
+                            <textarea name="productDetail" class="box"></textarea>
                         </div>
-                        <div class="input-field">
+                        <div class="inputField">
                             <p>total stock <span>*</span></p>
                             <input type="number" name="stock" class="box" min="0" max="9999999999" maxlength="10">
                         </div>
-                        <div class="input-field">
+                        <div class="inputField">
                             <p>product image <span>*</span></p>
                             <input type="file" name="image" accept="image/*" class="box">
-                    <div class="flex-btn">
+                    <div class="flexBtn">
                         <input type="submit" name="save" value="save post" class="btn">
                         <input type="submit" name="delete_post" value="delete post" class="btn">
                     </div>

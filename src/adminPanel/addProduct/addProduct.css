@@ -1,53 +1,47 @@
-.h1 {
-  color: var(--orange);
-  text-align: left;
-  text-transform: capitalize;
+h1 {
+  color: var(--orange)
 }
 
 section,
 .postEditor{
-  width: 75xw;
-  min-height: 100vh;
-  padding: 4%;
-  margin: 8% 5%;
-  margin-bottom: 2%;
-}
+    width: 75xw;
+    min-height: 100vh;
+    padding: 4%;
+    margin: 8% 5%;
+    margin-bottom: 2%;
+  }
 
-.flex-btn{
-  display: flex;
-  justify-content: space-between;
-}
+  .postEditor input[type='submit']{
+    font-size: 17px;
+    width: 50%;
+    text-align: center; 
+    height: 4rem; 
+    margin-top: .7rem;
+    justify-content: center;
+    text-transform: capitalize;
+  }
 
-.flex-btn .btn{
-  margin: .5rem;
-}
+  .postEditor a{
+    width: 49%;
+    text-align: center; 
+    height: 3rem; 
+    margin-top: .7rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flexBtn{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .flexBtn .btn{
+    margin: .5rem;
+  }
 
-::-webkit-scrollbar{
-  width: 5px;
-}
-
-::-webkit-scrollbar-thumb{
-  --webkit-border-radius: 20px;
-  border-radius: 20px;
-  height: 40px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  background-color: var(--orange);
-  position: relative;
-}
-
-::-webkit-scrollbar-track{
-  background-color: transparent;
-  --webkit-border-radius:20px;
-  border-radius: 20px;
-  height: 40px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-.form-container{
+.formContainer{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,21 +50,21 @@ section,
   position: relative;
 }
 
-.form-container .register{
+.formContainer .register{
   width: 60rem;
 }
 
-.form-container form p{
+.formContainer form p{
   padding-top: 1rem;
   font-size: 1.2rem;
   text-transform: capitalize;
 }
 
-.form-container form p span{
+.formContainer form p span{
   color: red;
 }
 
-.form-container form .box{
+.formContainer form .box{
   background-color: var(--white);
   border: 1px solid var(--black);
   box-shadow: var(--box-shadow);
@@ -81,7 +75,7 @@ section,
   padding: 1rem;
 }
 
-.form-container form textarea{
+.formContainer form textarea{
   height: 20rem;
   resize: none;
 }
