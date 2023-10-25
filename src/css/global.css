@@ -30,6 +30,27 @@ html {
   transition-duration: 0.4s;
   cursor: pointer;
   text-decoration: none;
+
+
+}
+.btn2 {
+  background-color: var(--white);
+  color: var(--orange);
+  font-weight: bold;
+  border: 1px solid var(--black);
+  border-radius: 15px;
+  padding: 8px 12px;
+  box-shadow: var(--box-shadow);
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: -500%;
+  margin-left: 500%;
+
+}
+.btn2:hover {
+  background-color: var(--orange);
+  color: var(--white);
 }
 .btn:hover {
   background-color: var(--orange);
