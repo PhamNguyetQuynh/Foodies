@@ -4,11 +4,8 @@ h1 {
 
 section,
 .postEditor{
-    width: 75xw;
-    min-height: 100vh;
-    padding: 4%;
-    margin: 8% 5%;
-    margin-bottom: 2%;
+  height: 70vh;
+  overflow: auto;
   }
 
   .postEditor input[type='submit']{
@@ -38,24 +35,29 @@ section,
   }
   
   .flexBtn .btn{
-    margin: .5rem;
+    margin-left: 40px;
   }
 
 .formContainer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 4% 0;
-  position: relative;
+  border: solid black 1px;
+    border-radius: 10px;
+   
+    position: relative;
+    display: flex;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    padding: 20px;
+    box-shadow: 2px 2px 4px #b6b6b6;
+    align-items: center;
 }
 
 .formContainer .register{
   width: 60rem;
+  margin-right: 40px;
 }
 
 .formContainer form p{
-  padding-top: 1rem;
   font-size: 1.2rem;
   text-transform: capitalize;
 }
@@ -81,9 +83,15 @@ section,
 }
 
 .mainContainer {
-  background-color: #ffffff;
-  padding: 20px; 
-  margin-left: 18vw;
+  width: 90%;
+    display: flex;
+    position: absolute;
+    float: left;
+    flex-direction: column;
+    top: 80px;
+    left: 290px;
+    margin-left: 40px;
+    margin-top: 10px;
 }
 
 .sideBar {

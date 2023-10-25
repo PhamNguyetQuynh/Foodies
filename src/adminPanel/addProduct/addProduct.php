@@ -15,8 +15,8 @@
     <?php include '../../components/adminHeader/adminHeader.php'; ?>
 
     <div class="mainContainer">
+    <h1 class="contentTitle">Add Product</h1>
     <div class="postEditor">
-        <h1 class="contentTitle">Add Product</h1>
             <div class="formContainer">
                 <form action="" method="post" enctype="multipart/form-data" class="register">
                     <div class="inputField">
@@ -46,6 +46,7 @@
                 </form>
             </div>
         </section>
+    </div>
     </div>
 </body>
 </html>
