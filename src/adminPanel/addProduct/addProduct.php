@@ -13,7 +13,6 @@
 
 <body>
     <?php include '../../components/adminHeader/adminHeader.php'; ?>
-
     <div class="mainContainer">
     <h1 class="contentTitle">Add Product</h1>
     <div class="postEditor">

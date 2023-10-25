@@ -13,16 +13,14 @@
 
 <body>
     <?php include '../../components/adminHeader/adminHeader.php'; ?>
-
     <div class="mainContainer">
+    <h1 class="contentTitle">Edit Product</h1>
     <div class="postEditor">
-        <h1 class="contentTitle">Edit Product</h1>
-            <div class="boxContainer">
-                <div class="formContainer">
-                    <form action="" method="post" enctype="multipart/form-data" class="register">
-                        <div class="inputField">
-                            <p>post status <span>*</span></p>
-                            <select name="status" class="box">
+            <div class="formContainer">
+                <form action="" method="post" enctype="multipart/form-data" class="register">
+                    <div class="inputField">
+                    <p>post status <span>*</span></p>
+                    <select name="status" class="box" style="width: 993px">
                                 <option value="active">active</option>
                                 <option value="deactive">deactive</option>
                             </select>
@@ -55,10 +53,10 @@
                         <input type="submit" name="save" value="save post" class="btn">
                         <input type="submit" name="delete_post" value="delete post" class="btn">
                     </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </section>
+    </div>
     </div>
 </body>
 </html>

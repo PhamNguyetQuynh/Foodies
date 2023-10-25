@@ -1,16 +1,11 @@
-.btn{
-    text-align: center;
-}
 h1 {
   color: var(--orange)
 }
-  section,
-  .postEditor{
-    width: 75xw;
-    min-height: 100vh;
-    padding: 4%;
-    margin: 8% 5%;
-    margin-bottom: 2%;
+
+section,
+.postEditor{
+  height: 70vh;
+  overflow: auto;
   }
 
   .postEditor input[type='submit']{
@@ -21,12 +16,14 @@ h1 {
     margin-top: .7rem;
     justify-content: center;
     text-transform: capitalize;
+    
+    display: flex;
   }
 
   .postEditor a{
-    width: 49%;
+    width: 47.5%;
     text-align: center; 
-    height: 3rem; 
+    height: 46px; 
     margin-top: .7rem;
     text-transform: capitalize;
     display: flex;
@@ -40,62 +37,73 @@ h1 {
   }
   
   .flexBtn .btn{
-    margin: .5rem;
+    margin-left: 40px;
   }
 
-  .formContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 4% 0;
+.formContainer{
+  border: solid black 1px;
+    border-radius: 10px;
+   
     position: relative;
-  }
-  
-  .formContainer .register{
-    width: 60rem;
-  }
-  
-  .formContainer form p{
-    padding-top: 1rem;
-    font-size: 1.2rem;
-    text-transform: capitalize;
-  }
-  
-  .formContainer form p span{
-    color: red;
-  }
-  
-  .formContainer form .box{
-    background-color: var(--white);
-    border: 1px solid var(--black);
-    box-shadow: var(--box-shadow);
-    width: 100%;
-    border-radius: .5rem;
-    margin: .5rem 0;
-    font-size: 1.3rem;
-    padding: 1rem;
-  }
-  
-  .formContainer form textarea{
-    height: 20rem;
-    resize: none;
-  }
-  
-  .mainContainer {
-    background-color: #ffffff;
-    padding: 20px; 
-    margin-left: 18vw;
-  }
-  
-  .sideBar {
-    width: 18vw;
-    height: 100vh;
-    position: fixed;
     display: flex;
-    flex-direction: column;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    padding: 20px;
+    box-shadow: 2px 2px 4px #b6b6b6;
     align-items: center;
-    justify-content: flex-start;
-    overflow: hidden;
-    left: 0;
-  }
+}
+
+.formContainer .register{
+  width: 60rem;
+  margin-right: 40px;
+}
+
+.formContainer form p{
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.formContainer form p span{
+  color: red;
+}
+
+.formContainer form .box{
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  border-radius: .5rem;
+  margin: .5rem 0;
+  font-size: 1.3rem;
+  padding: 1rem;
+}
+
+.formContainer form textarea{
+  height: 20rem;
+  resize: none;
+}
+
+.mainContainer {
+  width: 90%;
+    display: flex;
+    position: absolute;
+    float: left;
+    flex-direction: column;
+    top: 80px;
+    left: 290px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.sideBar {
+  width: 18vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  left: 0;
+}
