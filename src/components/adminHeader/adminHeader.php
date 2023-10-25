@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +11,7 @@
     <title>Foodies</title>
 </head>
 
-<body> -->
+<body>
     <header>
         <div class="headerContainer">
             <div class="floater container">
@@ -53,6 +53,6 @@
             </div>
         </div>
     </header>
-<!-- </body>
+</body>
 
-</html> -->
+</html>
