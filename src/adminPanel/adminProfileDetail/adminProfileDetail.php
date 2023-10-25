@@ -11,8 +11,9 @@
         <div class="wrapper">
             <?php include '../../components/adminHeader/adminHeader.php' ?>
         </div>
+
         <b class="ProfileDetail">Profile Details</b>
-        <div class="adminProfileDetailChild"></div>
+        <div class="container">
         <b class="name">name</b>
         <div class="seller">seller</div>
         <img
@@ -37,6 +38,7 @@
         <div class="group-div" id="groupContainer4">
             <div class="group-inner"></div>
             <div class="update-profile" id="updateProfileText">Update profile</div>
+        </div>
         </div>
         </div>
     </body>

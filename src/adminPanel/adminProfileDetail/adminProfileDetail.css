@@ -139,8 +139,8 @@
   cursor: pointer;
 }
 .update-profile {
-  top: 12.5%;
-  left: 6%;
+  top: 5px;
+  left: 10px;
   font-weight: 600;
 }
 .group-div {
@@ -161,4 +161,7 @@
   font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-sora);
+}
+.container{
+  background-color: black;
 }

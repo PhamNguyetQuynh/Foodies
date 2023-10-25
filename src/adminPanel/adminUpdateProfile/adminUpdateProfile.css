@@ -1,6 +1,7 @@
 #update-button {
   display: inline-block;
   margin: 20px auto;
+
   width: 700px;
   height: 57px;
   border-radius: var(--br-mini);
@@ -41,10 +42,8 @@
   position: absolute;
     width: 129px;
     height: 129px;
-    top: 26%;
-    right: 39%;
-    bottom: 57.42%;
-    left: 54.5%;
+    top: 150px;
+    right: 494px;
     border-radius: 50%;
     max-width: 100%;
     overflow: hidden;
@@ -58,16 +57,16 @@
 
 .UpdateProfile {
   position: absolute;
-  top: 50%;
-  left: 50.7%;
+  top: 300px;
+  left: 671px;
   font-size: 32px;
   font-family: var(--font-sora);
   color: var(--color-black);
 }
 table {
   position: absolute;
-  top:60%;
-  left: 32%;
+  top:350px;
+  left: 435px;
   border-collapse: separate;
   border-spacing: 34px 8px; /* Đặt khoảng cách giữa các cột thành 10px */
     
