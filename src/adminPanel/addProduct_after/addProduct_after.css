@@ -16,12 +16,14 @@ section,
     margin-top: .7rem;
     justify-content: center;
     text-transform: capitalize;
+    
+    display: flex;
   }
 
   .postEditor a{
-    width: 49%;
+    width: 47.5%;
     text-align: center; 
-    height: 3rem; 
+    height: 46px; 
     margin-top: .7rem;
     text-transform: capitalize;
     display: flex;
