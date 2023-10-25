@@ -8,51 +8,46 @@
     <link rel="stylesheet" href="adminMessage.css" />
     <title>Mesage</title></head>
     <body>
-    <div class="wrapper">
+
             <?php include '../../components/adminHeader/adminHeader.php' ?>
-        </div>
-    <div class="adminMessage">
-          <div class="title">Message</div>
-          <div class="first">
-          <div class="cover">
-          <div class="design">
-          <div class="design1 "> 
-                  <div class="name">John Doe</div>
-                  <div class="purpose">Selling purpose</div>
+    
+        
+ <div class="column-right">
+    <div class="mainContent">
+        <h1 class="contentTitle">Message</h1>
+        <div class="scrollContainer">
+            <div class="user">
+                <div class="info">
+                    <h3 class="infoLabel">John Doe</h3>
+                    <h4 class="infoLabel">Selling Purpose</h4>
+                    <p class="infoLabel">hello!!!</p>
+                    <div class="btn2">Delete Message</div>
+                    
                 </div>
-                <div class="script">hello!!!</div>
-                <div class="divWrapper">
-                  <div class="group"><div class="btn">Delete Message</div></div>
+               
+            </div>
+            <div class="user">
+            <div class="info">
+                    <h3 class="infoLabel">John Doe</h3>
+                    <h4 class="infoLabel">Selling Purpose</h4>
+                    <p class="infoLabel">hello!!!</p>
+                    <div class="btn2">Delete Message</div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="group1">
-            <div class="design">
-              <div class="design1">
-                <div class="name">John Doe</div>
-                <div class="purpose">Selling purpose</div>
-              </div>
-              <div class="script">hello!!!</div>
-              <div class="divWrapper">
-                <div class="group"><div class="btn">Delete Message</div></div>
-              </div>
+            <div class="user">
+            <div class="info">
+                    <h3 class="infoLabel">John Doe</h3>
+                    <h4 class="infoLabel">Selling Purpose</h4>
+                    <p class="infoLabel">hello!!!</p>
+                    <div class="btn2">Delete Message</div>
+                </div>
             </div>
-          </div>
-          <div class="group2">
-            <div class="design">
-              <div class="design1">
-                <div class="name">John Doe</div>
-                <div class="purpose">Selling purpose</div>
-              </div>
-              <div class="script">hello!!!</div>
-              <div class="divWrapper">
-                <div class="group"><div class="btn">Delete Message</div></div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </body>
+</div>
+   
+</body>
+</html>
+
+
 </html>
