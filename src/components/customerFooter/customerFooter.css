@@ -1,0 +1,21 @@
+footer
+{
+    background-image: url(../../img/footer.svg);
+}
+.upperLeft {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.social {
+    display: flex;
+    flex-direction: column; /* Make the social icons stack vertically */
+}
+
+.social .fb, .social .ig {
+    margin-bottom: 10px; /* Add margin between the icons */
+}
