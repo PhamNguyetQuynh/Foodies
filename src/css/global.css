@@ -6,6 +6,7 @@
   --black: #000000;
   --grey: #DEDEDE;
   --box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.663);
+  --grey: #E6E6E6;
 }
 * {
   text-decoration: none;
