@@ -11,9 +11,9 @@
         <div class="wrapper">
             <?php include '../../components/adminHeader/adminHeader.php' ?>
         </div>
-        <div class="adminUpdateProfileChild"> </div>
+        <div class="adminUpdateProfileChild"> 
         <div class="rectangle-parent">
-            <div class="group-child"></div>
+           
         <img
             class="admin-profile-avt"
             alt=""
@@ -85,6 +85,7 @@
           </tr>
 
         </table>
+        </div>
         </body>
 
 
