@@ -16,14 +16,14 @@
 
     <div class="container-view-product">
         <div class="heading">Your Product</div>
-        <div class="content-section">
+        <div class="content-section container">
             <div class="card">
                 <img class="product-img" src="../../img/logo.svg" alt="salad">
                 <h2 class="card-title">Salad</h2>
                 <div class="btn-container">
-                    <button class="btn-viewProduct">Edit</button>
-                    <button class="btn-viewProduct">Delete</button>
-                    <button class="btn-viewProduct">View post</button>
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
                 </div>
             </div>
 
@@ -31,9 +31,9 @@
             <img class="product-img" src="../../img/logo.svg" alt="salad">
                 <h2 class="card-title">Salad</h2>
                 <div class="btn-container">
-                    <button class="btn-viewProduct">Edit</button>
-                    <button class="btn-viewProduct">Delete</button>
-                    <button class="btn-viewProduct">View post</button>
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
                 </div>
             </div>
 
@@ -41,18 +41,18 @@
                 <img class="product-img" src="../../img/logo.svg" alt="salad">
                 <h2 class="card-title">Salad</h2>
                 <div class="btn-container">
-                    <button class="btn-viewProduct">Edit</button>
-                    <button class="btn-viewProduct">Delete</button>
-                    <button class="btn-viewProduct">View post</button>
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
                 </div>
             </div>
             <div class="card">
                 <img class="product-img" src="../../img/logo.svg" alt="salad">
                 <h2 class="card-title">Salad</h2>
                 <div class="btn-container">
-                    <button class="btn-viewProduct">Edit</button>
-                    <button class="btn-viewProduct">Delete</button>
-                    <button class="btn-viewProduct">View post</button>
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
                 </div>
             </div>
         </div> 

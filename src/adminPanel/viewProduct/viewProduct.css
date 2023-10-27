@@ -4,11 +4,13 @@
   font-family: sora;
   font-weight: bold;
   color: #f1ac00;
+  position: sticky;
 }
 
 .container-view-product {
   padding-left: 20vw;
   padding-top: 85px;
+
 }
 
 .content-section {
@@ -16,6 +18,9 @@
   grid-template-columns: auto auto auto;
   gap: 50px;
   padding: 0 30px;
+  height: 60vh;
+  overflow-y: auto;
+  position: sticky;
 }
 
 .card {
@@ -39,8 +44,11 @@
   display: flex;
   justify-content: space-between;
 }
-
-.btn-viewProduct {
+.btn{
+  width: 100px;
+  font-size: 15px;
+}
+/* .btn-viewProduct {
   border: none;
   font-size: 18px;
   color: #f1ac00;
@@ -53,7 +61,7 @@
 .btn-viewProduct:hover {
   background-color: var(--orange);
   color: var(--white);
-}
+} */
 
 @media screen and (max-width: 768px) {
   .content-section {
