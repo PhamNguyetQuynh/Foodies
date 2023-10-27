@@ -26,17 +26,17 @@
         <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temor incididunt ut labore.</div>
         <div class="group-1">
           <div class="divWrapper-1">
-            <div class="btn">Edit</div>
+            <div class="btn btnGo">Edit</div>
           </div>
         </div>
         <div class="group-2">
           <div class="divWrapper-2">
-            <div class="btn">Delete</div>
+            <div class="btn btnGo">Delete</div>
           </div>
         </div>
         <div class="group-3">
           <div class="divWrapper-3">
-            <div class="btn">Go Back</div>
+            <div class="btn btnGo">Go Back</div>
           </div>
         </div>
         <div class="deactive">DEACTIVE</div>
