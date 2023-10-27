@@ -42,8 +42,8 @@
   position: absolute;
     width: 129px;
     height: 129px;
-    top: 150px;
-    right: 494px;
+    top: 40px;
+    left: 410px;
     border-radius: 50%;
     max-width: 100%;
     overflow: hidden;
@@ -57,16 +57,16 @@
 
 .UpdateProfile {
   position: absolute;
-  top: 300px;
-  left: 671px;
+  top: 190px;
+  left: 356px;
   font-size: 32px;
   font-family: var(--font-sora);
   color: var(--color-black);
 }
 table {
   position: absolute;
-  top:350px;
-  left: 435px;
+  top:240px;
+  left: 120px;
   border-collapse: separate;
   border-spacing: 34px 8px; /* Đặt khoảng cách giữa các cột thành 10px */
     
