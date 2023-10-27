@@ -1,21 +1,21 @@
 <footer>
     <div class="footerContent">
         <div class="upperLeft">
-            <div class="logo">
-                <img src="../../img/logo.svg" />
+            <div class="logoFooter">
+                <img src="../../img/logoFooter.svg" />
             </div>
 
             <div class="social">
-                <div class="fb"><i class="fa-brands fa-facebook"></i></div>
-                <div class="ig"><i class="fa-brands fa-instagram"></i></div>
+                <div class="fb"><i class="fa-brands fa-facebook ic"></i></div>
+                <div class="ig"><i class="fa-brands fa-instagram ic"></i></div>
             </div>
 
         </div>
         <div class="contactInfo">
-            <div class="email"><i class="fa-solid fa-envelope"></i>
+            <div class="email"><i class="fa-solid fa-envelope ic"></i>
                 <p>foodies_official@gmail.com</p>
             </div>
-            <div class="phone"><i class="fa-solid fa-phone"></i>
+            <div class="phone"><i class="fa-solid fa-phone ic"></i>
                 <p>0989598xxx</p>
             </div>
         </div>
