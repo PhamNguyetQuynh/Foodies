@@ -26,7 +26,7 @@
         <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temor incididunt ut labore.</div>
         <div class="group-1">
           <div class="divWrapper-1">
-            <div class="btn btnGo">Edit</div>
+            <div class="btn btnGo"><a href="../editProduct/editProduct.php">Edit</a></div>
           </div>
         </div>
         <div class="group-2">
@@ -36,7 +36,7 @@
         </div>
         <div class="group-3">
           <div class="divWrapper-3">
-            <div class="btn btnGo">Go Back</div>
+            <div class="btn btnGo"><a href="../viewProduct/viewProduct.php">Go Back</a></div>
           </div>
         </div>
         <div class="deactive">DEACTIVE</div>

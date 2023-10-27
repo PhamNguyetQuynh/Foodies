@@ -36,7 +36,7 @@
                             <p>Message</p>
                             <h3>SL</h3>
                             <div class="viewDetail">
-                                <a href="message_detail.html">View Detail &raquo;</a>
+                                <a href="../adminMessage/adminMessage.php">View Detail &raquo;</a>
                             </div>
                         </div>
                     </td>
@@ -47,7 +47,7 @@
                             <p>Products Added</p>
                             <h3>SL</h3>
                             <div class="viewDetail">
-                                <a href="products_added_detail.html">View Detail &raquo;</a>
+                                <a href="../viewProduct/viewProduct.php">View Detail &raquo;</a>
                             </div>
                         </div>
                     </td>
@@ -56,7 +56,7 @@
                             <p>Total Deactive Products</p>
                             <h3>SL</h3>
                             <div class="viewDetail">
-                                <a href="deactive_products_detail.html">View Detail &raquo;</a>
+                                <a href="../viewProduct/viewProduct.php">View Detail &raquo;</a>
                             </div>
                         </div>
                     </td>
@@ -67,7 +67,7 @@
                             <p>Total Active Products</p>
                             <h3>SL</h3>
                             <div class="viewDetail">
-                                <a href="active_products_detail.html">View Detail &raquo;</a>
+                                <a href="../viewProduct/viewProduct.php">View Detail &raquo;</a>
                             </div>
                         </div>
                     </td>
@@ -76,7 +76,7 @@
                             <p>Total Orders</p>
                             <h3>SL</h3>
                             <div class="viewDetail">
-                                <a href="total_orders_detail.html">View Detail &raquo;</a>
+                                <a href="../totalOrderplaced/totalOrderplaced.php">View Detail &raquo;</a>
                             </div>
                         </div>
                     </td>
@@ -87,7 +87,7 @@
                             <p>Total Canceled Orders</p>
                             <h3>SL</h3>
                             <div class="viewDetail">
-                                <a href="canceled_orders_detail.html">View Detail &raquo;</a>
+                                <a href="../totalOrderplaced/totalOrderplaced.php">View Detail &raquo;</a>
                             </div>
                         </div>
                     </td>
@@ -96,7 +96,7 @@
                             <p>Total Confirmed Orders</p>
                             <h3>SL</h3>
                             <div class="viewDetail">
-                                <a href="confirmed_orders_detail.html">View Detail &raquo;</a>
+                                <a href="../totalOrderplaced/totalOrderplaced.php">View Detail &raquo;</a>
                             </div>
                         </div>
                     </td>

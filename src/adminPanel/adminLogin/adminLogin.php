@@ -13,7 +13,7 @@
 <body>
     <div class="wrapper">
         <div class="formWrapper container">
-            <form action="" method="post" enctype="multipart/form-data" class="login">
+            <form action="../adminDashboard/dashboard.php" method="post" enctype="multipart/form-data" class="login" id="loginForm">
                 <h1>WELCOME BACK</h1>
                 <div class="field">
                     <div class="input">

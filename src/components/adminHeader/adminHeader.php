@@ -15,7 +15,10 @@
     <header>
         <div class="headerContainer">
             <div class="floater container">
-                <img src="./../../img/logo.svg">
+                <a href="../../adminPanel/adminDashboard/dashboard.php">
+                    <img src="./../../img/logo.svg">
+                </a>
+
                 <div class="fa-solid fa-user rightFloater" id="userIcon"></div>
             </div>
 
@@ -25,7 +28,7 @@
                         <img src="../../img/exavt.svg" />
                     </div>
                     <div class="hoverOption">
-                        <a href="../../adminPanel/profile.php" class="btn navBtn viewProfileBtn">View Profile</a>
+                        <a href="../../adminPanel/adminProfileDetail/adminProfileDetail.php" class="btn navBtn viewProfileBtn">View Profile</a>
                         <a href="../../components/adminLogout.php" onclick="return confirm('Logout from this website?');" class="btn navBtn logoutBtn">Logout</a>
                     </div>
                 </div>
