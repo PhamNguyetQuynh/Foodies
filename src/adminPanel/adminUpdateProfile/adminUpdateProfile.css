@@ -1,0 +1,87 @@
+#update-button {
+  display: inline-block;
+  margin: 20px auto;
+  width: 666px;
+  height: 57px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.adminUpdateProfileChild {
+  position: absolute;
+  top: 100px;
+  left: 410px;
+  bottom: 100px;
+  margin-left: 50px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.41);
+  box-sizing: border-box;
+  width: 989px;
+  padding: 50px;
+  height: 600px;
+}
+
+.admin-profile-avt {
+  width: 129px;
+  height: 129px;
+  border-radius: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.b1 {
+  color: red;
+}
+
+.UpdateProfile {
+  font-size: 32px;
+  font-family: var(--font-sora);
+  color: var(--color-black);
+}
+
+.upper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  margin: 0 auto; /* Center the table */
+  border-collapse: separate;
+  border-spacing: 34px 8px;
+  position: relative;
+}
+
+label {
+  font-size: 18px;
+  font-family: var(--font-sora);
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.41);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.10);
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.input.selectpic input[type="file"] {
+  color: #999;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.box {
+  padding: 10px;
+  width: 285px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.41);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.10);
+  border-radius: 10px;
+  padding-left: 10px;
+}
