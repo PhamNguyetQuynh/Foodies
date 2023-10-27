@@ -132,3 +132,6 @@
 .userIcon:hover{
   color: var(--black);
 }
+.header{
+  max-width: 100%; overflow-x: hidden;
+}
