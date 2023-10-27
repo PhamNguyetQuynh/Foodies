@@ -3,16 +3,17 @@ h1 {
 }
 
 .mainContent {
-    width: 90%;
+    /* width: 90%; */
     display: flex;
     position: absolute;
     float: left;
     flex-direction: column;
     top: 80px;
-    left: 300px;
+    left: 410px;
     margin-left: 50px;
     margin-top: 10px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .orderPlaced {
