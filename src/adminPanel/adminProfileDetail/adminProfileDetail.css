@@ -23,23 +23,22 @@
 }
 .name{
     position: absolute;
-    top: 392px;
-    left: 765px;
+    top: 190px;
+    left: 466px;
   
 }
 
 .seller {
   position: absolute;
-  top: 415px;
-  left: 767px;
+  top: 212px;
+  left: 467px;
 }
 .adminProfileAvt {
   position: absolute;
   width: 129px;
   height: 129px;
-  top: 250px;
-  right: 350px;
-  left: 725px;
+  top: 50px;
+  left: 425px;
   border-radius: 50%;
   max-width: 100%;
   overflow: hidden;
@@ -48,8 +47,8 @@
 }
 .group-child {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -220px;
+  left: -312px;
   border-radius: var(--br-mini);
   background-color: var(--color-white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -61,8 +60,8 @@
 .ProductAdded,
 .ViewDetail {
   position: absolute;
-  top: 14.47%;
-  left: 9.09%;
+  top: 20px;
+  left: 40px;
 }
 .ViewDetail {
   top: 119px;
@@ -82,19 +81,19 @@
 .boxProduct {
   position: absolute;
   top: 530px;
-  left: 340px;
+  left: 355px;
   width: 400px;
   height: 159px;
 }
 .TotalOrder,
 .ViewDetail1 {
   position: absolute;
-  top: 122px;
-  left: 100px;
+  top: 20px;
+  left: 40px;
 }
 .ViewDetail1 {
-  top: 122px;
-  left: 251px;
+  top: 119px;
+  left: 257px;
   color: var(--color-goldenrod);
   cursor: pointer;
 }
@@ -111,7 +110,7 @@
 .boxTotalOrder {
   position: absolute;
   top: 530px;
-  left: 830px;
+  left: 825px;
   width: 400px;
   height: 159px;
 }
@@ -146,9 +145,8 @@
 .group-div {
   height: 30px;
   width: 130px;
-  top: 443px;
-  right: 493px;
-  bottom: 300px;
+  top: 240px;
+  left: 427px;
   font-size: 15px;
 }
 .admin-profile-details {
@@ -161,7 +159,4 @@
   font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-sora);
-}
-.container{
-  background-color: black;
 }
