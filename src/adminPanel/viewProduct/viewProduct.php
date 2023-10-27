@@ -7,45 +7,54 @@
     <link rel="stylesheet" href="viewProduct.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Sora' rel='stylesheet'>
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../components/adminHeader/adminHeader.css">
 </head>
 <body>
-    <div class="heading">Your Product</div>
-    
-    <div class="container">
+    <?php include '../../components/adminHeader/adminHeader.php' ?>
+
+    <div class="container-view-product">
+        <div class="heading">Your Product</div>
         <div class="content-section">
             <div class="card">
-                <img src="salad.jpeg" alt="salad">
-                <h2>Salad</h2>
-                <button class="button">Edit</button>
-                <button class="button">Delete</button>
-                <button class="button">View post</button>
+                <img src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct">Edit</button>
+                    <button class="btn-viewProduct">Delete</button>
+                    <button class="btn-viewProduct">View post</button>
+                </div>
             </div>
 
             <div class="card">
-                <img src="salad.jpeg" alt="salad">
-                <h2>Salad</h2>
-                <button class="button">Edit</button>
-                <button class="button">Delete</button>
-                <button class="button">View post</button>
+            <img src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct">Edit</button>
+                    <button class="btn-viewProduct">Delete</button>
+                    <button class="btn-viewProduct">View post</button>
+                </div>
             </div>
 
             <div class="card">
-                <img src="salad.jpeg" alt="salad">
-                <h2>Salad</h2>
-                <button class="button">Edit</button>
-                <button class="button">Delete</button>
-                <button class="button">View post</button>
+                <img src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct">Edit</button>
+                    <button class="btn-viewProduct">Delete</button>
+                    <button class="btn-viewProduct">View post</button>
+                </div>
             </div>
             <div class="card">
-                <img src="salad.jpeg" alt="salad">
-                <h2>Salad</h2>
-                <button class="button">Edit</button>
-                <button class="button">Delete</button>
-                <button class="button">View post</button>
+                <img src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct">Edit</button>
+                    <button class="btn-viewProduct">Delete</button>
+                    <button class="btn-viewProduct">View post</button>
+                </div>
             </div>
-            
-        </div>
+        </div> 
     </div>
 </body>
 </html>
