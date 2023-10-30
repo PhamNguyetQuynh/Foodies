@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../adminRegister/adminRegister.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
     <title>Foodies-Admin Register page</title>
 </head>
 
