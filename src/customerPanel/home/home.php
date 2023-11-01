@@ -16,15 +16,18 @@
 
 <body>
     <div class="grid">
-        <div class="headerWrapper">
+        <section class="headerWrapper">
             <?php include '../../components/customerHeader/customerHeader.php'; ?>
-        </div>
+        </section>
 
-        <div class="hero">
-            <h1 class="c-o-1 m-o-1 l-o-1">FOODIES</h1>
-            <p class="c-o-1 m-o-1 l-o-1">Nourish your body, indulge your taste buds
+        <section class="hero col">
+            <div>
+            <h1 class="c-o-2 m-o-2 l-o-2 heroT">FOODIES</h1>
+            <p class="c-o-2 m-o-2 l-o-2 heroP">Nourish your body, indulge your taste buds <br />
                 Welcome to a world of healthy delights!</p>
-        </div>
+            </div>
+            
+        </section>
         <h1>Homepage</h1>
         <?php include '../../components/customerFooter/customerFooter.php'; ?>
     </div>
