@@ -1,0 +1,12 @@
+.hero{
+    background-image: url('../../img/wishlistHero.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: clamp(10rem, 100%, 100rem);
+  height: clamp(10rem, 15rem, 20rem);
+}
+h1{
+    color: var(--orange);
+    font-size: 3rem;
+}
