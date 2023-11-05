@@ -28,6 +28,77 @@
             </div>
             
         </section>
+        <section class="grid ">
+        
+        <h1 class="c-o-5 m-o-5 l-o-5 popT">OUR POPULAR DISHES</h1>
+        <div class="ourPopular">
+
+        
+        <div class="content-section container ">
+        <div class="card">
+                <img class="product-img" src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
+                </div>
+            </div>
+            <div class="card">
+                <img class="product-img" src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
+                </div>
+            </div>
+            <div class="card">
+                <img class="product-img" src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
+                </div>
+            </div>
+            <div class="card">
+                <img class="product-img" src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
+                </div>
+            </div>
+            <div class="card">
+                <img class="product-img" src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
+                </div>
+            </div><div class="card">
+                <img class="product-img" src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
+                </div>
+            </div><div class="card">
+                <img class="product-img" src="../../img/logo.svg" alt="salad">
+                <h2 class="card-title">Salad</h2>
+                <div class="btn-container">
+                    <button class="btn-viewProduct btn">Edit</button>
+                    <button class="btn-viewProduct btn">Delete</button>
+                    <button class="btn-viewProduct btn">View post</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        </section>
         <h1>Homepage</h1>
         <?php include '../../components/customerFooter/customerFooter.php'; ?>
     </div>
