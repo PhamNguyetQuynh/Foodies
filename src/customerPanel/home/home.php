@@ -99,7 +99,6 @@
         </div>
         </div>
         </section>
-        <h1>Homepage</h1>
         <?php include '../../components/customerFooter/customerFooter.php'; ?>
     </div>
 
