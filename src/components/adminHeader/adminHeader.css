@@ -54,11 +54,15 @@ margin-right: 15px;
 }
 .avatar {
   margin-right: 20px;
+  width: 129px;
+  height: 129px;
 }
+
 .avatar img {
   width: 129px;
   height: 129px;
 }
+
 .hoverOption {
   display: flex;
   flex-direction: column;
@@ -165,4 +169,30 @@ background-color: var(--orange);
 .socialIcon {
   font-size: 25px;
   cursor: pointer;
+}
+.accountContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar {
+  width: 130px; /* Set a fixed width */
+  height: 130px; /* Set a fixed height */
+  overflow: hidden; /* Hide the overflow */
+  border-radius: 50%; /* Make the avatar image round */
+  position: relative;
+  margin-bottom: 10px; /* Adjust this for spacing */
+}
+
+.avatar img {
+  width: 100%; /* Occupy the full width of the container */
+  height: 100%; /* Occupy the full height of the container */
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+.userName {
+  font-size: 16px; /* Adjust font size as needed */
+  /* Other styles for the username */
 }

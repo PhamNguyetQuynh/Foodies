@@ -1,3 +1,14 @@
+<?php
+    include '../../components/connect.php';
+    if(isset($_COOKIE['seller_id'])){
+        $seller_id=$_COOKIE['seller_id'];
+    }else{
+        $seller_id="";
+        header('location:../adminLogin/adminLogin.php');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -17,9 +28,9 @@
         <?php include '../../components/adminHeader/adminHeader.php' ?>
     </div>
     <div class="dashboardContainer">
-        
-            <div class="title">Dashboard</div>
-            <div class="dashBoard">
+
+        <div class="title">Dashboard</div>
+        <div class="dashBoard">
             <table class="tb">
                 <tr>
                     <td>
