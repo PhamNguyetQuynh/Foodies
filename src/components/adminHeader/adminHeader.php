@@ -47,9 +47,12 @@
             <div class="sideBar">
                 <div class="sideBarContent">
                     <div class="sideBarProfile">
-                        <img src="../../img/exavt.svg" />
-                        <p>name</p>
+                    <div class="avatar">
+                        <img src="../../uploadedFiles/<?= $fetch_profile['image']; ?>" alt="Avatar" class="avatar-image">
                     </div>
+                        <p class="userName"><?=$fetch_profile['name']; ?></p>
+                    </div>
+        
                     <div class="navBar">
                         <ul>
                             <li class="liCon "><a href="../../adminPanel/adminDashboard/dashboard.php"><i class="icon fa-solid fa-house"></i>DASHBOARD</a></li>
