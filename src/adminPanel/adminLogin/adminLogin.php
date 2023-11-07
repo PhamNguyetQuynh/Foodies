@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 
     if ($select_seller->rowCount() > 0) {
         setcookie('seller_id', $row['id'], time() + 60 * 60 * 24 * 30, '/');
-        header('location:dashboard.php');
+        header('location:../adminDashboard/dashboard.php');
     } else {
         $warning_msg[] = 'incorrect email or password';
     }
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="wrapper">
         <div class="formWrapper container">
-            <form action="../adminDashboard/dashboard.php" method="post" enctype="multipart/form-data" class="login" id="loginForm">
+            <form action="" method="post" enctype="multipart/form-data" class="login" id="loginForm">
                 <h1>WELCOME BACK</h1>
                 <div class="field">
                     <div class="input">
