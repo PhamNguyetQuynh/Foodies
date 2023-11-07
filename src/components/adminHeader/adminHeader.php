@@ -20,9 +20,17 @@
                 </a>
 
                 <div class="fa-solid fa-user rightFloater" id="userIcon"></div>
+                <div class="toggleBtn"><i class="fa-solid fa-bars"></i></div>
             </div>
 
             <div class=" accountHover">
+                <?php
+                    $select_profile = $conn->prepare("SELECT *FROM `sellers` WHERE id=?");
+                    $select_profile->execute([$seller_id]);
+                    if($select_profile->rowCount() >0){
+                        $fetch_profile=$select_profile->fetch(PDO::FETCH_ASSOC);
+                    }
+                ?>
                 <div class=" container accountContent">
                     <div class="avatar">
                         <img src="../../img/exavt.svg" />
