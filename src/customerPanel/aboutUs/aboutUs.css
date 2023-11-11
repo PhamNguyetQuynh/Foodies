@@ -1,0 +1,114 @@
+
+.titleAbout {
+    width: 394px;
+    height: 61px;
+    top: 230px;
+    left: 220px;
+    margin-left: -12%;
+    font-weight: 700;
+    color: #0000008c;
+    font-size: 70px;
+
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.aboutUs{
+    position: relative;
+}
+.contentAbout {
+    position: absolute;
+    width: 500px;
+    top: 266px;
+    left: 157px;
+    font-size: 17px;
+    font-family:sora;
+    color: #f1ab00;
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+ .masterchef {
+    position: absolute;
+    width: 394px;
+    height: 61px;
+    top: 955px;
+    left: 531px;
+    font-family: "Sora-Bold";
+    font-weight: 700;
+    color: #0000008c;
+    font-size: 34px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.contentMasterchef {
+    font-family: Quicksand;
+    color: #000000;
+    font-size: 26px;
+    letter-spacing: 0;
+    position: absolute;
+    top: 1020px;
+    left: 98px;
+    text-align: center;
+
+}
+.b {
+    font-family: "Quicksand-Bold";
+    font-weight: 700;
+    margin-left:3%;
+}
+.selection{
+    margin-top:4%;
+    display:justify;
+
+}
+.btnExplore {
+    width:fit-content;
+    margin-left:25%;
+}
+.btnVisit{
+    width:fit-content;
+    margin-left: 50%;
+    text-align: center;
+    margin-top: -3.5%;
+}
+.titleOur {
+    width: 394px;
+    height: 61px;
+    top: 1500px;
+    left: 690px;
+    margin-left: -12%;
+    font-family: "Sora-Bold";
+    font-weight: 700;
+    color: #0000008c;
+    font-size: 34px;
+    position: absolute;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.contentOur {
+    font-family: Quicksand;
+    color: #000000;
+    font-size: 26px;
+    letter-spacing: 0;
+    position: absolute;
+    top: 1567px;
+    left: 98px;
+    text-align: center;
+}
+.d {
+    font-family: "Quicksand-Bold";
+    font-weight: 700;
+    margin-left:-5%;
+}
+.btnService {
+    width:fit-content;
+    margin-left:25%;
+    font-family:"Quicksand-Bold";
+    font-size: 26;
+}
+
+
+
