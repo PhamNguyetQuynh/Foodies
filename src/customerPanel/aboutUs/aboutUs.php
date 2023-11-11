@@ -62,7 +62,7 @@
 
         
         </div> 
-        <div class="wrapper"> <?php include '../../components/customerFooter/customerFooter.php' ?></div>
+        <div class="wrapper1"> <?php include '../../components/customerFooter/customerFooter.php' ?></div>
     </body>
    
 </html>
