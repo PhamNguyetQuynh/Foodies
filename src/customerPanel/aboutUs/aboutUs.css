@@ -280,3 +280,38 @@
     height: 20px;
     line-height: normal;
 }
+.three{
+    top: 4080px;
+    left: 530px;
+}
+.missonTitle{
+    top: 4480px;
+    left: 300px;
+    width: 394px;
+    height: 61px;
+    position: absolute;
+    font-family: "Sora-Bold";
+    font-weight: 600;
+    color: #0000008c;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.missonContent{
+    top: 4550px;
+    left: 200px;
+    font-family: "Quicksand-Regular";
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: 0;
+    position: absolute;
+    text-align:justify;
+    width:500px;
+    height: 40px;
+    line-height: normal;
+}
+.pancake{
+    top: 4550px;
+    left: 200px;
+}
