@@ -12,7 +12,6 @@
     <script src="../../js/customerScript.js"></script>
     <title>Foodies-Shop</title>
 </head>
-<body>
     <?php include '../../components/customerHeader/customerHeader.php'; ?>
     <div class="banner">
         <div class="detail">
@@ -22,27 +21,125 @@
         </div>
     </div>
 <div class="products">
-    <div class="heading">
-
-    </div>
-    <form action="" method="post" class="box">
-        <div class="content">
-            <img src="../../img/salad.svg" alt="" class="shap">
-            <div class="button">
-                <div> <h3 class="name"></h3></div>
-                <div>
-                    <button type="submit" name="add to cart"><i class="bx bx-cart"></i></button>
-                    <button type="submit" name="add to wishlist"><i class="bx bx-heart"></i></button>
+<div class="card">
+                <img class="productImg" src="../../img/salad.svg" alt="salad">
+                <h2 class="cardTitle">Salad</h2>
+                <h2 class="price">$15</h2>
+                <p class="description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
+                <div class="btnContainer">
+                <a href="../../customerPanel/checkOut/checkout.php" class="btn">Buy Now</a>
+                    <a href="../../customerPanel/cart/shoppingCart.php" class="bx-cart"></a>
+                    <a href="../../customerPanel/wishlist/wishlist.php" class="bx-heart"></a>
+                    <a href="../../customerPanel/viewPage/viewPage.php" class="bxs-show"></a>
                 </div>
             </div>
-            <p class="price">price</p>
-            <input type="hidden" name="product_id">
-            <div class="flexBtn">
-                <input type="number" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty">
-        </div>
-        </div>
-    </form>
+
+<div class="card">
+                <img class="productImg" src="../../img/salad.svg" alt="salad">
+                <h2 class="cardTitle">Salad</h2>
+                <h2 class="price">$15</h2>
+                <p class="description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
+                <div class="btnContainer">
+                <a href="../../customerPanel/checkOut/checkout.php" class="btn">Buy Now</a>
+                <a href="../../customerPanel/cart/shoppingCart.php" class="bx-cart"></a>
+                    <a href="../../customerPanel/wishlist/wishlist.php" class="bx-heart"></a>
+                    <a href="../../customerPanel/viewPage/viewPage.php" class="bxs-show"></a>
+                </div>
+            </div>
+
+<div class="card">
+                <img class="productImg" src="../../img/salad.svg" alt="salad">
+                <h2 class="cardTitle">Salad</h2>
+                <h2 class="price">$15</h2>
+                <p class="description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
+                <div class="btnContainer">
+                <a href="../../customerPanel/checkOut/checkout.php" class="btn">Buy Now</a>
+                <a href="../../customerPanel/cart/shoppingCart.php" class="bx-cart"></a>
+                    <a href="../../customerPanel/wishlist/wishlist.php" class="bx-heart"></a>
+                    <a href="../../customerPanel/viewPage/viewPage.php" class="bxs-show"></a>
+                </div>
+            </div>
+
+<div class="card">
+                <img class="productImg" src="../../img/salad.svg" alt="salad">
+                <h2 class="cardTitle">Salad</h2>
+                <h2 class="price">$15</h2>
+                <p class="description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
+                <div class="btnContainer">
+                <a href="../../customerPanel/checkOut/checkout.php" class="btn">Buy Now</a>
+                <a href="../../customerPanel/cart/shoppingCart.php" class="bx-cart"></a>
+                    <a href="../../customerPanel/wishlist/wishlist.php" class="bx-heart"></a>
+                    <a href="../../customerPanel/viewPage/viewPage.php" class="bxs-show"></a>
+                </div>
+            </div>
+
+<div class="card">
+                <img class="productImg" src="../../img/salad.svg" alt="salad">
+                <h2 class="cardTitle">Salad</h2>
+                <h2 class="price">$15</h2>
+                <p class="description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
+                <div class="btnContainer">
+                <a href="../../customerPanel/checkOut/checkout.php" class="btn">Buy Now</a>
+                <a href="../../customerPanel/cart/shoppingCart.php" class="bx-cart"></a>
+                    <a href="../../customerPanel/wishlist/wishlist.php" class="bx-heart"></a>
+                    <a href="../../customerPanel/viewPage/viewPage.php" class="bxs-show"></a>
+                </div>
+            </div>
+
+<div class="card">
+                <img class="productImg" src="../../img/salad.svg" alt="salad">
+                <h2 class="cardTitle">Salad</h2>
+                <h2 class="price">$15</h2>
+                <p class="description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
+                <div class="btnContainer">
+                <a href="../../customerPanel/checkOut/checkout.php" class="btn">Buy Now</a>
+                <a href="../../customerPanel/cart/shoppingCart.php" class="bx-cart"></a>
+                    <a href="../../customerPanel/wishlist/wishlist.php" class="bx-heart"></a>
+                    <a href="../../customerPanel/viewPage/viewPage.php" class="bxs-show"></a>
+                </div>
+            </div>
+
+<div class="card">
+                <img class="productImg" src="../../img/salad.svg" alt="salad">
+                <h2 class="cardTitle">Salad</h2>
+                <h2 class="price">$15</h2>
+                <p class="description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
+                <div class="btnContainer">
+                <a href="../../customerPanel/checkOut/checkout.php" class="btn">Buy Now</a>
+                <a href="../../customerPanel/cart/shoppingCart.php" class="bx-cart"></a>
+                    <a href="../../customerPanel/wishlist/wishlist.php" class="bx-heart"></a>
+                    <a href="../../customerPanel/viewPage/viewPage.php" class="bxs-show"></a>
+                </div>
+            </div>
+
+<div class="card">
+                <img class="productImg" src="../../img/salad.svg" alt="salad">
+                <h2 class="cardTitle">Salad</h2>
+                <h2 class="price">$15</h2>
+                <p class="description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
+                <div class="btnContainer">
+                <a href="../../customerPanel/checkOut/checkout.php" class="btn">Buy Now</a>
+                <a href="../../customerPanel/cart/shoppingCart.php" class="bx-cart"></a>
+                    <a href="../../customerPanel/wishlist/wishlist.php" class="bx-heart"></a>
+                    <a href="../../customerPanel/viewPage/viewPage.php" class="bxs-show"></a>
+                </div>
+            </div>
+
+<div class="card">
+                <img class="productImg" src="../../img/salad.svg" alt="salad">
+                <h2 class="cardTitle">Salad</h2>
+                <h2 class="price">$15</h2>
+                <p class="description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
+                <div class="btnContainer">
+                <a href="../../customerPanel/checkOut/checkout.php" class="btn">Buy Now</a>
+                <a href="../../customerPanel/cart/shoppingCart.php" class="bx-cart"></a>
+                    <a href="../../customerPanel/wishlist/wishlist.php" class="bx-heart"></a>
+                    <a href="../../customerPanel/viewPage/viewPage.php" class="bxs-show"></a>
+                </div>
+            </div>
 </div>
+
     <?php include '../../components/customerFooter/customerFooter.php'; ?>
 </body>
 </html>
+
