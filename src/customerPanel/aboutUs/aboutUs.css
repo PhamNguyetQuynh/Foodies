@@ -27,31 +27,37 @@
     letter-spacing: 0;
     line-height: normal;
 }
-
+.masterchefPage{
+    width: 394px;
+    height: 1500px;
+}
 
  .masterchef {
     position: absolute;
     width: 394px;
-    height: 61px;
+    height: 30px;
     top: 980px;
     left: 531px;
     font-family: "Sora-Bold";
     font-weight: 700;
     color: #0000008c;
-    font-size: 34px;
+    font-size: 40px;
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
 }
 .contentMasterchef {
-    font-family: Quicksand;
-    color: #000000;
-    font-size: 24px;
-    letter-spacing: 0;
     position: absolute;
-    top: 1030px;
-    left: 98px;
+    width:1000px;
+    height: 30px;
+    top: 1050px;
+    left: 251px;
+    font-family: Quicksand;
+    color: #0000008c;
+    font-size: 24px;
     text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
 
 }
 .b {
@@ -60,54 +66,54 @@
     margin-left:3%;
 }
 .selection{
+   
     margin-top:4%;
-    display:justify;
-
-}
-.btnExplore {
-    width:fit-content;
-    margin-left:25%;
+    display:inline-flex;
 }
 .btnVisit{
-    width:fit-content;
-    margin-left: 50%;
-    text-align: center;
-    margin-top: -3.5%;
+    margin-left: 100px;
 }
+
 .titleOur {
+    top: 1500px;
+    left: 530px;
     width: 394px;
     height: 61px;
-    top: 1500px;
-    left: 690px;
-    margin-left: -12%;
+    position: absolute;
     font-family: "Sora-Bold";
     font-weight: 700;
     color: #0000008c;
-    font-size: 34px;
-    position: absolute;
+    font-size: 50px;
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
+    
 }
 .contentOur {
+    top: 1587px;
+    left: 98px;
     font-family: Quicksand;
     color: #000000;
     font-size: 26px;
     letter-spacing: 0;
     position: absolute;
-    top: 1567px;
-    left: 98px;
     text-align: center;
+    width:1300px;
+    height: 30px;
+    line-height: normal;
 }
 .d {
     font-family: "Quicksand-Bold";
     font-weight: 700;
-    margin-left:-5%;
+  
 }
 .btnService {
-    width:fit-content;
+    top: 1587px;
+    width:150px;
     margin-left: 30px;
     text-align: center;
+    margin-left:170%;
+    font-size: 24px;
    
 }
 .ourStoryPage{
@@ -115,21 +121,39 @@
     font-family: "Quicksand-Bold";
 }
 
-.learnMorePage{
-    font-family: "Sora-Bold";
-    font-size: large;
-}
 .moreTitle{
+    top: 1950px;
+    left:890px;
+    width: 394px;
+    height: 61px;
+    position: absolute;
     font-family: "Sora-Bold";
-    font-size: large;
+    color: #0000008c;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
 .moreContent{
+    top: 2000px;
+    left: 860px;
     font-family: Quicksand;
+    color: #000000;
+    font-size: 26px;
+    letter-spacing: 0;
+    position: absolute;
+    text-align:center;
+    width:500px;
+    height: 30px;
+    line-height: normal;
 }
 
 .btnLearnMore{
-    width:fit-content;
-    margin-left: 50%;
+    width:150px;
     text-align: center;
+    margin-left:260%;
+    font-size: 26px;
+    font-family: Quicksand;
+    margin-top: 110%;
 }
