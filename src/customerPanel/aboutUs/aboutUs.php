@@ -65,6 +65,16 @@
                     <div class="btn btnLearnMore"><a href="../editProduct/editProduct.php">Learn more</a></div>
                 </div>
 
+            <div class="ourTeamPage">
+                <div class="ourTeam">Our Team</div>
+                <div class="member">
+                    <div class="mem1"><img src="../../img/mem1.svg" alt="The first member" /></div>
+                    <div class="mem2"><img src="../../img/mem2.svg" alt="The second member" /></div>
+                    <div class="mem3"><img src="../../img/mem3.svg" alt="The third member" /></div>
+                </div>
+            </div>
+
+
 
 
 

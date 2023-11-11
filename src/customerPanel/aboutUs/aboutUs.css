@@ -29,7 +29,7 @@
 }
 .masterchefPage{
     width: 394px;
-    height: 1500px;
+    height: 2500px;
 }
 
  .masterchef {
@@ -156,4 +156,37 @@
     font-size: 26px;
     font-family: Quicksand;
     margin-top: 110%;
+}
+.ourTeam{
+    top: 2400px;
+    left: 530px;
+    width: 394px;
+    height: 61px;
+    position: absolute;
+    font-family: "Sora-Bold";
+    font-weight: 700;
+    color: #0000008c;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.member{
+    margin-top: 35%;
+    margin-left: -2.3%;
+    margin-right: 5%;
+    display:inline-flex;
+
+}
+.mem1{
+    width:30%;
+    margin-inline: 5%;
+}
+.mem2{
+    width:30%;
+    
+}
+.mem3{
+    width:30%;
+    margin-inline: 5%;
 }
