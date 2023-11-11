@@ -117,3 +117,21 @@
     font-family: "Quicksand-Bold";
 }
 
+.learnMorePage{
+    font-family: "Sora-Bold";
+    font-size: large;
+}
+.moreTitle{
+    font-family: "Sora-Bold";
+    font-size: large;
+}
+
+.moreContent{
+    font-family: Quicksand;
+}
+
+.btnLearnMore{
+    width:fit-content;
+    margin-left: 50%;
+    text-align: center;
+}

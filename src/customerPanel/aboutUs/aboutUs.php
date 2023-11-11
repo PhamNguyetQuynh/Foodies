@@ -59,6 +59,21 @@
                 <div class="btn btnService"><a href="../editProduct/editProduct.php">Our Service</a></div>
             </div>
 
+                <div class="learnMorePage">
+                    <div class="moreTitle">Taking Food To New Heights</div>
+                    <div class="moreContent">Taking food to new heights is about more than just creating new and innovative dishes. It is about pushing the boundaries of what is possible in the culinary world. It is about using new technologies and techniques to create experiences that are truly unforgettable. Chefs are taking food to new heights in ways that were never before possible. This is an exciting time for the culinary world, and we can't wait to see what the future holds</div>
+                    <div class="btn btnLearnMore"><a href="../editProduct/editProduct.php">Learn more</a></div>
+                </div>
+
+
+
+
+
+
+
+
+                
+
 
         
         </div> 
