@@ -1,0 +1,35 @@
+.orderContainer {
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.orderContainer table {
+    width: 430px;
+    max-height: 512px; /*Tại vì NQ để cái tự mở rộng phần giữa header nên cái table nó to. Mà t không biết sao*/
+    overflow: auto; 
+    margin: 0 auto; /* Căn giữa theo chiều ngang */
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.orderContainer table td {
+    padding: 10px;
+}
+
+.orderContainer table td.product-description {
+    background-color: white; /* Đặt màu nền của dòng thứ hai thành màu trắng */
+}
+
+.orderContainer table img {
+    max-width: 100%;
+}
+
+.background-image {
+    background-image: url('../../img/Order.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
