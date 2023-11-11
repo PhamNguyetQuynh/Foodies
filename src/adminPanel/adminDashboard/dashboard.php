@@ -24,13 +24,13 @@
 
 <body>
 
-    <div class="wrapper">
+    <!-- <div class="wrapper"> -->
         <?php include '../../components/adminHeader/adminHeader.php' ?>
-    </div>
-    <div class="dashboardContainer">
-
+    <!-- </div> -->
+    <!-- <div class="dashboardContainer"> -->
+    <div class="dashBoard">
         <div class="title">Dashboard</div>
-        <div class="dashBoard">
+    
             <table class="tb">
                 <tr>
                     <td>
@@ -114,7 +114,7 @@
                 </tr>
             </table>
         </div>
-    </div>
+    <!-- </div> -->
 </body>
 
 </html>

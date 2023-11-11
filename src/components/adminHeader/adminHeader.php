@@ -45,7 +45,7 @@
                 </div>
             </div>
             </header>
-            <div class="sideBar">
+           
                 <div class="sideBarContent">
                     <div class="sideBarProfile">
                     <div class="avatar">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
  
 </body>
 

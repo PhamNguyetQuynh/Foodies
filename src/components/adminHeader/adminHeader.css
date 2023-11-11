@@ -1,17 +1,19 @@
-.headerContainer{
-  position:fixed;
+.headerContainer {
+  position: fixed;
   width: 100%;
   z-index: 9999;
-}.floater img {
+}
+.floater img {
   height: clamp(3rem, 3rem, 5rem);
   width: clamp(10rem, 12rem, 12rem);
   cursor: pointer;
 }
 
 .floater {
-  display: flex;
+  /* display: flex; */
   position: relative;
   border-radius: 0px;
+  z-index: 9999;
 }
 .rightFloater {
   position: absolute;
@@ -47,7 +49,7 @@
   opacity: 0;
   transition: visibility 0s, opacity 0.5s;
 }
-.accountHover.active .accountContent{
+.accountHover.active .accountContent {
   width: clamp(10rem, 22rem, 22rem);
   height: clamp(10rem, 10rem, 10rem);
   justify-content: center;
@@ -87,12 +89,11 @@
   margin-bottom: 6px;
 }
 
-.sideBar ul li:hover {
-background-color: var(--orange);
-
+.sideBarContent ul li:hover {
+  background-color: var(--orange);
 }
 
-.sideBar ul li a {
+.sideBarContent ul li a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -100,25 +101,26 @@ background-color: var(--orange);
   color: black;
 }
 
-.sideBar ul li a:hover {
+.sideBarContent ul li a:hover {
   color: var(--white);
   background-color: var(--orange);
 }
 
-.sideBar ul li i:hover {
+.sideBarContent ul li i:hover {
   color: var(--white);
   background-color: var(--orange);
 }
-.sideBar ul li a i:hover{
+.sideBarContent ul li a i:hover {
   color: var(--white);
   background-color: var(--orange);
 }
-.sideBar ul li a i {
+.sideBarContent ul li a i {
   margin-right: 15px;
 }
 
-.sideBar .sideBarContent{
+.sideBarContent {
   background-image: url(../../img/sideBarImg.svg);
+  background-color: var(--white);
   width: 18vw;
   height: 100vh;
   position: fixed;
@@ -127,15 +129,17 @@ background-color: var(--orange);
   align-items: center;
   justify-content: flex-start;
   overflow: auto;
-  transition: width 0.5s; /* Add a transition effect for a smoother animation */
+  z-index: 999;
+  transition: width 0.5s ease-in-out; /* Add a transition effect for a smoother animation */
 }
-
-.sideBar ul {
-  margin: 0; /* Remove the default margin on the <ul> element */
-  padding: 0; /* Remove the default padding on the <ul> element */
+.sideBarContent.active {
+  width: 25vw;
+}
+.sideBarContent ul {
+  margin: 0; 
+  padding: 0;
   list-style: none; /* Remove the list-style */
 }
-
 
 .sideBarProfile {
   display: flex;
@@ -172,9 +176,6 @@ background-color: var(--orange);
   width: 30px;
   height: 30px;
 }
-.sideBarContent {
-  margin-top: 50px;
-}
 .socialIcon {
   font-size: 25px;
   cursor: pointer;
@@ -205,31 +206,47 @@ background-color: var(--orange);
   font-size: 16px; /* Adjust font size as needed */
   font-weight: bold;
 }
-.toggleBtn{
-  display: none; 
-    cursor: pointer;
-    margin-left: 15px;
+.toggleBtn {
+  display: none;
+  cursor: pointer;
+  margin-left: 15px;
 }
 
 /*----*/
-@media screen and (max-width:991px){
-  .toggleBtn{
+@media screen and (max-width: 991px) {
+  .toggleBtn {
     display: block;
   }
-  .sideBarContent{
-    padding-top: 4rem;
+  .floater {
+      z-index: 9999;
+  }
+  .sideBarContent {
     position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 99999;
     width: 0;
-    transition: .5s;
-    z-index: 101;
-    top: 7%;
- display: none;
   }
-  .sideBarContent .active{
-    width: 300px; 
-    display: block;
+  .sideBarContent .active {
+    width: 25vw;
+    height: 100vh;
+    z-index: 999;
   }
-  .sideBarContent .sideBarProfile{
+  .sideBarContent .sideBarProfile {
     margin-top: 0.5rem;
   }
+  .liCon {
+    width: 18vw;
+    /* margin: 18px 0; */
+    text-transform: capitalize;
+    color: var(--black);
+    background-color: var(--white);
+    font-weight: bold;
+    box-shadow: 2px 2px 4px #b6b6b6;
+    border-radius: 15px;
+    padding: 16px 12px;
+    text-transform: uppercase;
+  }
+  
 }
