@@ -29,7 +29,7 @@
 }
 .masterchefPage{
     width: 394px;
-    height: 2500px;
+    height: 3000px;
 }
 
  .masterchef {
@@ -189,4 +189,54 @@
 .mem3{
     width:30%;
     margin-inline: 5%;
+}
+.name{
+    display:inline-flex;
+    font-size: 24px;
+    font-family: "Quicksand-Bold";
+    width:350%;
+    text-align: justify; 
+    margin-top: 10%;
+  
+}
+.name1{
+    width:35%;
+    margin-inline: 15%;
+    font-weight:Bold;
+}
+.name2{
+    width:35%;
+    font-weight:Bold;
+}
+.name3{
+    width:35%;
+    margin-inline: 3%;
+    font-weight:Bold;
+}
+.standardTitle{
+    top: 3380px;
+    left: 530px;
+    width: 394px;
+    height: 61px;
+    position: absolute;
+    font-family: "Sora-Bold";
+    font-weight: 700;
+    color: #0000008c;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.standardContent{
+    top: 3450px;
+    left: 490px;
+    font-family: "Quicksand-Regular";
+    color: #000000;
+    font-size: 26px;
+    letter-spacing: 0;
+    position: absolute;
+    text-align:center;
+    width:500px;
+    height: 30px;
+    line-height: normal;
 }

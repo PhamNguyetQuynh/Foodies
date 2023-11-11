@@ -72,6 +72,18 @@
                     <div class="mem2"><img src="../../img/mem2.svg" alt="The second member" /></div>
                     <div class="mem3"><img src="../../img/mem3.svg" alt="The third member" /></div>
                 </div>
+                <div class="name">
+                    <p class="name1">Anotonio Cooper</p>
+                    <p class="name2">Wade Warren</p>
+                    <p class="name3">Esther Howard</p>
+                </div>
+            </div>
+
+            <div class="ourStandard">
+                <img src="../../img/spoon.svg" alt=" Standard" />
+                <div class="standardTitle">Our Standard</div>
+                <p class="standardContent">Authentic Italian cuisine<br>Warm and inviting atmosphere<br>Extensive wine list<br>Fair prices<br>Commitment to excellence</p>
+
             </div>
 
 
