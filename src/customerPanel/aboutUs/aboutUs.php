@@ -16,12 +16,12 @@
     <div class="wrapper"> <?php include '../../components/customerHeader/customerHeader.php' ?></div>
     <div class="aboutUs">
             <div class="background"><img class="image" src="../../img/bg.svg" /></div>
-                <div class="total">
+
                     <div class="titleAbout">About us</div>
                     <p class="contentAbout">
                         Nourish your body, indulge your taste buds<br />Welcome to a world of healthy delights!
                     </p>
-                </div>
+               
            
             <div class="separate">
                 <img class="image" src="../../img/img.svg" />

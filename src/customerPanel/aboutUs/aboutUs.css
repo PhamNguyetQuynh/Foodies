@@ -27,9 +27,7 @@
     letter-spacing: 0;
     line-height: normal;
 }
-.total{
-    top: 1000px;
-}
+
 
  .masterchef {
     position: absolute;
@@ -48,7 +46,7 @@
 .contentMasterchef {
     font-family: Quicksand;
     color: #000000;
-    font-size: 18px;
+    font-size: 24px;
     letter-spacing: 0;
     position: absolute;
     top: 1030px;
@@ -108,9 +106,9 @@
 }
 .btnService {
     width:fit-content;
-    margin-left: 50%;
+    margin-left: 30px;
     text-align: center;
-    margin-top: -3.5%;
+   
 }
 .ourStoryPage{
     margin-top: 400px;
