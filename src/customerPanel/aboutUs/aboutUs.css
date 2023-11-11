@@ -29,7 +29,7 @@
 }
 .masterchefPage{
     width: 394px;
-    height: 3000px;
+    height: 3500px;
 }
 
  .masterchef {
@@ -238,5 +238,45 @@
     text-align:center;
     width:500px;
     height: 30px;
+    line-height: normal;
+}
+.testimonialTitle{
+    top: 3780px;
+    left: 530px;
+    width: 394px;
+    height: 61px;
+    position: absolute;
+    font-family: "Sora-Bold";
+    font-weight: 600;
+    color: #0000008c;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.testimonialContent{
+    top: 3850px;
+    left: 200px;
+    font-family: "Quicksand-Regular";
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: 0;
+    position: absolute;
+    text-align:justify;
+    width:500px;
+    height: 40px;
+    line-height: normal;
+}
+.chefImg{
+    top:80%;
+    left: 860px;
+    font-family: Quicksand;
+    color: #000000;
+    font-size: 26px;
+    letter-spacing: 0;
+    position: absolute;
+    text-align:center;
+    width:200px;
+    height: 20px;
     line-height: normal;
 }
