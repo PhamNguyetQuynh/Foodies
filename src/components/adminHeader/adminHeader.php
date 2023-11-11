@@ -20,10 +20,10 @@
                 </a>
 
                 <div class="fa-solid fa-user rightFloater" id="userIcon"></div>
-                <div class="toggleBtn"><i class="fa-solid fa-bars"></i></div>
+                <div class="toggleBtn rightFloaterBtn"><i class="fa-solid fa-bars"></i></div>
             </div>
 
-            <div class=" accountHover">
+            <div class="accountHover">
                 <?php
                 $select_profile = $conn->prepare("SELECT *FROM `sellers` WHERE id=?");
                 $select_profile->execute([$seller_id]);
@@ -44,6 +44,7 @@
                     </div>
                 </div>
             </div>
+            </header>
             <div class="sideBar">
                 <div class="sideBarContent">
                     <div class="sideBarProfile">
@@ -69,7 +70,7 @@
                 </div>
             </div>
         </div>
-    </header>
+ 
 </body>
 
 </html>

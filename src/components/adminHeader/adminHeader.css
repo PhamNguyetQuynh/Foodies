@@ -1,33 +1,41 @@
-.floater img {
-  max-height: 40px;
-  width: 176px;
-  cursor: pointer;
-}
 .headerContainer{
   position:fixed;
   width: 100%;
   z-index: 9999;
+}.floater img {
+  height: clamp(3rem, 3rem, 5rem);
+  width: clamp(10rem, 12rem, 12rem);
+  cursor: pointer;
 }
+
 .floater {
   display: flex;
   position: relative;
   border-radius: 0px;
-  /* width: 100%; */
 }
 .rightFloater {
   position: absolute;
   align-items: center;
-  right: 50px;
+  right: 2rem;
   top: 35%;
   display: block;
-  margin-right: 30px;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.rightFloaterBtn {
+  position: absolute;
+  align-items: center;
+  right: 5rem;
+  top: 35%;
+  display: block;
+  margin-right: 2rem;
   cursor: pointer;
 }
 .accountContent {
-  margin-top: 5px;
-margin-right: 15px;
-  width: 369px;
-  height: 165px;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  width: clamp(10rem, 12rem, 12rem);
+  height: clamp(10rem, 12rem, 12rem);
   justify-content: center;
   z-index: 5;
   display: flex;
@@ -40,8 +48,8 @@ margin-right: 15px;
   transition: visibility 0s, opacity 0.5s;
 }
 .accountHover.active .accountContent{
-  width: 369px;
-  height: 165px;
+  width: clamp(10rem, 22rem, 22rem);
+  height: clamp(10rem, 10rem, 10rem);
   justify-content: center;
   z-index: 5;
   display: flex;
@@ -109,7 +117,7 @@ background-color: var(--orange);
   margin-right: 15px;
 }
 
-.sideBar {
+.sideBar .sideBarContent{
   background-image: url(../../img/sideBarImg.svg);
   width: 18vw;
   height: 100vh;
@@ -118,8 +126,10 @@ background-color: var(--orange);
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow: auto;
+  transition: width 0.5s; /* Add a transition effect for a smoother animation */
 }
+
 .sideBar ul {
   margin: 0; /* Remove the default margin on the <ul> element */
   padding: 0; /* Remove the default padding on the <ul> element */
@@ -132,6 +142,7 @@ background-color: var(--orange);
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 4rem;
 }
 .liCon {
   width: 18vw;
@@ -150,8 +161,6 @@ background-color: var(--orange);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
-  /* color: var(--white); */
 }
 
 .socialLink i {
@@ -195,4 +204,32 @@ background-color: var(--orange);
 .userName {
   font-size: 16px; /* Adjust font size as needed */
   font-weight: bold;
+}
+.toggleBtn{
+  display: none; 
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/*----*/
+@media screen and (max-width:991px){
+  .toggleBtn{
+    display: block;
+  }
+  .sideBarContent{
+    padding-top: 4rem;
+    position: fixed;
+    width: 0;
+    transition: .5s;
+    z-index: 101;
+    top: 7%;
+ display: none;
+  }
+  .sideBarContent .active{
+    width: 300px; 
+    display: block;
+  }
+  .sideBarContent .sideBarProfile{
+    margin-top: 0.5rem;
+  }
 }
