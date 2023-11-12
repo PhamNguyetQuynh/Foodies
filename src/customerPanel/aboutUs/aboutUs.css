@@ -94,7 +94,7 @@
     left: 98px;
     font-family: Quicksand;
     color: #000000;
-    font-size: 26px;
+    font-size: 22px;
     letter-spacing: 0;
     position: absolute;
     text-align: center;
@@ -108,7 +108,7 @@
   
 }
 .btnService {
-    top: 1587px;
+    top: 1387px;
     width:150px;
     margin-left: 30px;
     text-align: center;
@@ -140,7 +140,7 @@
     left: 860px;
     font-family: Quicksand;
     color: #000000;
-    font-size: 26px;
+    font-size: 25px;
     letter-spacing: 0;
     position: absolute;
     text-align:center;
@@ -181,6 +181,7 @@
 .mem1{
     width:30%;
     margin-inline: 5%;
+    
 }
 .mem2{
     width:30%;
@@ -195,27 +196,31 @@
     font-size: 24px;
     font-family: "Quicksand-Bold";
     width:350%;
-    text-align: justify; 
+    text-align:justify; 
     margin-top: 10%;
   
 }
-.name1{
-    width:35%;
-    margin-inline: 15%;
+.name11{
+    margin-left: 30%;
     font-weight:Bold;
+    font-size: 24px;
+    font-family: "Quicksand-Bold";
 }
-.name2{
-    width:35%;
+.name22{
+    margin-left: 30%;
     font-weight:Bold;
+    font-size: 24px;
+    font-family: "Quicksand-Bold";
 }
-.name3{
-    width:35%;
-    margin-inline: 3%;
+.name33{
+    margin-left: 30%;
     font-weight:Bold;
+    font-size: 24px;
+    font-family: "Quicksand-Bold";
 }
 .standardTitle{
     top: 3380px;
-    left: 530px;
+    left: 430px;
     width: 394px;
     height: 61px;
     position: absolute;
@@ -229,7 +234,7 @@
 }
 .standardContent{
     top: 3450px;
-    left: 490px;
+    left: 390px;
     font-family: "Quicksand-Regular";
     color: #000000;
     font-size: 26px;
@@ -255,22 +260,22 @@
     line-height: normal;
 }
 .testimonialContent{
-    top: 3950px;
+    top: 3850px;
     left: 200px;
     font-family: "Quicksand-Regular";
-    font-size: 18px;
+    font-size: 26px;
     color: #000000;
     letter-spacing: 0;
     position: absolute;
     text-align:justify;
-    width:400px;
+    width:550px;
     height: 50px;
     line-height: normal;
 }
 
 .missonTitle{
     top: 4480px;
-    left: 300px;
+    left: 200px;
     width: 394px;
     height: 61px;
     position: absolute;
@@ -285,12 +290,14 @@
 .missonContent{
     top: 4550px;
     left: 200px;
-    font-family: "Quicksand-Regular";
-    font-size: 18px;
+    font-family: Quicksand;
+    font-size: 20px;
     color: #000000;
     letter-spacing: 0;
     position: absolute;
-    text-align:justify;
+    text-align:center;
+    width:450px;
+    height: 50px;
     line-height: normal;
 }
 .pancake{

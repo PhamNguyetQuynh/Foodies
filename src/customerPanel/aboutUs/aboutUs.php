@@ -68,14 +68,9 @@
             <div class="ourTeamPage">
                 <div class="ourTeam">Our Team</div>
                 <div class="member">
-                    <div class="mem1"><img src="../../img/mem1.svg" alt="The first member" /></div>
-                    <div class="mem2"><img src="../../img/mem2.svg" alt="The second member" /></div>
-                    <div class="mem3"><img src="../../img/mem3.svg" alt="The third member" /></div>
-                </div>
-                <div class="name">
-                    <p class="name1">Anotonio Cooper</p>
-                    <p class="name2">Wade Warren</p>
-                    <p class="name3">Esther Howard</p>
+                    <div class="mem1"><img src="../../img/mem1.svg" alt="The first member" /><p class="name11">Anotonio Cooper</p></div>
+                    <div class="mem2"><img src="../../img/mem2.svg" alt="The second member" /> <p class="name22">Wade Warren</p></div>
+                    <div class="mem3"><img src="../../img/mem3.svg" alt="The third member" /> <p class="name33">Esther Howard</p></div>
                 </div>
             </div>
 
