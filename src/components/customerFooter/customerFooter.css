@@ -5,6 +5,7 @@ footer {
     width: 100%;
     overflow-x: hidden;
     position: relative; /* Add this line to make it a positioning context */
+    bottom: 0;
   }
   
   hr {
