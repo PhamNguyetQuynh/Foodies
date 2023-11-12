@@ -87,7 +87,7 @@
             <div class="missonPage">
                 <div class="missonTitle">Our Mission </div>
                 <div class="missonContent">We are committed to providing our guests with a warm and welcoming atmosphere, excellent service, and a menu that features something for everyone. We want our restaurant to be a place where people come to celebrate special occasions, enjoy a meal with family and friends, or simply relax and enjoy a delicious Italian meal.</div>
-                <img src="../../img/pancake.svg" alt="pancake" style="width:600px;height:580px;margin-left:130%;margin-top:-550px">
+                <img src="../../img/pancake.svg" alt="pancake" style="width:600px;height:580px;margin-left:130%;margin-top:-450px">
             </div>
         </div> 
         <div class="wrapper1"> <?php include '../../components/customerFooter/customerFooter.php' ?></div>
