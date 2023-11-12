@@ -38,7 +38,7 @@
             </div>
 
             <div class="card">
-                <img class="product-img" src="../../img/logo.svg" alt="salad">
+                <img class="product-img" src="../../img/salad.svg" alt="salad">
                 <h2 class="card-title">Salad</h2>
                 <div class="btn-container">
                     <button class="btn-viewProduct btn">Edit</button>
