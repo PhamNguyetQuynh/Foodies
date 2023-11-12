@@ -255,7 +255,7 @@
     line-height: normal;
 }
 .testimonialContent{
-    top: 3850px;
+    top: 3950px;
     left: 200px;
     font-family: "Quicksand-Regular";
     font-size: 18px;
@@ -268,7 +268,7 @@
     line-height: normal;
 }
 .chefImg{
-    top:80%;
+    top:110%;
     left: 860px;
     font-family: Quicksand;
     color: #000000;
@@ -314,4 +314,8 @@
 .pancake{
     top: 4550px;
     left: 200px;
+}
+.missonPage{
+    width:600px;
+    height:30px;
 }

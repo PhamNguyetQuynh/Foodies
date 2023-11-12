@@ -86,15 +86,15 @@
             </div class="testimonialPage">
                 <div class="testimonialTitle">Testimonial</div>
                 <p class="testimonialContent">Chef Antonio was born and raised in the small town of Amalfi, Italy, where he grew up surrounded by the fresh seafood and seasonal produce that have become the hallmarks of his cuisine. His passion for cooking began at a young age, when he would spend hours in his grandmother's kitchen learning the secrets of traditional Italian recipes. Chef Antonio is passionate about creating a warm and welcoming dining experience for his guests. He invites you to come and taste the authentic flavors of Amalfi at his restaurant, where he will take you on a culinary journey through the heart of Southern Italy</p>
-                <div class="chefImg"><img src="../../img/chef.svg" alt=" Chef" /></div>
+                <img src="../../img/chef.svg" alt="Chef" style="width:600px;height:420px;margin-left:200%;margin-top:50%">
             </div>
            
-            <div class="three"><img src="../../img/three.svg" /></div>
+             <img class="three" src="../../img/three.svg" /></div>
 
             <div class="missonPage">
                 <div class="missonTitle">Our Mission </div>
                 <div class="missonContent">We are committed to providing our guests with a warm and welcoming atmosphere, excellent service, and a menu that features something for everyone. We want our restaurant to be a place where people come to celebrate special occasions, enjoy a meal with family and friends, or simply relax and enjoy a delicious Italian meal.</div>
-                <div class="pancake"><img src="../../img/pancake.svg" /></div>
+               <img class="pancake" src="../../img/pancake.svg" />
             </div>
 
 
