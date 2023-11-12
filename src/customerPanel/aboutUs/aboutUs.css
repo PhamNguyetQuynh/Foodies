@@ -29,7 +29,7 @@
 }
 .masterchefPage{
     width: 394px;
-    height: 3500px;
+    height: 4000px;
 }
 
  .masterchef {
@@ -263,27 +263,11 @@
     letter-spacing: 0;
     position: absolute;
     text-align:justify;
-    width:500px;
-    height: 40px;
+    width:400px;
+    height: 50px;
     line-height: normal;
 }
-.chefImg{
-    top:110%;
-    left: 860px;
-    font-family: Quicksand;
-    color: #000000;
-    font-size: 26px;
-    letter-spacing: 0;
-    position: absolute;
-    text-align:center;
-    width:200px;
-    height: 20px;
-    line-height: normal;
-}
-.three{
-    top: 4080px;
-    left: 530px;
-}
+
 .missonTitle{
     top: 4480px;
     left: 300px;

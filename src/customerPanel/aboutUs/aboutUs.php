@@ -89,12 +89,11 @@
                 <img src="../../img/chef.svg" alt="Chef" style="width:600px;height:420px;margin-left:200%;margin-top:50%">
             </div>
            
-             <img class="three" src="../../img/three.svg" /></div>
+             <img class="three" src="../../img/three.svg" style="width:180px;height:100px;margin-left:50%;margin-top:-10px" /></div>
 
             <div class="missonPage">
                 <div class="missonTitle">Our Mission </div>
                 <div class="missonContent">We are committed to providing our guests with a warm and welcoming atmosphere, excellent service, and a menu that features something for everyone. We want our restaurant to be a place where people come to celebrate special occasions, enjoy a meal with family and friends, or simply relax and enjoy a delicious Italian meal.</div>
-               <img class="pancake" src="../../img/pancake.svg" />
             </div>
 
 
