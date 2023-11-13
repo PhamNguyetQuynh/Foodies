@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../../components/customerHeader/customerHeader.css">
     <link rel="stylesheet" href="../../components/customerFooter/customerFooter.css">
     <link rel="stylesheet" href="searchResult.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="../../js/customerScript.js"></script>
     <title>Search Result</title>
 </head>
 <body>
@@ -23,7 +25,7 @@
                 </div>
                 <p class="rsl-product-description">A feast for the senses, with fresh ingredients and a flavorful dressing</p>
                 <div class="rsl-btn-icons-group">
-                    <button class="rsl-btn">Buy Now</button>
+                    <button class="rsl-btn btn">Buy Now</button>
                     <img src="../../img/shopping-cart.svg" alt="">
                     <img src="../../img/heart.svg" alt="">
                     <img src="../../img/eye.svg" alt="">
