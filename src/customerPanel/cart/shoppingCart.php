@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../components/customerFooter/customerFooter.css">
     <link rel="stylesheet" href="shoppingCart.css">
     <script src="../../js/customerScript.js"></script>
-    <title>Foodies-Homepage</title>
+    <title>Foodies-Shopping Cart</title>
 </head>
 <body>
     <?php include '../../components/customerHeader/customerHeader.php'; ?>
