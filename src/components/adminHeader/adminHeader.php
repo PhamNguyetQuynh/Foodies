@@ -20,12 +20,23 @@
                 </a>
 
                 <div class="fa-solid fa-user rightFloater" id="userIcon"></div>
+                <div class="toggleBtn rightFloaterBtn"><i class="fa-solid fa-bars"></i></div>
             </div>
 
-            <div class=" accountHover">
+            <div class="accountHover">
+                <?php
+                $select_profile = $conn->prepare("SELECT *FROM `sellers` WHERE id=?");
+                $select_profile->execute([$seller_id]);
+                if ($select_profile->rowCount() > 0) {
+                    $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+                }
+                ?>
                 <div class=" container accountContent">
-                    <div class="avatar">
+                    <!-- <div class="avatar">
                         <img src="../../img/exavt.svg" />
+                    </div> -->
+                    <div class="avatar">
+                        <img src="../../uploadedFiles/<?= $fetch_profile['image']; ?>" alt="Avatar" class="avatar-image">
                     </div>
                     <div class="hoverOption">
                         <a href="../../adminPanel/adminProfileDetail/adminProfileDetail.php" class="btn navBtn viewProfileBtn">View Profile</a>
@@ -33,12 +44,16 @@
                     </div>
                 </div>
             </div>
-            <div class="sideBar">
+            </header>
+           
                 <div class="sideBarContent">
                     <div class="sideBarProfile">
-                        <img src="../../img/exavt.svg" />
-                        <p>name</p>
+                    <div class="avatar">
+                        <img src="../../uploadedFiles/<?= $fetch_profile['image']; ?>" alt="Avatar" class="avatar-image">
                     </div>
+                        <p class="userName"><?=$fetch_profile['name']; ?></p>
+                    </div>
+        
                     <div class="navBar">
                         <ul>
                             <li class="liCon "><a href="../../adminPanel/adminDashboard/dashboard.php"><i class="icon fa-solid fa-house"></i>DASHBOARD</a></li>
@@ -54,8 +69,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        
+ 
 </body>
 
 </html>

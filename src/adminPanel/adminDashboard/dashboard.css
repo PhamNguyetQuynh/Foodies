@@ -3,17 +3,19 @@
   padding: 20px;
   top:0;
   bottom: 0;
-  margin-left: 18vw;
-  height: 60vh;
-  overflow-y: auto;
-  position: sticky;
+  margin-left: 25vw;
+   height: 60vh;
+   
+   font-weight: bold;
+ /* overflow-y: auto; */
+  /* position: sticky; */
 }
-.dashboardContainer {
-  margin-left: 10vw;
+/* .dashboardContainer {
+   margin-left: 10vw; 
   font-weight: bold;
-}
+} */
 
-.sideBar {
+/* .sideBar {
   width: 18vw;
   height: 100vh;
   position: fixed;
@@ -23,15 +25,16 @@
   justify-content: flex-start;
   overflow: hidden;
   left: 0;
-}
+} */
 .title {
   width: 392px;
   height: 68px;
-  top: 100px;
-  margin-left: 15vw;
+  margin-top: 5rem;
+  position: relative;
+  display: flex;
+  /* margin-left: 25vw; */
   margin-bottom: 15vh;
-  position: sticky;
-  font-family: "Sora-Bold", Helvetica;
+   font-family: "Sora-Bold", Helvetica;
   font-weight: 700;
   color: #f9bd29;
   font-size: 50px;
@@ -44,6 +47,8 @@
   border-collapse: collapse;
   width: 900px;
   top: 500px;
+  display: flex;
+  flex-direction: row;
  
 }
 
@@ -60,6 +65,7 @@
   border-radius: 16px;
   padding: 10px;
   position: relative;
+  display: flex;
 }
 
 .form p {
@@ -88,4 +94,14 @@
 }
 .viewDetail a {
   color: #f9bd29;
+}
+@media screen and (max-width: 991px){
+  .tb {
+   flex-direction: column;
+  }
+  .dashBoard {
+  margin-left: 0vw;
+      height: 60vh;
+
+  }
 }

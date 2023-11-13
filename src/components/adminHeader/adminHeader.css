@@ -1,33 +1,43 @@
-.floater img {
-  max-height: 40px;
-  width: 176px;
-  cursor: pointer;
-}
-.headerContainer{
-  position:fixed;
+.headerContainer {
+  position: fixed;
   width: 100%;
   z-index: 9999;
 }
+.floater img {
+  height: clamp(3rem, 3rem, 5rem);
+  width: clamp(10rem, 12rem, 12rem);
+  cursor: pointer;
+}
+
 .floater {
-  display: flex;
+  /* display: flex; */
   position: relative;
   border-radius: 0px;
-  /* width: 100%; */
+  z-index: 9999;
 }
 .rightFloater {
   position: absolute;
   align-items: center;
-  right: 50px;
+  right: 2rem;
   top: 35%;
   display: block;
-  margin-right: 30px;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.rightFloaterBtn {
+  position: absolute;
+  align-items: center;
+  right: 5rem;
+  top: 35%;
+  display: block;
+  margin-right: 2rem;
   cursor: pointer;
 }
 .accountContent {
-  margin-top: 5px;
-margin-right: 15px;
-  width: 369px;
-  height: 165px;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  width: clamp(10rem, 12rem, 12rem);
+  height: clamp(10rem, 12rem, 12rem);
   justify-content: center;
   z-index: 5;
   display: flex;
@@ -39,9 +49,9 @@ margin-right: 15px;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s;
 }
-.accountHover.active .accountContent{
-  width: 369px;
-  height: 165px;
+.accountHover.active .accountContent {
+  width: clamp(10rem, 22rem, 22rem);
+  height: clamp(10rem, 10rem, 10rem);
   justify-content: center;
   z-index: 5;
   display: flex;
@@ -54,11 +64,15 @@ margin-right: 15px;
 }
 .avatar {
   margin-right: 20px;
+  width: 129px;
+  height: 129px;
 }
+
 .avatar img {
   width: 129px;
   height: 129px;
 }
+
 .hoverOption {
   display: flex;
   flex-direction: column;
@@ -75,12 +89,11 @@ margin-right: 15px;
   margin-bottom: 6px;
 }
 
-.sideBar ul li:hover {
-background-color: var(--orange);
-
+.sideBarContent ul li:hover {
+  background-color: var(--orange);
 }
 
-.sideBar ul li a {
+.sideBarContent ul li a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -88,25 +101,26 @@ background-color: var(--orange);
   color: black;
 }
 
-.sideBar ul li a:hover {
+.sideBarContent ul li a:hover {
   color: var(--white);
   background-color: var(--orange);
 }
 
-.sideBar ul li i:hover {
+.sideBarContent ul li i:hover {
   color: var(--white);
   background-color: var(--orange);
 }
-.sideBar ul li a i:hover{
+.sideBarContent ul li a i:hover {
   color: var(--white);
   background-color: var(--orange);
 }
-.sideBar ul li a i {
+.sideBarContent ul li a i {
   margin-right: 15px;
 }
 
-.sideBar {
+.sideBarContent {
   background-image: url(../../img/sideBarImg.svg);
+  background-color: var(--white);
   width: 18vw;
   height: 100vh;
   position: fixed;
@@ -114,20 +128,25 @@ background-color: var(--orange);
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow: auto;
+  z-index: 999;
+  transition: width 0.5s ease-in-out; /* Add a transition effect for a smoother animation */
 }
-.sideBar ul {
-  margin: 0; /* Remove the default margin on the <ul> element */
-  padding: 0; /* Remove the default padding on the <ul> element */
+.sideBarContent.active {
+  width: 25vw;
+}
+.sideBarContent ul {
+  margin: 0; 
+  padding: 0;
   list-style: none; /* Remove the list-style */
 }
-
 
 .sideBarProfile {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 4rem;
 }
 .liCon {
   width: 18vw;
@@ -146,8 +165,6 @@ background-color: var(--orange);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
-  /* color: var(--white); */
 }
 
 .socialLink i {
@@ -159,10 +176,77 @@ background-color: var(--orange);
   width: 30px;
   height: 30px;
 }
-.sideBarContent {
-  margin-top: 50px;
-}
 .socialIcon {
   font-size: 25px;
   cursor: pointer;
+}
+.accountContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar {
+  width: 130px; /* Set a fixed width */
+  height: 130px; /* Set a fixed height */
+  overflow: hidden; /* Hide the overflow */
+  border-radius: 50%; /* Make the avatar image round */
+  position: relative;
+  margin-bottom: 10px; /* Adjust this for spacing */
+}
+
+.avatar img {
+  width: 100%; /* Occupy the full width of the container */
+  height: 100%; /* Occupy the full height of the container */
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+.userName {
+  font-size: 16px; /* Adjust font size as needed */
+  font-weight: bold;
+}
+.toggleBtn {
+  display: none;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/*----*/
+@media screen and (max-width: 991px) {
+  .toggleBtn {
+    display: block;
+  }
+  .floater {
+      z-index: 9999;
+  }
+  .sideBarContent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 99999;
+    width: 0;
+  }
+  .sideBarContent .active {
+    width: 25vw;
+    height: 100vh;
+    z-index: 999;
+  }
+  .sideBarContent .sideBarProfile {
+    margin-top: 0.5rem;
+  }
+  .liCon {
+    width: 18vw;
+    /* margin: 18px 0; */
+    text-transform: capitalize;
+    color: var(--black);
+    background-color: var(--white);
+    font-weight: bold;
+    box-shadow: 2px 2px 4px #b6b6b6;
+    border-radius: 15px;
+    padding: 16px 12px;
+    text-transform: uppercase;
+  }
+  
 }
