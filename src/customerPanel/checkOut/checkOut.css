@@ -14,7 +14,7 @@ h1 {
     flex-direction: column;
     top: 20px;
     bottom: 20px;
-    left: 380px;
+    left: 20vw;
     margin-bottom: 100px;
     overflow: visible;
 }
@@ -26,11 +26,11 @@ h1 {
 }
 
 .billInfo {
-    width: 44%;
+    width: 45%;
 }
 
 .billInfo+.billInfo {
-    margin-left: 93px;
+    margin-left: 8%;
 }
 
 input[type="text"],select {
@@ -78,6 +78,7 @@ td {
 }
 
 .price {
+    padding-right:0;
     text-align:right;
     vertical-align:top;
 }
@@ -112,14 +113,23 @@ hr {
     justify-content: center
 }
 
-.btn.empty,.btn.checkOut {
+.btn.cancel,.btn.checkOut {
+    padding: 1rem;
     width: 40%;
-    height: 3rem;
-    font-size: 1.3rem;
+    min-height: max-content;
+    font-size: 1.2rem;
 }
 
 .btn.checkOut {
     margin-left: 3rem;
     background-color: var(--orange);
     color: var(--white);
+}
+
+.btn.checkOut:hover {
+    background-color: green;
+}
+
+.btn.cancel:hover {
+    background-color: red;
 }
