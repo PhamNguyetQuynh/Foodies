@@ -14,8 +14,7 @@
     <title>Customer Update Profile</title>
 </head>
 <body>
-    <?php include '../../components/customerHeader/customerHeader.php'; ?>
-    
+    <?php include '../../components/customerHeader/customerHeader.php'; ?>    
     <div class="adminUpdateProfileChild">
         <div class="rectangle-parent">
             <!-- <div class="group-child"></div> -->
