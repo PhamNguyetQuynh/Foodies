@@ -112,7 +112,7 @@ hr {
     justify-content: center
 }
 
-.btn {
+.btn.empty,.btn.checkOut {
     width: 40%;
     height: 3rem;
     font-size: 1.3rem;
