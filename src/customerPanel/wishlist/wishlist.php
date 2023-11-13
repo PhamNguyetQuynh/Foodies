@@ -34,7 +34,7 @@
                     <p class="price">20$</p>
         
                     <div class="btn-container">
-                        <button class="btn-viewProduct btn">Buy Now</button>
+                        <button class="btn-viewProduct btn buyBtn ">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
@@ -46,7 +46,7 @@
                     <p class="price">20$</p>
         
                     <div class="btn-container">
-                        <button class="btn-viewProduct btn">Buy Now</button>
+                        <button class="btn-viewProduct btn buyBtn">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
@@ -58,7 +58,7 @@
                     <p class="price">20$</p>
         
                     <div class="btn-container">
-                        <button class="btn-viewProduct btn">Buy Now</button>
+                        <button class="btn-viewProduct btn buyBtn">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
@@ -70,7 +70,7 @@
                     <p class="price">20$</p>
         
                     <div class="btn-container">
-                        <button class="btn-viewProduct btn">Buy Now</button>
+                        <button class="btn-viewProduct btn buyBtn">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
@@ -82,7 +82,7 @@
                     <p class="price">20$</p>
         
                     <div class="btn-container">
-                        <button class="btn-viewProduct btn">Buy Now</button>
+                        <button class="btn-viewProduct btn buyBtn">Buy Now</button>
                     </div>
                 </div>
             </div>
