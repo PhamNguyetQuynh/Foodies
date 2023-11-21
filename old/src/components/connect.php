@@ -1,7 +1,7 @@
 <?php
 $db_name='mysql:host=localhost;dbname=foodies_db';
-$user_name='root';
-$user_password='';
+$user_name='foodies';
+$user_password='foodies';
 
 $conn=new PDO($db_name, $user_name, $user_password);
 
