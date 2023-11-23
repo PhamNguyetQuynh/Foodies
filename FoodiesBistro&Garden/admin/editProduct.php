@@ -43,27 +43,27 @@ include('./includes/header.php');
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="name" class="form-label">Name</label>
-                                        <input type="text" name="name" value="<?= $data['name'] ?>" placeholder="Enter Product Name" class="form-control">
+                                        <input type="text" name="name" required value="<?= $data['name'] ?>" placeholder="Enter Product Name" class="form-control">
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="slug" class="form-label">Slug</label>
-                                        <input type="text" name="slug" value="<?= $data['slug'] ?>" placeholder="Enter Slug" class="form-control">
+                                        <input type="text" name="slug" required value="<?= $data['slug'] ?>" placeholder="Enter Slug" class="form-control">
                                     </div>
                                     <div class="col-md-12 mb-3">
                                         <label for="small_description" class="form-label">Small Description</label>
-                                        <textarea rows="3" name="small_description" placeholder="Enter Small Description" class="form-control"><?= $data['small_description'] ?></textarea>
+                                        <textarea rows="3" name="small_description" required placeholder="Enter Small Description" class="form-control"><?= $data['small_description'] ?></textarea>
                                     </div>
                                     <div class="col-md-12 mb-3">
                                         <label for="description" class="form-label">Description</label>
-                                        <textarea rows="3" name="description" placeholder="Enter Description" class="form-control"><?= $data['description'] ?></textarea>
+                                        <textarea rows="3" name="description" required placeholder="Enter Description" class="form-control"><?= $data['description'] ?></textarea>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="original_price" class="form-label">Original Price</label>
-                                        <input type="text" name="original_price" value="<?= $data['original_price'] ?>" placeholder="Enter Original Price" class="form-control">
+                                        <input type="text" name="original_price" required value="<?= $data['original_price'] ?>" placeholder="Enter Original Price" class="form-control">
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="selling_price" class="form-label">Selling Price</label>
-                                        <input type="text" name="selling_price" value="<?= $data['selling_price'] ?>" placeholder="Enter Selling Price" class="form-control">
+                                        <input type="text" name="selling_price" required value="<?= $data['selling_price'] ?>" placeholder="Enter Selling Price" class="form-control">
                                     </div>
                                     <div class="col-md-12 mb-3">
                                         <label for="image" class="form-label">Upload Image</label>
@@ -71,20 +71,20 @@ include('./includes/header.php');
                                         <div class="mt-2">
                                             <label for="old_image" class="form-label">Current Image</label>
                                             <input type="hidden" name="old_image" value="<?= $data['image'] ?>">
-                                            <img src="../uploads/<?= $data['image'] ?>" height="200px" width="200px" alt="">
+                                            <img src="../uploads/<?= $data['image'] ?>" height="200px" width="150px" alt="">
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="qty" class="form-label">Quantity</label>
-                                        <input type="number" name="qty" placeholder="Enter Quantity" class="form-control" value="<?= $data['qty'] ?>">
+                                        <input type="number" required name="qty" placeholder="Enter Quantity" class="form-control" value="<?= $data['qty'] ?>">
                                     </div>
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-3 mt-4">
                                         <div class="form-check">
                                             <input type="checkbox" <?= $data['status'] ? "checked" : "" ?> name="status" id="statusCheckbox">
                                             <label class="form-check-label" for="statusCheckbox">Status</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-3 mt-4">
                                         <div class="form-check">
                                             <input type="checkbox" <?= $data['trending'] ? "checked" : "" ?> name="trending" id="trendingCheckbox">
                                             <label class="form-check-label" for="trendingCheckbox">Trending</label>
@@ -92,21 +92,21 @@ include('./includes/header.php');
                                     </div>
                                     <div class="col-md-12 mb-3">
                                         <label for="meta_title" class="form-label">Meta Title</label>
-                                        <input type="text" name="meta_title" value="<?= $data['meta_title'] ?>" placeholder="Enter Meta Title" class="form-control">
+                                        <input type="text" required  name="meta_title" value="<?= $data['meta_title'] ?>" placeholder="Enter Meta Title" class="form-control">
                                     </div>
                                     <div class="col-md-12 mb-3">
                                         <label for="meta_description" class="form-label">Meta Description</label>
-                                        <textarea rows="3" name="meta_description" placeholder="Enter Meta Description" class="form-control"><?= $data['meta_description'] ?></textarea>
+                                        <textarea rows="3" required  name="meta_description" placeholder="Enter Meta Description" class="form-control"><?= $data['meta_description'] ?></textarea>
                                     </div>
                                     <div class="col-md-12 mb-3">
                                         <label for="meta_keywords" class="form-label">Meta Keywords</label>
-                                        <textarea rows="3" name="meta_keywords" placeholder="Enter Meta Keywords" class="form-control"><?= $data['meta_keywords'] ?></textarea>
+                                        <textarea rows="3" required name="meta_keywords" placeholder="Enter Meta Keywords" class="form-control"><?= $data['meta_keywords'] ?></textarea>
                                     </div>
                                     <!-- Add more form fields here with appropriate Bootstrap spacing classes -->
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-warning" name="update_product_btn">Update</button>
-                                    <a href="product.php" class="btn btn-secondary float-end">Back</a>
+                                    <a href="product.php" class="btn btn-outline-warning float-end">Back</a>
                                 </div>
                             </form>
                         </div>
