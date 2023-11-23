@@ -40,7 +40,7 @@ include('./includes/header.php');
                                         <div class="mt-2">
                                             <label for="old_image" class="form-label">Current Image</label>
                                             <input type="hidden" name="old_image" value="<?= $data['image'] ?>">
-                                            <img src="../uploads/<?= $data['image'] ?>" height="200px" width="200px" alt="">
+                                            <img src="../uploads/<?= $data['image'] ?>" height="200px" width="150px" alt="">
                                         </div>
                                     </div>
                                     <div class="col-md-12 mb-3">
@@ -69,7 +69,7 @@ include('./includes/header.php');
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-warning" name="update_category_btn">Update</button>
-                                        <a href="category.php" class="btn btn-secondary float-end">Back</a>
+                                        <a href="category.php" class="btn btn-outline-warning float-end">Back</a>
                                     </div>
                                 </div>
                             </form>
