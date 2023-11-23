@@ -55,7 +55,7 @@ include('./includes/header.php');
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="add_category_btn">Save</button>
+                                <button type="submit" class="btn  btn-warning" name="add_category_btn">Save</button>
                             </div>
                         </div>
                     </form>
