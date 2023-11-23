@@ -7,8 +7,8 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="text-warning font-weight-bold">
+                <div class="card-header bg-warning">
+                    <h4 class="text-white">
                         Products
                     </h4>
                 </div>
