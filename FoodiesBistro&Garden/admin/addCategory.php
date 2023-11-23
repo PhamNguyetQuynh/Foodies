@@ -9,8 +9,8 @@ include('./includes/header.php');
         <div class="col-md-12">
             <div class="card">
             <div class="card">
-                <div class="card-header bg-warning text-white">
-                    <h4 class="font-weight-bold mb-0">Add Category</h4>
+                <div class="card-header bg-warning ">
+                    <h4 class="font-weight-bold mb-0 text-white">Add Category</h4>
                 </div>
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">
@@ -56,7 +56,7 @@ include('./includes/header.php');
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn  btn-warning" name="add_category_btn">Save</button>
+                                <button type="submit" class="btn btn-warning" name="add_category_btn">Save</button>
                             </div>
                         </div>
                     </form>
