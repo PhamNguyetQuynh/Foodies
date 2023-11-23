@@ -45,7 +45,7 @@ include('./includes/header.php');
                                                     <input type="hidden" name="category_id" value="<?= $item['id']; ?>">
                                                     <button type="submit" class="btn btn-danger btn-sm" name="delete_category_btn">Delete</button>
                                                 </form> -->
-                                                <button type="button" class="btn btn-sm btn-warning delete_category_btn" value="<?= $item['id']; ?>">Delete</button>
+                                                <button type="button" class="btn btn-sm btn-outline-warning delete_category_btn" value="<?= $item['id']; ?>">Delete</button>
                                             </td>
                                         </tr>
 

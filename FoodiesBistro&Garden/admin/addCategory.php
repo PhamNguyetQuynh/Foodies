@@ -8,8 +8,8 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                        <div class="card-header bg-warning text-white">
-                            <h4 class="font-weight-bold mb-0">Add Product</h4>
+                        <div class="card-header bg-warning">
+                            <h4 class="font-weight-bold mb-0 text-white">Add Category</h4>
                         </div>
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">

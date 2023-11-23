@@ -46,13 +46,13 @@ include('./includes/header.php');
                                                         <button type="submit" class="btn btn-danger btn-sm" name="delete_product_btn">Delete</button>
                                                     </form>
                                                 </td> -->
-                                                <button type="button" class="btn btn-sm btn-warning delete_product_btn" value="<?= $item['id']; ?>">Delete</button>
+                                                <button type="button" class="btn btn-sm btn-outline-warning delete_product_btn" value="<?= $item['id']; ?>">Delete</button>
                                             </td>
                                         </tr>
                                 <?php
                                     }
                                 } else {
-                                    echo "N0 record found";
+                                    echo "No record found";
                                 }
                                 ?>
                             </tbody>
