@@ -8,9 +8,9 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h4>Add Category</h4>
-                </div>
+                        <div class="card-header bg-warning text-white">
+                            <h4 class="font-weight-bold mb-0">Add Product</h4>
+                        </div>
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
@@ -51,7 +51,7 @@ include('./includes/header.php');
                                 <input type="checkbox" name="popular">
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary" name="add_category_btn">Save</button>
+                                <button type="submit" class="btn btn-warning" name="add_category_btn">Save</button>
                             </div>
                         </div>
                     </form>
