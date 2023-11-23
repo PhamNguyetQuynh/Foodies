@@ -15,8 +15,8 @@ include('./includes/header.php');
                     $data = mysqli_fetch_array($category);
                     ?>
                     <div class="card">
-                        <div class="card-header bg-warning text-white">
-                            <h4 class="font-weight-bold mb-0">Edit Category</h4>
+                        <div class="card-header bg-warning">
+                            <h4 class="font-weight-bold text-white mb-0">Edit Category</h4>
                         </div>
                         <div class="card-body">
                             <form action="code.php" method="POST" enctype="multipart/form-data">
