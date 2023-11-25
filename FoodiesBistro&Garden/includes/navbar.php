@@ -3,6 +3,9 @@
     <div class="row">
       <div class="col-md-4">
         <a class="navbar-brand fs-4" href="index.php" style="font-weight: bolder; ">Foodies</a>
+        <button class="navbar-toggler float-end" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
 
       <div class="col-md-4">
@@ -12,7 +15,9 @@
             <i class="fa fa-search" style="color: #7D6323;"></i>
           </button>
         </form>
+
       </div>
+
 
       <div class="col-md-3">
         <div class="collapse navbar-collapse" id="navbarNav">

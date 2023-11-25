@@ -8,25 +8,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="homeLink">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="link2">Link 2</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="link3">Link 3</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
@@ -52,7 +34,7 @@ include('./includes/slider.php'); ?>
                         <div class="item">
                             <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                                 <div class="card shadow">
-                                    <div class="card-body" style="height: 600px">
+                                    <div class="card-body" style="height: 400px">
                                         <img src="uploads/<?= $item['image']; ?>"  alt="Product Image" >
                                         <h6 class="text-center"><?= $item['name'];  ?></h6>
                                     </div>
