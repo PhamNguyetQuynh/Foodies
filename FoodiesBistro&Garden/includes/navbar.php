@@ -3,24 +3,28 @@
     <div class="row">
       <div class="col-md-4">
         <a class="navbar-brand fs-4" href="index.php" style="font-weight: bolder; ">Foodies</a>
+        <button class="navbar-toggler float-end " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
 
       <div class="col-md-4">
         <form class="d-flex justify-content-between">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width: 300px">
+          <input class="form-control ml-auto" type="search" placeholder="Search" aria-label="Search" style="width: 300px">
           <button class="btn" type="submit" style="background-color: white;">
             <i class="fa fa-search" style="color: #7D6323;"></i>
           </button>
         </form>
+
       </div>
 
       <div class="col-md-3">
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-          <a class="nav-link" href="index.php">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
 
-          </li>
+            </li>
             <li class="nav-item">
               <a class="nav-link" style="width:95px;" href="aboutUs.php">About Us</a>
             </li>
@@ -72,7 +76,7 @@
 </nav>
 <script>
   // Đợi cho trang web được tải hoàn toàn
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     // Lấy đối tượng navbarNav
     var navbarNav = document.getElementById("navbarNav");
 
