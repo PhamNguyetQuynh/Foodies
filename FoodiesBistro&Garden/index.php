@@ -1,3 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Bootstrap Nav-Link Active</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="homeLink">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="link2">Link 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="link3">Link 3</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <?php
 include('./functions/userFunctions.php');
 include('./includes/header.php');
@@ -18,8 +52,8 @@ include('./includes/slider.php'); ?>
                         <div class="item">
                             <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                                 <div class="card shadow">
-                                    <div class="card-body" style="height: 400px;">
-                                        <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100">
+                                    <div class="card-body" style="height: 600px">
+                                        <img src="uploads/<?= $item['image']; ?>"  alt="Product Image" >
                                         <h6 class="text-center"><?= $item['name'];  ?></h6>
                                     </div>
                                 </div>
@@ -41,16 +75,9 @@ include('./includes/slider.php'); ?>
                 <h4>About Us</h4>
                 <div class="underline mb-2"> </div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
+                Welcome to FOODIES, where culinary excellence meets a diverse tapestry of flavors! We are passionate about bringing together a myriad of tastes from around the world to create a gastronomic experience that transcends borders. Our journey began with a simple yet profound idea: to connect people through the universal language of food. Whether you're a seasoned foodie or just beginning your culinary adventure, we invite you to explore the rich and varied offerings that make up our food web.
                 </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
-
-
-                </p>
+                <a href="aboutUs.php" class="btn btn-primary btn btn-danger" role="button" data-bs-toggle="button">Read More</a>            
             </div>
         </div>
     </div>
@@ -104,3 +131,6 @@ include('./includes/slider.php'); ?>
         })
     })
 </script>
+
+</body>
+</html>
