@@ -36,36 +36,17 @@ include('authenticate.php');
                         $items = getCartItems();
                         if (mysqli_num_rows($items) > 0) {
                         ?>
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <h5>Product</h5><br>
-                                </div>
-                                <div class="col-md-2">
-                                    <h5>Price</h5><br>
-                                </div>
-                                <div class="col-md-2">
-                                    <h5>Quantity</h5><br>
-                                </div>
-                                <div class="col-md-2">
-                                    <h5>Remove</h5><br>
-                                </div>
-                            </div>
                             <div>
                                 <?php
                                 foreach ($items as $citem) {
                                 ?>
                                     <div class="card product_data shadow-sm mb-3">
                                         <div class="row align-items-center">
-                                            <div class="col-md-2">
+                                            <div class="col-md-3">
                                                 <img src="uploads/<?= $citem['image'] ?>" alt="Image" class="w-50">
                                             </div>
-                                            <div class="col-md-4">
-                                                <h5><?= $citem['name'] ?></h5>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <h5><?= $citem['selling_price']  ?>vnd</h5>
-                                            </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-6">
+                                                <h5><?= $citem['name'] ?></h5><br>
                                                 <input type="hidden" class="product_id" value="<?= $citem['pid'] ?>">
                                                 <div class="input-group mb-3" style="width:130px">
                                                     <button class="input-group-text decrement-btn update_qty">-</button>
@@ -73,7 +54,8 @@ include('authenticate.php');
                                                     <button class="input-group-text increment-btn update_qty">+</button>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-3">
+                                                <h5><?= $citem['selling_price']  ?>vnd</h5><br>
                                                 <button class="btn btn-danger btn-sm deleteItem" value="<?= $citem['cid'] ?>">
                                                     <i class="fa fa-trash me-2"></i>Remove</button>
                                             </div>
@@ -102,7 +84,7 @@ include('authenticate.php');
             </div>
         </div>
         <div class="float-end py-5">
-                                        <a href="checkout.php" class="btn btn-outline-primary">Checkout</a>
+                                        <a href="checkout.php" class="btn btn-outline-primary btn-lg">Checkout</a>
                                     </div>
     </div>
 </div>
