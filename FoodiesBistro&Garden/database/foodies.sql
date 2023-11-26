@@ -200,3 +200,14 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/*INSERT IMAGE*/
+-- Thêm trường `image` vào bảng `users`
+ALTER TABLE `users`
+ADD COLUMN `image` VARCHAR(191) DEFAULT 'default.jpg' AFTER `phone`;
+
+-- Cập nhật dữ liệu cho người dùng hiện tại
+UPDATE `users` SET `image` = 'default.jpg' WHERE `image` IS NULL OR `image` = '';
+
+-- Hiển thị cấu trúc và dữ liệu của bảng `users` sau khi thực hiện cập nhật
+SELECT * FROM `users`;
