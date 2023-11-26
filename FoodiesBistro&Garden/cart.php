@@ -84,7 +84,7 @@ include('authenticate.php');
             </div>
         </div>
         <div class="float-end py-5">
-                                        <a href="checkout.php" class="btn btn-outline-primary btn-lg">Checkout</a>
+                                        <a href="checkout.php" class="btn btn-outline-primary">Checkout</a>
                                     </div>
     </div>
 </div>
