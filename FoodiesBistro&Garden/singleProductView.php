@@ -9,20 +9,8 @@ if (isset($_GET['product'])) {
 
     if ($product) {
 ?>
-        <div class="py-3 bg-primary">
-            <div class="container">
-                <h6 class="text-white">
-                    <a class="text-white" href="category.php">
-                        Home /
-                    </a>
-                    <a class="text-white" href="category.php">
-                        Collections /
-                    </a>
-                    <?= $product['name']; ?>
-                </h6>
-            </div>
-        </div>
-        <div class="bg-light py-4">
+        <img class="img-fluid opacity-25 position-absolute" src="uploads/wp10509681.jpg">
+        <div class="bg-light py-4 d-flex">
             <div class="container product_data mt-5">
                 <div class="row">
                     <div class="col-md-4">
@@ -59,7 +47,7 @@ if (isset($_GET['product'])) {
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6">
-                                <button class="btn btn-primary px-4 addToCartBtn" value="<?= $product['id']; ?>">
+                                <button class="btn btn-primary px-4" value="<?= $product['id']; ?>">
                                     <i class="fa fa-shopping-cart me-2 "></i>Add to Cart</button>
                             </div>
                             <div class="col-md-6">
