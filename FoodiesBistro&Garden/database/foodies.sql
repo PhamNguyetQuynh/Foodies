@@ -65,10 +65,6 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
 -- Dumping data for table `wishlist`
 --
 
-INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `product_qty`, `created_at`) VALUES
-(29, 5, 11, 1, '2023-11-21 09:22:02'),
-(7, 6, 11, 2, '2023-11-19 18:04:00');
-
 -- --------------------------------------------------------
 
 --
