@@ -11,7 +11,7 @@ include('./includes/header.php'); ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Our Collections</h1>
+                <h1>Our Menu</h1>
                 <hr>
                 <div class="row">
                     <?php
