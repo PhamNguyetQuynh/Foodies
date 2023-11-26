@@ -1,7 +1,6 @@
 <?php
 include('./functions/userFunctions.php');
 include('./includes/header.php');
-include('./includes/footer.php');
 ?>
 <style>
     .bg-image {
@@ -117,3 +116,4 @@ include('./includes/footer.php');
         </div>
     </div>
 </div>
+<?php include('./includes/footer.php') ?>
