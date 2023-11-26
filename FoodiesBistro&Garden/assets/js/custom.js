@@ -119,3 +119,26 @@ $(document).on("click", ".addToWishlistBtn", function (e) {
     },
   });
 });
+
+$(document).on("click", ".toggleWishlistBtn", function (e) {
+  e.preventDefault();
+  var wishlist_id = $(this).val();
+
+  $.ajax({
+    method: "POST",
+    url: "./functions/handleWishlist.php",
+    data: {
+      wishlist_id: wishlist_id,
+      scope: "delete",
+    },
+    success: function (response) {
+      if (response == 201) {
+        alertify.success("Product removed from wishlist");
+      } else if (response == 401) {
+        alertify.success("Login to continue");
+      } else if (response == 500) {
+        alertify.success("Something went wrong");
+      }
+    },
+  });
+});
