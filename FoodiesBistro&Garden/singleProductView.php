@@ -63,7 +63,7 @@ if (isset($_GET['product'])) {
                                     <i class="fa fa-shopping-cart me-2 "></i>Add to Cart</button>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn  btn-danger px-4">
+                                <button class="btn  btn-danger px-4 addToWishlistBtn" value="<?= $product['id']; ?>">
                                     <i class="fa fa-heart me-2"></i>Add to Wishlist
                                 </button>
                             </div>

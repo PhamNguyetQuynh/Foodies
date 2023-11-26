@@ -48,6 +48,30 @@ INSERT INTO `carts` (`id`, `user_id`, `product_id`, `product_qty`, `created_at`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `wishlist`
+--
+
+DROP TABLE IF EXISTS `wishlist`;
+CREATE TABLE IF NOT EXISTS `wishlist` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  `product_qty` int NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `wishlist`
+--
+
+INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `product_qty`, `created_at`) VALUES
+(29, 5, 11, 1, '2023-11-21 09:22:02'),
+(7, 6, 11, 2, '2023-11-19 18:04:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categories`
 --
 
