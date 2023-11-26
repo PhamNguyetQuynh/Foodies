@@ -12,7 +12,7 @@ if (isset($_GET['category'])) {
         $cateID = $category['id'];
 ?>
         <img class="img-fluid opacity-25 position-absolute" src="uploads/wp10509681.jpg">
-        <div class="py-4">
+        <div class="py-4 position-relative">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
