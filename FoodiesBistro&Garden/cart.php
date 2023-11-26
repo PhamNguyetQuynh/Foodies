@@ -38,16 +38,16 @@ include('authenticate.php');
                         ?>
                             <div class="row align-items-center">
                                 <div class="col-md-6">
-                                    <br><h5>Product</h5><br>
+                                    <h5>Product</h5><br>
                                 </div>
                                 <div class="col-md-2">
-                                    <h5>Price</h5>
+                                    <h5>Price</h5><br>
                                 </div>
                                 <div class="col-md-2">
-                                    <h5>Quantity</h5>
+                                    <h5>Quantity</h5><br>
                                 </div>
                                 <div class="col-md-2">
-                                    <h5>Remove</h5>
+                                    <h5>Remove</h5><br>
                                 </div>
                             </div>
                             <div>
@@ -79,9 +79,7 @@ include('authenticate.php');
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="float-end py-5">
-                                        <a href="checkout.php" class="btn btn-outline-primary">Checkout</a>
-                                    </div>
+                                    
                                 <?php
                                 }
                                 ?>
@@ -103,6 +101,9 @@ include('authenticate.php');
                 </div>
             </div>
         </div>
+        <div class="float-end py-5">
+                                        <a href="checkout.php" class="btn btn-outline-primary">Checkout</a>
+                                    </div>
     </div>
 </div>
 <?php include('./includes/footer.php') ?>
@@ -127,7 +128,13 @@ h1{
 .deleteItem{
     margin-top: -1rem;
 }
+.btn.btn-danger.btn-sm.deleteItem{
+    color: #fff;
+  background-color: #7D6323;
+  border-color: #7D6323;
+}
 .card.card-body.shadow{
+    padding-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
 }
