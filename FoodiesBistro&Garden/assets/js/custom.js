@@ -52,7 +52,7 @@ $(document).ready(function () {
       },
     });
   });
-  //not using click because when the pgae reloaded, the increase decrease will not going to work
+  //not using click because when the page reloaded, the increase decrease will not going to work
   $(document).on("click", ".update_qty", function () {
     var qty = $(this).closest(".product_data").find(".input-qty").val();
     var product_id = $(this).val();
