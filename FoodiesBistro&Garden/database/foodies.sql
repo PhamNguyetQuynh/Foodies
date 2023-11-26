@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(191) NOT NULL,
   `email` varchar(191) NOT NULL,
-  `phone` int NOT NULL,
+  `phone`  varchar(191) NOT NULL,
   `password` varchar(191) NOT NULL,
   `role_as` tinyint NOT NULL DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -192,9 +192,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `phone`, `password`, `role_as`, `created_at`) VALUES
-(5, 'nina', 'nina@gmail.com', 123, '123', 0, '2023-11-15 15:28:58'),
-(6, 'admin', 'admin@gmail.com', 2222222, '123', 1, '2023-11-16 13:44:47');
+INSERT INTO `users` (`id`, `name`, `email`,`phone`, `password`, `role_as`, `created_at`) VALUES
+(5, 'nina', 'nina@gmail.com', '123456', '123', 0, '2023-11-15 15:28:58'),
+(6, 'admin', 'admin@gmail.com', '2222222', '123', 1, '2023-11-16 13:44:47');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

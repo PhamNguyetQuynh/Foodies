@@ -37,7 +37,8 @@ $user = $_SESSION['auth_user'];
                         <ul class="list-group">
                             <li class="list-group-item"><strong>Name:</strong> <?= $user['name']; ?></li>
                             <li class="list-group-item"><strong>Email:</strong> <?= $user['email']; ?></li>
-                            <li class="list-group-item"><strong>Phone:</strong> <?= $user['phone']; ?></li>
+                            <li class="list-group-item"><strong>Phone:</strong> <?= isset($user['phone']) ? $user['phone'] : 'N/A'; ?></li>
+
                         </ul>
                     </div>
                     <div class="card-footer d-flex justify-content-between">
