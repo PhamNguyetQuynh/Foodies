@@ -2,16 +2,12 @@
 include('./functions/userFunctions.php');
 include('./includes/header.php'); ?>
 
-<div class="py-3 bg-primary">
-    <div class="container">
-        <h6 class="text-white">Home / Collections</h6>
-    </div>
-</div>
-<div class="py-5">
+<img class="img-fluid opacity-25 position-absolute" src="uploads/wp10509681.jpg">
+<div class="py-4 position-relative">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Our Collections</h1>
+                <h1>Our Menu</h1>
                 <hr>
                 <div class="row">
                     <?php
@@ -21,10 +17,10 @@ include('./includes/header.php'); ?>
                     ?>
                             <div class="col-md-3 mb-2">
                                 <a href="product.php?category=<?= $item['slug']; ?>">
-                                    <div class="card shadow">
-                                        <div class="card-body">
+                                    <div class="card shadow-lg mb-5 rounded border-0">
+                                        <div class="card-body p-0">
                                             <img src="uploads/<?= $item['image']; ?>" alt="Category Image" class="w-100">
-                                            <h4 class="text-center"><?= $item['name'];  ?></h4>
+                                            <h4 class="text-center text-white mt-sm-3 mb-sm-3"><?= $item['name'];  ?></h4>
                                         </div>
                                     </div>
                                 </a>

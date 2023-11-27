@@ -9,60 +9,44 @@ if (isset($_GET['product'])) {
 
     if ($product) {
 ?>
-        <div class="py-3 bg-primary">
-            <div class="container">
-                <h6 class="text-white">
-                    <a class="text-white" href="category.php">
-                        Home /
-                    </a>
-                    <a class="text-white" href="category.php">
-                        Collections /
-                    </a>
-                    <?= $product['name']; ?>
-                </h6>
-            </div>
-        </div>
-        <div class="bg-light py-4">
+        <img class="img-fluid opacity-25 position-absolute" src="uploads/wp10509681.jpg">
+        <div class="py-4 position-relative">
             <div class="container product_data mt-5">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="shadow">
                             <img src="uploads/<?= $product['image']; ?>" alt="Product Image" class="w-100">
                         </div>
-
                     </div>
                     <div class="col-md-8">
-                        <h4 class="fw-bold"><?= $product['name']; ?>
-                            <span class="float-end text-danger"><?php if ($product['trending']) {
-                                                                    echo "Trending";
-                                                                } ?></span>
-                        </h4>
-                        <hr>
-                        <p><?= $product['small_description']; ?></p>
                         <div class="row">
-                            <div class="col-md-6">
-                                <h5> <span class="text-success fw-bold"><?= $product['selling_price']; ?></span> vnd</h5>
+                            <h3 class="fw-bold col-md-8"><?= $product['name']?></h3> 
+                            <span class="text-danger col-md-4 text-end h4 fw-bold"><?php if ($product['trending']) {echo "Trending";} ?></span>
+                            <p><?= $product['small_description']; ?></p>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="col-auto">
+                                <h3 class="mb-0"> <span class="text-success fw-bold"><?= $product['selling_price']; ?></span> VND</h3>
                             </div>
-                            <div class="col-md-6">
-                                <h5><s class="text-danger"><?= $product['original_price']; ?></s> vnd </h5>
+                            <div class="col-auto align-items-center d-flex">
+                                <h5 class="mb-0" style="height:fit-content";><s class="text-danger"><?= $product['original_price']; ?></s> VND</h5>
                             </div>
 
                         </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="input-group mb-3" style="width:130px">
+                        <div class="row mt-4">
+                            <div class="col-auto me-1">
+                                <div class="input-group mb-3" style="width:7rem">
                                     <button class="input-group-text decrement-btn">-</button>
                                     <input type="text" class="form-control input-qty bg-white text-center" value="1" disabled>
                                     <button class="input-group-text increment-btn">+</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <button class="btn btn-primary px-4 addToCartBtn" value="<?= $product['id']; ?>">
+                            <div class="col-auto me-5">
+                                <button class="btn btn-success px-4" value="<?= $product['id']; ?>">
                                     <i class="fa fa-shopping-cart me-2 "></i>Add to Cart</button>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-auto">
                                 <button class="btn  btn-danger px-4">
                                     <i class="fa fa-heart me-2"></i>Add to Wishlist
                                 </button>
