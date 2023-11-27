@@ -19,25 +19,23 @@
       </div>
 
       <div class="col-md-3">
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
-
+              <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'active' : ''; ?>" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="width:95px;" href="aboutUs.php">About Us</a>
+              <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'aboutUs.php') ? 'active' : ''; ?>" style="width:95px;" href="aboutUs.php">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="width:100px;" href="category.php">Our Menu </a>
+              <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'category.php') ? 'active' : ''; ?>" style="width:100px;" href="category.php">Our Menu </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="wishlist.php">Wishlist</a>
+              <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'wishlist.php') ? 'active' : ''; ?>" href="wishlist.php">Wishlist</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cart.php">Cart</a>
+              <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'cart.php') ? 'active' : ''; ?>" href="cart.php">Cart</a>
             </li>
-
           </ul>
 
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -74,21 +72,3 @@
     </div>
   </div>
 </nav>
-<script>
-  // Đợi cho trang web được tải hoàn toàn
-  document.addEventListener("DOMContentLoaded", function() {
-    // Lấy đối tượng navbarNav
-    var navbarNav = document.getElementById("navbarNav");
-
-    // Lấy tất cả các liên kết trong navbarNav
-    var navLinks = navbarNav.getElementsByClassName("nav-link");
-
-    // Lặp qua từng liên kết và kiểm tra nếu đúng là trang hiện tại
-    for (var i = 0; i < navLinks.length; i++) {
-      if (navLinks[i].href === window.location.href) {
-        // Thêm lớp "active" nếu là trang hiện tại
-        navLinks[i].classList.add("active");
-      }
-    }
-  });
-</script>
