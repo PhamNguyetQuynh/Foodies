@@ -1,14 +1,32 @@
-<?php
-include('./functions/userFunctions.php');
-include('./includes/header.php');
-include('./includes/slider.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="py-5">
-    <div class="container">
-        <div class="row">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Bootstrap Nav-Link Active</title>
+</head>
+
+<body>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <?php
+    include('./functions/userFunctions.php');
+    include('./includes/header.php');
+    include('./includes/slider.php'); ?>
+
+    <div class="py-5">
+        <div class="container">
             <div class="col-md-12">
-                <h4>Trending Products</h4>
-                <div class="underline  mb-2"> </div>
+                <h4 class="fw-bolder">Trending Now</h4>
+                <div class="underline mb-3" style="width: 200px"> </div>
+
                 <div class="owl-carousel">
                     <?php
                     $trendingProducts = getAllTrending();
@@ -18,9 +36,9 @@ include('./includes/slider.php'); ?>
                         <div class="item">
                             <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                                 <div class="card shadow">
-                                    <div class="card-body" style="height: 400px;">
-                                        <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100">
-                                        <h6 class="text-center"><?= $item['name'];  ?></h6>
+                                    <div class="card-body" style="height: 400px">
+                                        <img src="uploads/<?= $item['image']; ?>" alt="Product Image">
+                                        <h6 class="text-center text-dark mt-2 fw-bold"><?= $item['name'];  ?></h6>
                                     </div>
                                 </div>
                             </a>
@@ -33,74 +51,70 @@ include('./includes/slider.php'); ?>
             </div>
         </div>
     </div>
-</div>
-<div class="py-5 bg-f2f2f2">
-    <div class="container">
-        <div class="row">
+    </div>
+    <div class="py-5 px-7 bg-f2f2f2">
+        <div class="container">
             <div class="col-md-12">
-                <h4>About Us</h4>
-                <div class="underline mb-2"> </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
+                <h4 class="fw-bolder">About Us</h4>
+                <div class="underline mb-2"></div>
+                <p class="text-break">
+                    Welcome to FOODIES, where culinary excellence meets a diverse tapestry of flavors! We are passionate about bringing together a myriad of tastes from around the world to create a gastronomic experience that transcends borders. Our journey began with a simple yet profound idea: to connect people through the universal language of food. Whether you're a seasoned foodie or just beginning your culinary adventure, we invite you to explore the rich and varied offerings that make up our food web.
                 </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
-
-
-                </p>
+                <a href="aboutUs.php" class="btn btn-primary btn btn-danger float-end" role="button" data-bs-toggle="button">Read More</a>
             </div>
         </div>
     </div>
-</div>
-<div class="py-5 bg-dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <h4 class="text-white">Foodies Bistro & Garden</h4>
-                <div class="underline mb-2"> </div>
-                <a href="index.php" class="text-white">Home</a> <br>
-                <a href="#" class="text-white">About Us</a><br>
-                <a href="category.php" class="text-white">Our Menu</a> <br>
-            </div>
-            <div class="col-md-4">
-                <h4 class="text-white">Address</h4>
-                <p class="text-white">42 Nguyen Hue Street, District 1, Ho Chi Minh City, Viet Nam</p>
-                <a href="tel: +84989598472" class="text-white"><i class="fa fa-phone"></i> +(84) 98 95 98 472</a><br>
-                <a href="mailto:xyz@gmail.com" class="text-white"><i class="fa fa-envelope"></i> foddiesbistroandgarden@gmail.com</a>
-            </div>
-            <div class="col-md-5">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.547984513965!2d106.69074697405321!3d10.76927748937904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fc8702ecc0b%3A0x4e830dc2c0483582!2sDaybyDay%20-%20Kitchen%20%26%20Bar!5e0!3m2!1svi!2s!4v1700565681506!5m2!1svi!2s" class="w-100" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <div class="py-5 bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4 class="text-white">Foodies Bistro & Garden</h4>
+                    <div class="underline mb-2"> </div>
+                    <a href="index.php" class="text-white">Home</a> <br>
+                    <a href="#" class="text-white">About Us</a><br>
+                    <a href="category.php" class="text-white">Our Menu</a> <br>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="text-white">Address</h4>
+                    <p class="text-white">42 Nguyen Hue Street, District 1, Ho Chi Minh City, Viet Nam</p>
+                    <a href="tel: +84989598472" class="text-white"><i class="fa fa-phone"></i> +(84) 98 95 98 472</a><br>
+                    <a href="mailto:xyz@gmail.com" class="text-white"><i class="fa fa-envelope"></i> foddiesbistroandgarden@gmail.com</a>
+                </div>
+                <div class="col-md-5">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.547984513965!2d106.69074697405321!3d10.76927748937904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fc8702ecc0b%3A0x4e830dc2c0483582!2sDaybyDay%20-%20Kitchen%20%26%20Bar!5e0!3m2!1svi!2s!4v1700565681506!5m2!1svi!2s" class="w-100" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="py-2 bg-danger">
-    <div class="text-end">
-        <div class="mb-0 me-3 text-white">All rights reserved. Copy right @Foodies Bistro & Garden - <?= date('Y'); ?> </div>
-    </div>
+    <div class="py-2 bg-danger">
+        <div class="text-end">
+            <div class="mb-0 me-3 text-white">All rights reserved. Copy right @Foodies Bistro & Garden - <?= date('Y'); ?> </div>
+        </div>
 
-</div>
-<?php include('./includes/footer.php') ?>
-<script>
-    $(document).ready(function() {
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
+    </div>
+    <?php include('./includes/footer.php') ?>
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
                 }
-            }
+            })
         })
-    })
-</script>
+    </script>
+
+</body>
+
+</html>
