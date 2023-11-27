@@ -1,7 +1,7 @@
 <?php
 include('./functions/userFunctions.php');
 include('./includes/header.php');
-
+include('authenticate.php');
 ?>
 <div class="container py-5">
     <h3 class="pb-3">Wishlist</h3>
