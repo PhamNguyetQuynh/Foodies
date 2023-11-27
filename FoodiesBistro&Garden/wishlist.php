@@ -17,7 +17,8 @@ include('authenticate.php');
                             <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100">
                             <div class="d-flex pt-2">
                                 <a href="singleProductView.php?product=<?= $item['name']; ?>"><h6><?= $item['name'];  ?></h6></a>
-                                <i class="fa-solid fa-heart" style="color: #f22626;"></i>
+                                
+                                <button class="toggleWishlistBtn border border-0 bg-transparent" value="<?= $item['wid']; ?>"><i class="fa-solid fa-heart" style="color: #f22626;"></i></button>
                             </div>
                         </div>
                     </div>
