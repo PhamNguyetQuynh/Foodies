@@ -24,7 +24,7 @@
     <div class="py-5">
         <div class="container">
             <div class="col-md-12">
-                <h4>Trending Now</h4>
+                <h4 class="fw-bolder">Trending Now</h4>
                 <div class="underline mb-3" style="width: 200px"> </div>
 
                 <div class="owl-carousel">
@@ -38,7 +38,7 @@
                                 <div class="card shadow">
                                     <div class="card-body" style="height: 400px">
                                         <img src="uploads/<?= $item['image']; ?>" alt="Product Image">
-                                        <h6 class="text-center"><?= $item['name'];  ?></h6>
+                                        <h6 class="text-center text-dark mt-2 fw-bold"><?= $item['name'];  ?></h6>
                                     </div>
                                 </div>
                             </a>
@@ -55,7 +55,7 @@
     <div class="py-5 px-7 bg-f2f2f2">
         <div class="container">
             <div class="col-md-12">
-                <h4>About Us</h4>
+                <h4 class="fw-bolder">About Us</h4>
                 <div class="underline mb-2"></div>
                 <p class="text-break">
                     Welcome to FOODIES, where culinary excellence meets a diverse tapestry of flavors! We are passionate about bringing together a myriad of tastes from around the world to create a gastronomic experience that transcends borders. Our journey began with a simple yet profound idea: to connect people through the universal language of food. Whether you're a seasoned foodie or just beginning your culinary adventure, we invite you to explore the rich and varied offerings that make up our food web.
