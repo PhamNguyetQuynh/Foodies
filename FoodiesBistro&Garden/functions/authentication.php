@@ -17,19 +17,21 @@ if (isset($_POST['registerBtn'])) {
         header('location: ../register.php');
     } else {
         if ($password == $cpassword) {
-            //insert
-            $insert_query = "INSERT INTO users(name, email, phone, password) VALUES('$name','$email','$phone','$password')";
+            // Hash the password before storing it in the database
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+            // Insert user data into the database
+            $insert_query = "INSERT INTO users(name, email, phone, password) VALUES('$name','$email','$phone','$hashedPassword')";
             $insert_query_run = mysqli_query($conn, $insert_query);
 
             if ($insert_query_run) {
-                $_SESSION['message'] = 'Registerd successfully';
+                $_SESSION['message'] = 'Registered successfully';
                 header('location: ../login.php');
             } else {
                 $_SESSION['message'] = 'Something went wrong';
-                header('location: register.php');
+                header('location: ../register.php');
             }
         } else {
-            //use session so add session_start(); at the start of the page
             $_SESSION['message'] = "Password do not match";
             header('location: ../register.php');
         }
