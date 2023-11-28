@@ -51,44 +51,43 @@ if (mysqli_num_rows($cartItems) == 0) {
                                 <small class="text-danger address"></small>
                             </div>
                             <div class="col-md-12 mb-3">
-                                <label class="fw-bold">Comment</label>
-                                <textarea name="comments" id="comments" class="form-control" required rows=3"></textarea>
+                                <label class="fw-bold">Comments</label>
+                                <textarea name="comments" id="comments" class="form-control" rows="3"></textarea>
                                 <small class="text-danger comments"></small>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 overflow-auto">
                         <h5>Order Details</h5>
                         <hr>
-                        <div class="order-details-container" style="max-height: 200px; overflow-y: auto; overflow-x: hidden">
-                            <?php $items = getCartItems();
-                            $totalPrice = 0;
-                            foreach ($items as $citem) {
-                            ?>
-                                <div class="mb-1 border">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-2">
-                                            <img src="uploads/<?= $citem['image'] ?>" alt="Image" width="65px" height="90px">
-                                        </div>
-                                        <div class="col-md-5">
-                                            <label><?= $citem['name'] ?></label>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label>x <?= $citem['product_qty']  ?></label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label><?= $citem['selling_price'] ?>vnd</label>
-                                        </div>
 
-
+                        <?php $items = getCartItems();
+                        $totalPrice = 0;
+                        foreach ($items as $citem) {
+                        ?>
+                            <div class="mb-1 border">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2">
+                                        <img src="uploads/<?= $citem['image'] ?>" alt="Image" width="65px" height="90px">
                                     </div>
+                                    <div class="col-md-5">
+                                        <label><?= $citem['name'] ?></label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>x <?= $citem['product_qty']  ?></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label><?= $citem['selling_price'] ?>vnd</label>
+                                    </div>
+
+
                                 </div>
+                            </div>
 
 
-                            <?php
-                                $totalPrice += $citem['selling_price'] * $citem['product_qty'];
-                            }   ?>
-                        </div>
+                        <?php
+                            $totalPrice += $citem['selling_price'] * $citem['product_qty'];
+                        }   ?>
                         <hr>
                         <h5>Total Price: <span class="float-end mx-5 fw-bold"><?= $totalPrice ?>vnd</span></h5>
                         <div class="">
@@ -121,7 +120,6 @@ if (mysqli_num_rows($cartItems) == 0) {
             var email = $('#email').val();
             var phone = $('#phone').val();
             var address = $('#address').val();
-            var comments = $('#comments').val();
             if (name.length == 0) {
                 // alert("name is required");
                 $('.name').text("*This field is required");
@@ -165,47 +163,42 @@ if (mysqli_num_rows($cartItems) == 0) {
         //finalize the transaction after paer approval
         onApprove: (data, actions) => {
             return actions.order.capture().then(function(orderData) {
-                //successful capture
-                // console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
                 const transaction = orderData.purchase_units[0].payments.captures[0];
-                // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available detail`);
-                //when ready to go live, remove the alert ans show a success message within this page. f.ex:
-                //const element=document.getElementById('paypal-button-container');
-                //element.innerHTML='<h3>Thank you for your payment!</h3?';
-                //or go to another url: actions.redirect('thank_you.html');
                 var name = $('#name').val();
                 var email = $('#email').val();
                 var phone = $('#phone').val();
                 var address = $('#address').val();
-                var comments = $('#comments').val();
+                var comments = $('#comments').val(); // Include the comments field
                 var data = {
-
                     'name': name,
                     'email': email,
                     'phone': phone,
                     'address': address,
-                    'comments': comments,
+                    'comments': comments, // Add this line for the comments field
                     'payment_mode': "Paid by PayPal",
                     'payment_id': transaction.id,
                     'placeOrderBtn': true,
-                }
+                };
 
                 $.ajax({
                     method: "POST",
                     url: "functions/placeOrder.php",
                     data: data,
-                    // dataType: "dataType",
                     success: function(response) {
                         if (response == 201) {
-                            alertify.success("Order Placed Sucecsfully");
-                            // actions.redirect('myOrder.php');
+                            alertify.success("Order Placed Successfully");
                             window.location.href = 'myOrder.php';
                         }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('AJAX Error:', textStatus, errorThrown);
                     }
                 });
-
-
             });
         }
+
+
+
+
     }).render('#paypal-button-container');
 </script>

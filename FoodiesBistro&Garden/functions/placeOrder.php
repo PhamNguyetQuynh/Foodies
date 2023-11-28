@@ -7,7 +7,7 @@ function generateUniqueId()
     $charLength = strlen($characters);
     $uniqueId = '';
 
-    for ($i = 0; $i < 20; $i++) { // Generating a 20-character ID
+    for ($i = 0; $i < 20; $i++) {
         $randomIndex = mt_rand(0, $charLength - 1);
         $uniqueId .= $characters[$randomIndex];
     }
@@ -22,12 +22,12 @@ if (isset($_SESSION['auth'])) {
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
         $address = mysqli_real_escape_string($conn, $_POST['address']);
-        $comments = mysqli_real_escape_string($conn, $_POST['comments']);
+        $comments = mysqli_real_escape_string($conn, $_POST['comments']); // Add comments
         $payment_mode = mysqli_real_escape_string($conn, $_POST['payment_mode']);
         $payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']);
 
         if ($name == "" || $email == "" || $phone == "" || $address == "") {
-            $_SESSION['message'] = "All field are mandatory";
+            $_SESSION['message'] = "All fields are mandatory";
             header('location: ../checkout.php');
             exit(0);
         }
@@ -39,7 +39,6 @@ if (isset($_SESSION['auth'])) {
         AND carts.user_id='$userID'
         ORDER BY carts.id DESC";
         $query_run = mysqli_query($conn, $query);
-
 
         $totalPrice = 0;
         foreach ($query_run as $citem) {
@@ -55,14 +54,12 @@ if (isset($_SESSION['auth'])) {
         if ($insert_query_run) {
             $order_id = mysqli_insert_id($conn);
             foreach ($query_run as $citem) {
-
                 $product_id = $citem['pid'];
                 $product_qty = $citem['product_qty'];
                 $price = $citem['selling_price'];
                 $insert_items_query = "INSERT INTO order_items (order_id, product_id, qty, price) 
                 VALUES ('$order_id','$product_id', '$product_qty', '$price')";
                 $insert_items_query_run = mysqli_query($conn, $insert_items_query);
-
 
                 $product_fetch_query = "SELECT * FROM products WHERE id='$product_id' LIMIT 1";
                 $product_fetch_query_run = mysqli_query($conn, $product_fetch_query);
@@ -75,15 +72,19 @@ if (isset($_SESSION['auth'])) {
                 $update_productQty_query = "UPDATE products SET qty='$new_qty' WHERE id='$product_id' ";
                 $update_productQty_query_run = mysqli_query($conn, $update_productQty_query);
             }
-            //after place order -> cart need to be empty
+            // After placing the order, the cart needs to be emptied
             $delete_cart_query = "DELETE FROM carts WHERE user_id='$userID'";
             $delete_cart_query_run = mysqli_query($conn, $delete_cart_query);
-
-
-            $_SESSION['message'] = "Order placed sucessfully";
-            header('location: ../myOrder.php');
+            if ($payment_mode == "COD") {
+                $_SESSION['message'] = "Order placed successfully";
+                header('location: ../myOrder.php');
+                die();
+            } else {
+                echo 201;
+            }
         }
     }
 } else {
     header('location: ../index.php');
 }
+?>
