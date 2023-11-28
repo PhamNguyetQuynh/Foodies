@@ -17,7 +17,7 @@ if (isset($_GET['category'])) {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Our Menu: <?= $category['name']; ?></h1>
+                        <h1>Category: <span class="text-success"><?= $category['name']; ?></span></h1>
                         <hr>
                         <div class="row">
                             <?php
