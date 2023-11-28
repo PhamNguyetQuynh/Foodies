@@ -22,6 +22,7 @@ if (isset($_SESSION['auth'])) {
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
         $address = mysqli_real_escape_string($conn, $_POST['address']);
+        $comments = mysqli_real_escape_string($conn, $_POST['comments']);
         $payment_mode = mysqli_real_escape_string($conn, $_POST['payment_mode']);
         $payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']);
 
@@ -47,8 +48,8 @@ if (isset($_SESSION['auth'])) {
 
         $tracking_no = generateUniqueId();
 
-        $insert_query = "INSERT INTO orders (tracking_no, user_id, name, email, phone, address, total_price, payment_mode, payment_id)
-        VALUES('$tracking_no', '$userID', '$name', '$email', '$phone', '$address', '$totalPrice', '$payment_mode', '$payment_id')";
+        $insert_query = "INSERT INTO orders (tracking_no, user_id, name, email, phone, address, comments, total_price, payment_mode, payment_id)
+        VALUES('$tracking_no', '$userID', '$name', '$email', '$phone', '$address', '$comments', '$totalPrice', '$payment_mode', '$payment_id')";
         $insert_query_run = mysqli_query($conn, $insert_query);
 
         if ($insert_query_run) {

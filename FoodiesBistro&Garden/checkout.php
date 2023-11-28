@@ -50,6 +50,11 @@ if (mysqli_num_rows($cartItems) == 0) {
                                 <textarea name="address" id="address" class="form-control" required rows=5"></textarea>
                                 <small class="text-danger address"></small>
                             </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="fw-bold">Comment</label>
+                                <textarea name="comments" id="comments" class="form-control" required rows=3"></textarea>
+                                <small class="text-danger comments"></small>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -116,6 +121,7 @@ if (mysqli_num_rows($cartItems) == 0) {
             var email = $('#email').val();
             var phone = $('#phone').val();
             var address = $('#address').val();
+            var comments = $('#comments').val();
             if (name.length == 0) {
                 // alert("name is required");
                 $('.name').text("*This field is required");
@@ -171,12 +177,14 @@ if (mysqli_num_rows($cartItems) == 0) {
                 var email = $('#email').val();
                 var phone = $('#phone').val();
                 var address = $('#address').val();
+                var comments = $('#comments').val();
                 var data = {
 
                     'name': name,
                     'email': email,
                     'phone': phone,
                     'address': address,
+                    'comments': comments,
                     'payment_mode': "Paid by PayPal",
                     'payment_id': transaction.id,
                     'placeOrderBtn': true,
