@@ -1,20 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container py-2 px-4">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <a class="navbar-brand fs-4" href="index.php" style="font-weight: bolder; ">Foodies</a>
       </div>
 
       <div class="col-md-4">
         <form id="searchForm" action="product.php?" method="GET" class="d-flex justify-content-between">
-          <input class="form-control" type="text" id="search" name="key" placeholder="Search for Products" aria-label="Search" style="width: 300px">
+          <input class="form-control" type="text" id="search" name="key" placeholder="Search for Products" aria-label="Search" style="width: 85%">
           <button class="btn" type="submit" title="Search" style="background-color: white;">
             <i class="fa fa-search" style="color: #7D6323;"></i>
           </button>
         </form>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
