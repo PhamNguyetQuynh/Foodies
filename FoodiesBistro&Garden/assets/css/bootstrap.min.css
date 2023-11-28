@@ -4291,7 +4291,7 @@ fieldset:disabled .btn {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: var(--brown);
+  background-color: var(--bs-white);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -7251,6 +7251,9 @@ fieldset:disabled .btn {
 .bg-white {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+}
+.bg-brown{
+  background-color: var(--brown) !important;
 }
 .bg-body {
   --bs-bg-opacity: 1;

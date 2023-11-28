@@ -42,6 +42,13 @@ function getProductsByCate($category_id)
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
+function getProductsByID($product_id)
+{
+    global $conn;
+    $query = "SELECT* FROM products WHERE id='$product_id' AND status='0'";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
 function getCartItems()
 {
     global $conn;
@@ -70,4 +77,11 @@ function checkTrackingNoExist($trackingNo)
 
     $query="SELECT * FROM orders WHERE tracking_no='$trackingNo' AND user_id='$userID'";
     return mysqli_query($conn, $query);
+}
+function searchProduct($key)
+{
+    global $conn;
+    $query = "SELECT * FROM products WHERE products.name LIKE '%".$key."%'";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
 }

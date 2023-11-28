@@ -6,9 +6,9 @@
       </div>
 
       <div class="col-md-4">
-        <form class="d-flex justify-content-between">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width: 300px">
-          <button class="btn" type="submit" style="background-color: white;">
+        <form id="searchForm" action="product.php?" method="GET" class="d-flex justify-content-between">
+          <input class="form-control" type="text" id="search" name="key" placeholder="Search for Products" aria-label="Search" style="width: 300px">
+          <button class="btn" type="submit" title="Search" style="background-color: white;">
             <i class="fa fa-search" style="color: #7D6323;"></i>
           </button>
         </form>
