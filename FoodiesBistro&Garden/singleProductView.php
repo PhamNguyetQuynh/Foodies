@@ -43,7 +43,7 @@ if (isset($_GET['product'])) {
                                 </div>
                             </div>
                             <div class="col-auto me-5">
-                                <button class="btn btn-success px-4" value="<?= $product['id']; ?>">
+                                <button class="btn btn-success px-4 addToCartBtn" value="<?= $product['id']; ?>">
                                     <i class="fa fa-shopping-cart me-2 "></i>Add to Cart</button>
                             </div>
                             <div class="col-auto">
