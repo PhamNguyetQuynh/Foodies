@@ -42,6 +42,13 @@ function getProductsByCate($category_id)
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
+function getProductsByID($product_id)
+{
+    global $conn;
+    $query = "SELECT* FROM products WHERE id='$product_id' AND status='0'";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
 function getCartItems()
 {
     global $conn;
@@ -80,6 +87,13 @@ function getWishlistItems()
     WHERE wishlist.product_id=products.id
     -- AND wishlist.user_id='$userID'
     ORDER BY wishlist.id DESC";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
+function searchProduct($key)
+{
+    global $conn;
+    $query = "SELECT * FROM products WHERE products.name LIKE '%".$key."%'";
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }

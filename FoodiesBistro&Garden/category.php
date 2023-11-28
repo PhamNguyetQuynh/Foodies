@@ -17,7 +17,7 @@ include('./includes/header.php'); ?>
                     ?>
                             <div class="col-md-3 mb-2">
                                 <a href="product.php?category=<?= $item['slug']; ?>">
-                                    <div class="card shadow-lg mb-5 rounded border-0">
+                                    <div class="card bg-brown shadow-lg mb-5 rounded border-0">
                                         <div class="card-body p-0">
                                             <img src="uploads/<?= $item['image']; ?>" alt="Category Image" class="w-100">
                                             <h4 class="text-center text-white mt-sm-3 mb-sm-3"><?= $item['name'];  ?></h4>
