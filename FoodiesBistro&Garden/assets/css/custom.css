@@ -13,3 +13,10 @@ a{
 .bg-f2f2f2{
     background-color: #f2f2f2;
 }
+.center-cropped {
+    width: 300px;
+    height: 350px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }

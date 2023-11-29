@@ -20,7 +20,7 @@
                             <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                                 <div class="card shadow">
                                     <div class="card-body" style="height: 400px">
-                                        <img src="uploads/<?= $item['image']; ?>" alt="Product Image">
+                                        <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
                                         <h6 class="text-center text-dark mt-2 fw-bold"><?= $item['name'];  ?></h6>
                                     </div>
                                 </div>

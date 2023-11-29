@@ -17,7 +17,7 @@ if (isset($_GET['category'])) {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Our Menu: <?= $category['name']; ?></h1>
+                        <h1>Category: <span class="text-success"><?= $category['name']; ?></span></h1>
                         <hr>
                         <div class="row">
                             <?php
@@ -29,7 +29,7 @@ if (isset($_GET['category'])) {
                                         <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                                             <div class="card bg-brown shadow-lg mb-5 rounded border-0">
                                                 <div class="card-body p-0">
-                                                    <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100">
+                                                    <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
                                                     <h5 class="text-center text-white mt-sm-3 mb-sm-3"><?= $item['name'];  ?></h4>
                                                 </div>
                                             </div>
@@ -76,7 +76,7 @@ if (isset($_GET['key'])) {
                                     <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                                         <div class="card bg-brown shadow-lg mb-5 rounded border-0">
                                             <div class="card-body p-0">
-                                                <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100">
+                                                <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
                                                 <h5 class="text-center text-white mt-sm-3 mb-sm-3"><?= $item['name'];  ?></h4>
                                             </div>
                                         </div>
