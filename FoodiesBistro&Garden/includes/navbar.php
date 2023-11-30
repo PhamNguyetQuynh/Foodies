@@ -6,9 +6,9 @@
       </div>
 
       <div class="col-md-4">
-        <form class="d-flex justify-content-between">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width: 300px">
-          <button class="btn" type="submit" style="background-color: white;">
+        <form id="searchForm" action="product.php?" method="GET" class="d-flex justify-content-between">
+          <input class="form-control" type="text" id="search" name="key" placeholder="Search for Products" aria-label="Search" style="width: 300px">
+          <button class="btn" type="submit" title="Search" style="background-color: white;">
             <i class="fa fa-search" style="color: #7D6323;"></i>
           </button>
         </form>
@@ -18,9 +18,8 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-          <a class="nav-link" href="index.php">Home</a>
-
-          </li>
+              <a class="nav-link" href="index.php">Home</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" style="width:95px;" href="aboutUs.php">About Us</a>
             </li>
@@ -33,7 +32,6 @@
             <li class="nav-item">
               <a class="nav-link" href="cart.php">Cart</a>
             </li>
-
           </ul>
 
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -70,21 +68,3 @@
     </div>
   </div>
 </nav>
-<script>
-  // Đợi cho trang web được tải hoàn toàn
-  document.addEventListener("DOMContentLoaded", function () {
-    // Lấy đối tượng navbarNav
-    var navbarNav = document.getElementById("navbarNav");
-
-    // Lấy tất cả các liên kết trong navbarNav
-    var navLinks = navbarNav.getElementsByClassName("nav-link");
-
-    // Lặp qua từng liên kết và kiểm tra nếu đúng là trang hiện tại
-    for (var i = 0; i < navLinks.length; i++) {
-      if (navLinks[i].href === window.location.href) {
-        // Thêm lớp "active" nếu là trang hiện tại
-        navLinks[i].classList.add("active");
-      }
-    }
-  });
-</script>

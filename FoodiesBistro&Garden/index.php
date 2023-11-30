@@ -1,14 +1,15 @@
-<?php
-include('./functions/userFunctions.php');
-include('./includes/header.php');
-include('./includes/slider.php'); ?>
 
-<div class="py-5">
-    <div class="container">
-        <div class="row">
+<?php
+    include('./functions/userFunctions.php');
+    include('./includes/header.php');
+    include('./includes/slider.php'); ?>
+
+    <div class="py-5">
+        <div class="container">
             <div class="col-md-12">
-                <h4>Trending Products</h4>
-                <div class="underline  mb-2"> </div>
+                <h4 class="fw-bolder">Trending Now</h4>
+                <div class="underline mb-3" style="width: 200px"> </div>
+
                 <div class="owl-carousel">
                     <?php
                     $trendingProducts = getAllTrending();
@@ -18,9 +19,9 @@ include('./includes/slider.php'); ?>
                         <div class="item">
                             <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                                 <div class="card shadow">
-                                    <div class="card-body" style="height: 400px;">
-                                        <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100">
-                                        <h6 class="text-center"><?= $item['name'];  ?></h6>
+                                    <div class="card-body" style="height: 400px">
+                                        <img src="uploads/<?= $item['image']; ?>" alt="Product Image">
+                                        <h6 class="text-center text-dark mt-2 fw-bold"><?= $item['name'];  ?></h6>
                                     </div>
                                 </div>
                             </a>
@@ -33,24 +34,16 @@ include('./includes/slider.php'); ?>
             </div>
         </div>
     </div>
-</div>
-<div class="py-5 bg-f2f2f2">
-    <div class="container">
-        <div class="row">
+    </div>
+    <div class="py-5 px-7 bg-f2f2f2">
+        <div class="container">
             <div class="col-md-12">
-                <h4>About Us</h4>
-                <div class="underline mb-2"> </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
+                <h4 class="fw-bolder">About Us</h4>
+                <div class="underline mb-2"></div>
+                <p class="text-break">
+                    Welcome to FOODIES, where culinary excellence meets a diverse tapestry of flavors! We are passionate about bringing together a myriad of tastes from around the world to create a gastronomic experience that transcends borders. Our journey began with a simple yet profound idea: to connect people through the universal language of food. Whether you're a seasoned foodie or just beginning your culinary adventure, we invite you to explore the rich and varied offerings that make up our food web.
                 </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nostrum a quibusdam asperiores, esse rerum, quos vitae officiis illo consequuntur cum ipsam animi enim aliquid. Sunt doloribus consequuntur eius minus.
-
-
-                </p>
+                <a href="aboutUs.php" class="btn btn-primary btn btn-danger float-end" role="button" data-bs-toggle="button">Read More</a>
             </div>
         </div>
     </div>
@@ -82,25 +75,26 @@ include('./includes/slider.php'); ?>
         <div class="mb-0 me-3 text-white">All rights reserved. Copy right @Foodies Bistro & Garden - <?= date('Y'); ?> </div>
     </div>
 
-</div>
-<?php include('./includes/footer.php') ?>
-<script>
-    $(document).ready(function() {
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
+    </div>
+    <?php include('./includes/footer.php') ?>
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
                 }
-            }
+            })
         })
-    })
-</script>
+    </script>
+

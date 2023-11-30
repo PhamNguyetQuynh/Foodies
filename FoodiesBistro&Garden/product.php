@@ -1,7 +1,9 @@
 <?php
 include('./functions/userFunctions.php');
 include('./includes/header.php');
-
+?>
+<img class="img-fluid opacity-25 position-absolute" src="uploads/wp10509681.jpg">
+<?php
 if (isset($_GET['category'])) {
 
     $category_slug = $_GET['category'];
@@ -11,25 +13,11 @@ if (isset($_GET['category'])) {
     if ($category) {
         $cateID = $category['id'];
 ?>
-
-        <div class="py-3 bg-primary">
-            <div class="container">
-                <h6 class="text-white">
-                    <a class="text-white" href="category.php">
-                        Home /
-                    </a>
-                    <a class="text-white" href="category.php">
-                        Collections /
-                    </a>
-                    <?= $category['name']; ?>
-                </h6>
-            </div>
-        </div>
-        <div class="py-3">
+        <div class="py-4 position-relative">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2><?= $category['name']; ?></h2>
+                        <h1>Our Menu: <?= $category['name']; ?></h1>
                         <hr>
                         <div class="row">
                             <?php
@@ -39,10 +27,10 @@ if (isset($_GET['category'])) {
                             ?>
                                     <div class="col-md-3 mb-2">
                                         <a href="singleProductView.php?product=<?= $item['slug']; ?>">
-                                            <div class="card shadow">
-                                                <div class="card-body">
+                                            <div class="card bg-brown shadow-lg mb-5 rounded border-0">
+                                                <div class="card-body p-0">
                                                     <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100">
-                                                    <h4 class="text-center"><?= $item['name'];  ?></h4>
+                                                    <h5 class="text-center text-white mt-sm-3 mb-sm-3"><?= $item['name'];  ?></h4>
                                                 </div>
                                             </div>
                                         </a>
@@ -50,22 +38,67 @@ if (isset($_GET['category'])) {
                             <?php
                                 }
                             } else {
-                                echo "No data available";
+                                echo '<p class="ms-1">' . "No data available" . '</p>';
                             }
 
                             ?>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+    <?php
+        } else {
+            echo '<p class="ms-1">' . "Something went wrong" . '</p>';
+        }
+} else
+if (isset($_GET['key'])) {
 
+    $key = $_GET['key'];
+    $search_query= searchProduct($key);
+    $result = mysqli_fetch_array($search_query);
+    ?>
+    <div class="py-4 position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Your search result:&nbsp;<span class="fst-italic"><?= $key; ?></span></h1>
+                    <hr>
+                    <div class="row">
+                        <?php
+                        if ($result) {
+                            $resultID = $result['id'];
+                            $products = getProductsByID($resultID);
+                            if (mysqli_num_rows($products) > 0) {
+                                foreach ($products as $item) {
+                        ?>
+                                <div class="col-md-3 mb-2">
+                                    <a href="singleProductView.php?product=<?= $item['slug']; ?>">
+                                        <div class="card bg-brown shadow-lg mb-5 rounded border-0">
+                                            <div class="card-body p-0">
+                                                <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100">
+                                                <h5 class="text-center text-white mt-sm-3 mb-sm-3"><?= $item['name'];  ?></h4>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php
+                                }
+                            } else {
+                                echo '<h5 class="ms-1 text-danger">' . "No product found. Please search for another one!" . '</5>';
+                            }
+                        } else {
+                            echo '<h5 class="ms-1 text-danger">' . "No product found. Please search for another one!" . '</5>';
+                        }
+                            ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php
-    } else {
-        echo "Something went wrong";
-    }
 } else {
-    echo "Something went wrong";
-}
-include('./includes/footer.php') ?>
+    echo '<p class="ms-1">' . "Something went wrong" . '</p>';}
+
+include('./includes/footer.php') 
+?>

@@ -29,6 +29,25 @@ if (isset($_SESSION['auth'])) {
                 }
 
                 break;
+            case "delete":
+                $wishlist_id = $_POST['wishlist_id'];
+
+                $user_id = $_SESSION['auth_user']['user_id'];
+    
+                $check_existing = "SELECT * FROM wishlist WHERE id='$wishlist_id' AND user_id='$user_id'";
+                $check_existing_run = mysqli_query($conn, $check_existing);
+                if (mysqli_num_rows($check_existing_run) > 0) {
+                    $delete_query = "DELETE FROM wishlist WHERE id='$wishlist_id'";
+                    $delete_query_run = mysqli_query($conn, $delete_query);
+                    if ($delete_query_run) {
+                        echo 200;
+                    } else {
+                        echo "Something went wrong";
+                    }
+                } else {
+                    echo "Something went wrong";
+                }
+                break;
             default:
                 echo 500;
         }
