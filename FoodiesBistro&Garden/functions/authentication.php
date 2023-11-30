@@ -40,33 +40,38 @@ if (isset($_POST['registerBtn'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-
-    $login_query = "SELECT* FROM users WHERE email='$email' AND password='$password'";
+    $login_query = "SELECT * FROM users WHERE email='$email'";
     $login_query_run = mysqli_query($conn, $login_query);
 
     if (mysqli_num_rows($login_query_run) > 0) {
-        $_SESSION['auth'] = true;
         $userdata = mysqli_fetch_array($login_query_run);
+        $hashedPasswordFromDatabase = $userdata['password'];
 
-        
-        $userid = $userdata['id'];
-        $username = $userdata['name'];
-        $useremail = $userdata['email'];
-        $userphone = $userdata['phone'];
-        $role_as = $userdata['role_as'];
+        if (password_verify($password, $hashedPasswordFromDatabase)) {
+            $_SESSION['auth'] = true;
 
-        $_SESSION['auth_user'] = [
-            'user_id' => $userid,
-            'name' => $username,
-            'email' => $useremail,
-            'phone'=>$userphone
-        ];
-        $_SESSION['role_as'] = $role_as;
-        //1==admin
-        if ($role_as == 1) {
-            redirect("../admin/index.php", "Welcome to dashboard");
+            $userid = $userdata['id'];
+            $username = $userdata['name'];
+            $useremail = $userdata['email'];
+            $userphone = $userdata['phone'];
+            $role_as = $userdata['role_as'];
+
+            $_SESSION['auth_user'] = [
+                'user_id' => $userid,
+                'name' => $username,
+                'email' => $useremail,
+                'phone' => $userphone
+            ];
+
+            $_SESSION['role_as'] = $role_as;
+
+            if ($role_as == 1) {
+                redirect("../admin/index.php", "Welcome to the dashboard");
+            } else {
+                redirect("../index.php", "Logged in");
+            }
         } else {
-            redirect("../index.php", "Logged in");
+            redirect("../login.php", "Invalid");
         }
     } else {
         redirect("../login.php", "Invalid");
