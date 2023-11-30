@@ -5,7 +5,7 @@ include('./includes/header.php');
 ?>
 
 <div class="container">
-    <div class="row">
+    <div class="row ">
         <div class="col-md-12">
             <div class="row">
                 <div class="col-lg-12">
@@ -99,10 +99,130 @@ include('./includes/header.php');
                             </div>
                         </div>
                     </div>
+                    <div class="row py-4">
+                        <div class="col-lg-7 col-md-12">
+                            <div class="card" style="min-height:485px">
+                                <div class="card-header card-header-text">
+                                    <h4 class="card-title">Employess Stats</h4>
+                                    <p class="category">New employees on 15th November, 2023</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-primary">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Phone No</th>
+                                                <th>City</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Cam Tu</td>
+                                                <td>012354478</td>
+                                                <td>Ben Tre</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Nguyet Quynh</td>
+                                                <td>5208851520</td>
+                                                <td>Tien Giang</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Vy Ngo</td>
+                                                <td>01254789</td>
+                                                <td>Tien Giang</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Diem Quynh</td>
+                                                <td>024158752</td>
+                                                <td>HCMC</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Mai Chi</td>
+                                                <td>012254867</td>
+                                                <td>HCMC</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Phuong Anh</td>
+                                                <td>011254788</td>
+                                                <td>HCMC</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Dang Khoa</td>
+                                                <td>021547852</td>
+                                                <td>HCMC</td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                            <div class="col-lg-5 col-md-12">
+                                <div class="card" style="min-height:485px">
+                                    <div class="card-header card-header-text">
+                                        <h4 class="card-title">Message</h4>
+                                        <p class="category">Check it out!git c</p>
+                                    </div>
+                                    <div class="card-content table-responsive">
+                                        <table class="table table-hover">
+                                            <thead class="text-primary">
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>From</th>
+                                                    <th>Message content</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Cam Tu</td>
+                                                    <td>i need to bla bla</td>
+                                          
+                                                </tr>
+
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Nguyet Quynh</td>
+                                                    <td>dont git me chili</td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Vy Ngo</td>
+                                                    <td>can you grab it for me now</td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <?php
