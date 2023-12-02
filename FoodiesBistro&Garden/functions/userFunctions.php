@@ -78,7 +78,7 @@ function getWishlistItems()
     $query = "SELECT wishlist.id as wid, wishlist.product_qty, products.id as pid, products.name, products.image, products.selling_price 
     FROM wishlist, products
     WHERE wishlist.product_id=products.id
-    -- AND wishlist.user_id='$userID'
+    AND wishlist.user_id='$userID'
     ORDER BY wishlist.id DESC";
     $query_run = mysqli_query($conn, $query);
     return $query_run;

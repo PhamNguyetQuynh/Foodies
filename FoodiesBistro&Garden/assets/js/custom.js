@@ -134,9 +134,8 @@ $(document).on("click", ".toggleWishlistBtn", function (e) {
     success: function (response) {
       if (response == 201) {
         alertify.success("Product removed from wishlist");
-      } else if (response == 401) {
-        alertify.success("Login to continue");
-      } else if (response == 500) {
+        $("#wishlistContainer").load(location.href + " #wishlistContainer");
+      } else {
         alertify.success("Something went wrong");
       }
     },

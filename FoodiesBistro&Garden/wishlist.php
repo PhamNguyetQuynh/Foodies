@@ -5,7 +5,7 @@ include('./includes/header.php');
 ?>
 <div class="container py-5">
     <h3 class="pb-3">Wishlist</h3>
-    <div class="row">
+    <div class="row" id="wishlistContainer">
         <?php
         $products = getWishlistItems();
         if (mysqli_num_rows($products) > 0) {
