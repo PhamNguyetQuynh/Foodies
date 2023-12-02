@@ -97,3 +97,13 @@ function searchProduct($key)
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
+function getOrdersItems()
+{
+    global $conn;
+    $userID = $_SESSION['auth_user']['user_id'];
+    $query = "SELECT tracking_no, total_price, status, created_at
+    FROM orders
+    ORDER BY id DESC";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
