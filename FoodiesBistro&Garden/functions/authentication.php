@@ -1,7 +1,16 @@
 <?php
 session_start();
+
+// if (session_status() == PHP_SESSION_NONE) {
+//     session_start();
+// }
+
 include('../config/dbconn.php');
 include('./myFunctions.php');
+require_once('../PHPMailer-master/src/Exception.php');
+require_once('../PHPMailer-master/src/PHPMailer.php');
+require_once('../PHPMailer-master/src/SMTP.php');
+
 if (isset($_POST['registerBtn'])) {
     //to prevent sql injection -> mysqli_real...
     $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -23,7 +32,12 @@ if (isset($_POST['registerBtn'])) {
 
             if ($insert_query_run) {
                 $_SESSION['message'] = 'Registerd successfully';
+
+                // Gửi email
+                sendRegistrationEmail($name, $email);
+
                 header('location: ../login.php');
+                exit();
             } else {
                 $_SESSION['message'] = 'Something went wrong';
                 header('location: register.php');
