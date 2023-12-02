@@ -31,8 +31,17 @@ include('./includes/header.php');
                                         <i class="material-icons opacity-10">weekend</i>
                                     </div>
                                     <div class="text-end pt-1">
-                                        <p class="text-sm mb-0 text-capitalize">Bookings</p>
-                                        <h4 class="mb-0">281</h4>
+                                        <?php
+                                        $id = 0;
+                                        $select_products = $conn->prepare("SELECT * FROM products WHERE id= ?");
+                                        $select_products->bind_param("i", $id);
+                                        $select_products->execute();
+                                        $result = $select_products->get_result();
+                                        $number_of_products = $result->num_rows;
+                                        $select_products->close();
+                                        ?>
+                                        <p class="text-sm mb-0 text-capitalize">Product Added</p>
+                                        <h4 class="mb-0"><?= $number_of_products; ?></h4>
                                     </div>
                                 </div>
                                 <hr class="dark horizontal my-0" />
@@ -50,8 +59,17 @@ include('./includes/header.php');
                                         <i class="material-icons opacity-10">leaderboard</i>
                                     </div>
                                     <div class="text-end pt-1">
-                                        <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                                        <h4 class="mb-0">2,300</h4>
+                                        <?php
+                                        $id = 0;
+                                        $select_users = $conn->prepare("SELECT * FROM users WHERE id= ?");
+                                        $select_users->bind_param("i", $id);
+                                        $select_users->execute();
+                                        $result = $select_users->get_result();
+                                        $number_of_users = $result->num_rows;
+                                        $select_users->close();
+                                        ?>
+                                        <p class="text-sm mb-0 text-capitalize">Today's User</p>
+                                        <h4 class="mb-0"><?= $number_of_users; ?></h4>
                                     </div>
                                 </div>
                                 <hr class="dark horizontal my-0" />
@@ -69,8 +87,19 @@ include('./includes/header.php');
                                         <i class="material-icons opacity-10">store</i>
                                     </div>
                                     <div class="text-end pt-1">
+                                        <?php
+                                        $total_price = 0;
+                                        $select_orders = $conn->prepare("SELECT * FROM orders WHERE id= ?");
+                                        $select_orders->bind_param("i", $id);
+                                        $select_orders->execute();
+                                        $result = $select_orders->get_result();
+                                        while ($row = $result->fetch_assoc()) {
+                                            $total_price += $row['total_price'];
+                                        };
+                                        $select_orders->close();
+                                        ?>
                                         <p class="text-sm mb-0 text-capitalize">Revenue</p>
-                                        <h4 class="mb-0">34k</h4>
+                                        <h4 class="mb-0"><?= $total_price; ?></h4>
                                     </div>
                                 </div>
                                 <hr class="horizontal my-0 dark" />
@@ -88,7 +117,7 @@ include('./includes/header.php');
                                         <i class="material-icons opacity-10">person_add</i>
                                     </div>
                                     <div class="text-end pt-1">
-                                        <p class="text-sm mb-0 text-capitalize">Followers</p>
+                                        <p class="text-sm mb-0 text-capitalize">Massage</p>
                                         <h4 class="mb-0">+91</h4>
                                     </div>
                                 </div>
@@ -174,46 +203,45 @@ include('./includes/header.php');
                             </div>
                         </div>
 
-                        
-                            <div class="col-lg-5 col-md-12">
-                                <div class="card" style="min-height:485px">
-                                    <div class="card-header card-header-text">
-                                        <h4 class="card-title">Message</h4>
-                                        <p class="category">Check it out!git c</p>
-                                    </div>
-                                    <div class="card-content table-responsive">
-                                        <table class="table table-hover">
-                                            <thead class="text-primary">
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>From</th>
-                                                    <th>Message content</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Cam Tu</td>
-                                                    <td>i need to bla bla</td>
-                                          
-                                                </tr>
 
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Nguyet Quynh</td>
-                                                    <td>dont git me chili</td>
+                        <div class="col-lg-5 col-md-12">
+                            <div class="card" style="min-height:485px">
+                                <div class="card-header card-header-text">
+                                    <h4 class="card-title">Message</h4>
+                                    <p class="category">Check it out!git c</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-primary">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>From</th>
+                                                <th>Message content</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Cam Tu</td>
+                                                <td>i need to bla bla</td>
 
-                                                </tr>
+                                            </tr>
 
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Vy Ngo</td>
-                                                    <td>can you grab it for me now</td>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Nguyet Quynh</td>
+                                                <td>dont git me chili</td>
 
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Vy Ngo</td>
+                                                <td>can you grab it for me now</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -222,6 +250,7 @@ include('./includes/header.php');
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 
