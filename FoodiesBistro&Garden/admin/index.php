@@ -45,10 +45,7 @@ include('./includes/header.php');
                                     </div>
                                 </div>
                                 <hr class="dark horizontal my-0" />
-                                <div class="card-footer p-3">
-                                    <p class="mb-0">
-                                        <span class="text-success text-sm font-weight-bolder">+55% </span>than last week
-                                    </p>
+                                <div class="card-footer p-3" id="productsfooter">
                                 </div>
                             </div>
                         </div>
@@ -73,10 +70,8 @@ include('./includes/header.php');
                                     </div>
                                 </div>
                                 <hr class="dark horizontal my-0" />
-                                <div class="card-footer p-3">
-                                    <p class="mb-0">
-                                        <span class="text-success text-sm font-weight-bolder">+3% </span>than last month
-                                    </p>
+                                <div class="card-footer p-3" id="usersfooter">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -103,10 +98,8 @@ include('./includes/header.php');
                                     </div>
                                 </div>
                                 <hr class="horizontal my-0 dark" />
-                                <div class="card-footer p-3">
-                                    <p class="mb-0">
-                                        <span class="text-success text-sm font-weight-bolder">+1% </span>than yesterday
-                                    </p>
+                                <div class="card-footer p-3" id="revenuefooter">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -117,7 +110,7 @@ include('./includes/header.php');
                                         <i class="material-icons opacity-10">person_add</i>
                                     </div>
                                     <div class="text-end pt-1">
-                                        <p class="text-sm mb-0 text-capitalize">Massage</p>
+                                        <p class="text-sm mb-0 text-capitalize">Message</p>
                                         <h4 class="mb-0">+91</h4>
                                     </div>
                                 </div>
@@ -251,8 +244,28 @@ include('./includes/header.php');
         </div>
     </div>
 </div>
-</div>
-</div>
+<script>
+    function updateFooterContent(id, percentageChange) {
+        const footerElement = document.getElementById(id);
+        if (footerElement) {
+            const sign = percentageChange >= 0 ? '+' : '-';
+            const percentageText = `${sign}${Math.abs(percentageChange).toFixed(2)}% than yesterday`;
+            const successText = `<span class="text-success text-sm font-weight-bolder">${percentageText}</span>`;
+            const newText = `<p class="mb-0">${successText}</p>`;
+            footerElement.innerHTML = newText;
+        }
+    }
+
+    // Assume you have data for percentage changes
+    const productChange = 1.5; // Replace with actual data
+    const userChange = -2.3; // Replace with actual data
+    const revenueChange = 0.8; // Replace with actual data
+
+    // Update the content for each footer
+    updateFooterContent('productFooter', productChange);
+    updateFooterContent('userFooter', userChange);
+    updateFooterContent('revenueFooter', revenueChange);
+</script>
 
 <?php
 include('./includes/footer.php');
