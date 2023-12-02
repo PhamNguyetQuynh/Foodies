@@ -45,7 +45,7 @@ include('./includes/header.php');
                                     </div>
                                 </div>
                                 <hr class="dark horizontal my-0" />
-                                <div class="card-footer p-3" id="productsfooter">
+                                <div class="card-footer p-3" id="productfooter">
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ include('./includes/header.php');
                                     </div>
                                 </div>
                                 <hr class="dark horizontal my-0" />
-                                <div class="card-footer p-3" id="usersfooter">
+                                <div class="card-footer p-3" id="userfooter">
                                     
                                 </div>
                             </div>
@@ -262,9 +262,9 @@ include('./includes/header.php');
     const revenueChange = 0.8; // Replace with actual data
 
     // Update the content for each footer
-    updateFooterContent('productFooter', productChange);
-    updateFooterContent('userFooter', userChange);
-    updateFooterContent('revenueFooter', revenueChange);
+    updateFooterContent('productfooter', productChange);
+    updateFooterContent('userfooter', userChange);
+    updateFooterContent('revenuefooter', revenueChange);
 </script>
 
 <?php
