@@ -28,16 +28,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['auth_user']['name'] = $name;
         $_SESSION['auth_user']['email'] = $email;
         $_SESSION['auth_user']['phone'] = $phone;
+        $_SESSION['auth_user']['image'] = $image;
+
 
         // Xử lý avatar nếu có được tải lên
         if ($_FILES['avatar']['name'] != "") {
             $avatar_path = "./avt-image/";
-            $avatar_filename = time() . '_' . $_FILES['avatar']['name'];
-
+            $avatar_filename =  $_FILES['avatar']['name'];
+            
             if (file_exists($_FILES['avatar']['tmp_name'])) {
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar_path . $avatar_filename);
 
                 // Lưu đường dẫn avatar vào cơ sở dữ liệu
+
+        
                 $update_avatar_query = "UPDATE users SET image='$avatar_filename' WHERE id=" . $user['user_id'];
                 $update_avatar_query_run = mysqli_query($conn, $update_avatar_query);
 
@@ -80,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="mb-3">
                                 <label for="avatar" class="form-label">Avatar</label>
                                 <div class="d-flex align-items-center">
-                                    <img src="<?= isset($user['image']) ? './avt-image/' . $user['image'] : './avt-image/avt.jpg'; ?>" alt="Avatar Preview" class="avatar-preview mr-2">
+                                    <img src="<?= isset($user['image']) && $user['image'] === 'default.jpg'? './avt-image/avt.jpg':'./avt-image/' . $user['image']  ?>" alt="Avatar Preview" class="avatar-preview mr-2">
                                     <input type="file" class="form-control" id="avatar" name="avatar">
                                 </div>
                             </div>
