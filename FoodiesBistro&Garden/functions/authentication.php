@@ -26,7 +26,9 @@ if (isset($_POST['registerBtn'])) {
         header('location: ../register.php');
     } else {
         if ($password == $cpassword) {
-            sendRegistrationEmail($name, $email);
+            $subject='Registration Successful';
+            $content='Dear ' . $name . ',<br><br>Thank you for registering on our website.';
+            sendRegistrationEmail($name, $email,$subject,$content);
                 
                     echo 'Email sent successfully.';
                     $insert_query = "INSERT INTO users(name, email, phone, password) VALUES('$name','$email','$phone','$password')";

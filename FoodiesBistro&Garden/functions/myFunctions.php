@@ -55,7 +55,7 @@ function getOrderHistory()
     return mysqli_query($conn, $query);
 }
 
-function sendRegistrationEmail($name, $email)
+function sendRegistrationEmail($name, $email,$subject,$content)
 {
     $mail = new PHPMailer(true);
     
@@ -75,8 +75,8 @@ function sendRegistrationEmail($name, $email)
 
         // Content
         $mail->isHTML(true);
-        $mail->Subject = 'Registration Successful';
-        $mail->Body    = 'Dear ' . $name . ',<br><br>Thank you for registering on our website.';
+        $mail->Subject = $subject;
+        $mail->Body    = $content;
 
         $mail->send();
         echo 'Email has been sent'; 
