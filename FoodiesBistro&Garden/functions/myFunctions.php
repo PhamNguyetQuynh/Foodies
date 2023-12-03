@@ -58,19 +58,19 @@ function getOrderHistory()
 function sendRegistrationEmail($name, $email)
 {
     $mail = new PHPMailer(true);
-
+    
     try {
         // Server settings
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; // Thay bằng địa chỉ SMTP server của bạn
+        $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'foodiesbistrongarden@gmail.com';   // Thay bằng tên đăng nhập SMTP của bạn
-        $mail->Password   = 'hbrb cmvj taxm qzak';   // Thay bằng mật khẩu SMTP của bạn
-        $mail->SMTPSecure = 'tls';                   // Sử dụng TLS
+        $mail->Username   = 'foodiesbistrongarden@gmail.com';   
+        $mail->Password   = 'hbrb cmvj taxm qzak';  
+        $mail->SMTPSecure = 'tls';                  
         $mail->Port       = 587;
 
         // Recipients
-        $mail->setFrom('foodiesbistrongarden@gmail.com', 'Foodies');  // Thay bằng địa chỉ email của bạn và tên của bạn
+        $mail->setFrom('foodiesbistrongarden@gmail.com', 'Foodies');  
         $mail->addAddress($email, $name);
 
         // Content
@@ -79,8 +79,15 @@ function sendRegistrationEmail($name, $email)
         $mail->Body    = 'Dear ' . $name . ',<br><br>Thank you for registering on our website.';
 
         $mail->send();
-        // echo 'Email has been sent';  // Thông báo nếu muốn kiểm tra, có thể comment lại dòng này nếu không cần
+        echo 'Email has been sent'; 
+        return true;
+     
     } catch (Exception $e) {
-        // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+     return false;
     }
+   
+    
 }
+
+

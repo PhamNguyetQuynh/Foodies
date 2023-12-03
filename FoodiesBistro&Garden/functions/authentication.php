@@ -26,18 +26,20 @@ if (isset($_POST['registerBtn'])) {
         header('location: ../register.php');
     } else {
         if ($password == $cpassword) {
+            sendRegistrationEmail($name, $email);
+                
+                    echo 'Email sent successfully.';
+                    $insert_query = "INSERT INTO users(name, email, phone, password) VALUES('$name','$email','$phone','$password')";
+                    $insert_query_run = mysqli_query($conn, $insert_query);
+                
             //insert
-            $insert_query = "INSERT INTO users(name, email, phone, password) VALUES('$name','$email','$phone','$password')";
-            $insert_query_run = mysqli_query($conn, $insert_query);
-
+          
             if ($insert_query_run) {
                 $_SESSION['message'] = 'Registerd successfully';
 
-                // Gửi email
-                sendRegistrationEmail($name, $email);
-
                 header('location: ../login.php');
                 exit();
+                
             } else {
                 $_SESSION['message'] = 'Something went wrong';
                 header('location: register.php');
