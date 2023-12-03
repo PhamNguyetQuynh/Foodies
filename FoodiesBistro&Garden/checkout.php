@@ -188,7 +188,12 @@ if (mysqli_num_rows($cartItems) == 0) {
                         if (response == 201) {
                             alertify.success("Order Placed Successfully");
                             window.location.href = 'myOrder.php';
+                            $email=email;
+                            $subject='Order Placed Successfully';
+                            $content='Dear our beloved customer, <br><br> Thank you for supporting us. Hope you like it! ';
+                           sendRegistrationEmail($name, $email,$subject,$content);
                         }
+                        
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.error('AJAX Error:', textStatus, errorThrown);
