@@ -96,11 +96,11 @@ if (mysqli_num_rows($cartItems) == 0) {
                                 Cofirm and place order | COD
                             </button>
                             <p></p>
-                            <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded">
-                          <input type="submit" name="momoATMBtn" value="Thanh toan MOMO ATM" class="btn btn-danger w-100" style="background-color: #C62E86;">
-                            </form>
+                            <input type="hidden" name="payment_mode" value="MOMO">
+                            <button type="submit" name="momoATMBtn" class="btn btn-success w-100" style="background-color: #C62E86;">
+                                MoMo
+                            </button>
                             <div id="paypal-button-container" class="mt-3"></div>
-
                         </div>
                     </div>
                 </div>
