@@ -50,12 +50,14 @@ if (isset($_POST['registerBtn'])) {
         $userid = $userdata['id'];
         $username = $userdata['name'];
         $useremail = $userdata['email'];
+        $userphone = $userdata['phone'];
         $role_as = $userdata['role_as'];
 
         $_SESSION['auth_user'] = [
             'user_id' => $userid,
             'name' => $username,
-            'email' => $useremail
+            'email' => $useremail,
+            'phone'=>$userphone
         ];
         $_SESSION['role_as'] = $role_as;
         //1==admin
