@@ -218,6 +218,22 @@ INSERT INTO `users` (`id`, `name`, `email`,`phone`, `password`, `role_as`, `crea
 (6, 'admin', 'admin@gmail.com', '2222222', '123', 1, '2023-11-16 13:44:47');
 COMMIT;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(191) NOT NULL,
+  `last_name` varchar(191) NOT NULL,
+  `email` varchar(191) NOT NULL,
+  `msg` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
