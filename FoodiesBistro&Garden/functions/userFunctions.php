@@ -97,3 +97,27 @@ function searchProduct($key)
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
+function getOrdersItems()
+{
+    global $conn;
+    $userID = $_SESSION['auth_user']['user_id'];
+    $query = "SELECT tracking_no, total_price, status, created_at
+    FROM orders
+    ORDER BY id DESC";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
+function getBySlugOrder($slug)
+{
+    global $conn;
+    $query = "SELECT products.name as product_name, products.image as product_image, 
+    order_items.qty as product_qty, order_items.price as product_price, 
+    orders.name as name, orders.email as email, orders.phone as phone, orders.address as address, 
+    orders.total_price as total_price, orders.status as status, orders.created_at as ordered_at
+    FROM products, order_items, orders 
+    WHERE orders.tracking_no='$slug'
+    AND orders.id=order_items.order_id
+    AND products.id=order_items.product_id";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
