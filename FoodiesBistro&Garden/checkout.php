@@ -95,6 +95,9 @@ if (mysqli_num_rows($cartItems) == 0) {
                             <button type="submit" name="placeOrderBtn" class="btn btn-success w-100">
                                 Cofirm and place order | COD
                             </button>
+                            <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded">
+                          <input type="submit" name="momoQRBtn" value="Thanh toan MOMO QR Code" class="btn btn-danger w-100" style="background-color: #C62E86;">
+                            </form>
                             <div id="paypal-button-container" class="mt-3"></div>
 
                         </div>
