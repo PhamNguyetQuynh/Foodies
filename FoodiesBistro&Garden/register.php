@@ -27,20 +27,33 @@ include('./includes/header.php') ?>
                         <form action="functions/authentication.php" method="POST">
                             <div class="mb-3">
                                 <label class="form-label">Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter your name">
+                                <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Phone</label>
-                                <input type="number" name="phone" class="form-control" placeholder="Enter your phone number">
+                                <input type="number" name="phone" class="form-control" placeholder="Enter your phone number" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email">
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" required>
                             </div>
+
+                            <!-- password field with regex validation -->
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password" 
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character">
+                                <!-- The pattern in the provided code is a regular expression (regex) used to enforce certain requirements for the password. 
+                                    ^: Start of the string
+                                    (?=.*[a-z]): At least one lowercase letter.
+                                    (?=.*[A-Z]): At least one uppercase letter.
+                                    (?=.*\d): At least one digit.
+                                    (?=.*[@$!%*?&]): At least one special character from the list @, $, !, %, *, ?, &.
+                                    [A-Za-z\d@$!%*?&]{8,}: At least eight characters from the specified character set, including uppercase and lowercase letters, digits, and special characters @, $, !, %, *, ?, &.
+                                    $: End of the string.
+                                -->
                             </div>
+
                             <div class="mb-3">
                                 <label class="form-label">Confirm Password</label>
                                 <input type="password" name="cpassword" class="form-control" placeholder="Confirm password">
@@ -57,6 +70,5 @@ include('./includes/header.php') ?>
 
     </div>
 </div>
-
 
 <?php include('./includes/footer.php') ?>
