@@ -20,3 +20,6 @@ a{
     background-repeat: no-repeat;
     overflow: hidden;
   }
+td {
+    display: flex !important;
+}

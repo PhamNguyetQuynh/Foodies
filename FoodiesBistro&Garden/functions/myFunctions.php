@@ -22,7 +22,7 @@ function redirect($url, $message)
     header('location:' . $url);
     exit();
 }
-function getAllOrders()
+function getOnGoingOrders()
 {
     global $conn;
     $query = "SELECT * FROM orders WHERE status='0'";
@@ -32,15 +32,14 @@ function getAllOrders()
 function checkTrackingNoExist($trackingNo)
 {
     global $conn;
-   
     $query="SELECT * FROM orders WHERE tracking_no='$trackingNo'";
     return mysqli_query($conn, $query);
 }
 
-function getOrderHistory()
+function getAllOrders()
 {
     global $conn;
    
-    $query="SELECT * FROM orders WHERE status != '0'";
+    $query="SELECT * FROM orders";
     return mysqli_query($conn, $query);
 }
