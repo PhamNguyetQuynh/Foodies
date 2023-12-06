@@ -1,8 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container py-2 px-4">
     <div class="row">
-      <div class="col-md-3">
+    <div class="col-md-4">
         <a class="navbar-brand fs-4" href="index.php" style="font-weight: bolder; ">Foodies</a>
+        <button class="navbar-toggler float-end " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
 
       <div class="col-md-4">
