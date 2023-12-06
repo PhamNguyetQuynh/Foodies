@@ -212,6 +212,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
+
 INSERT INTO `users` (`id`, `name`, `email`,`phone`, `password`, `role_as`, `created_at`) VALUES
 (5, 'nina', 'nina@gmail.com', '123456', '123', 0, '2023-11-15 15:28:58'),
 (6, 'admin', 'admin@gmail.com', '2222222', '123', 1, '2023-11-16 13:44:47');
