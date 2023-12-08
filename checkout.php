@@ -24,14 +24,6 @@ $hcm_districts = array(
     'District Binh Tan' => array('Ward An Lac','Ward An Lac A','Ward Binh Hung Hoa','Ward Binh Hung Hoa A','Ward Binh Hung Hoa B','Ward Binh Tri Dong','Ward Binh Tri Dong A','Ward Binh Tri Dong B','Ward Tan Tao','Ward Tan Tao A'),
     'District Tan Binh' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 5','Ward 6','Ward 7','Ward 8','Ward 9','Ward 10','Ward 11','Ward 12','Ward 13','Ward 14','Ward 15'),
     'District Thu Duc' => array('Ward Binh Chieu','Ward Binh Tho','Ward Hiep Binh Chanh','Ward Hiep Binh Phuoc','Ward Linh Chieu','Ward Linh Dong','Ward Linh Tay','Ward Linh Trung','Ward Linh Xuan','Ward Tam Binh','Ward Tam Phu','Ward Truong Tho'),
-
-
-
-
-
-
-
-
 );
 ?>
 
