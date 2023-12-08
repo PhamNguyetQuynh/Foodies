@@ -62,7 +62,7 @@ $hcm_districts = array(
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label class="fw-bold">District</label>
-                                <select name="district" id="district" class="form-control" required onchange="loadWards(this.value)">
+                                <select name="address" id="address" class="form-control" required onchange="loadWards(this.value)">
                                     <option value="" disabled selected>Select your district</option>
                                     <?php
                                     foreach ($hcm_districts as $district => $wards) {
@@ -70,8 +70,9 @@ $hcm_districts = array(
                                     }
                                     ?>
                                 </select>
-                                <small class="text-danger district"></small>
+                                <small class="text-danger address"></small>
                             </div>
+
                             <div class="col-md-12 mb-3">
                                 <label class="fw-bold">Ward</label>
                                 <select name="ward" id="ward" class="form-control" required>
@@ -160,7 +161,7 @@ $hcm_districts = array(
             var name = $('#name').val();
             var email = $('#email').val();
             var phone = $('#phone').val();
-            var selectedAddress = $('#district').val(); 
+            var selectedAddress = $('#address').val(); 
             if (name.length == 0) {
                 $('.name').text("*This field is required");
             } else {
@@ -195,7 +196,7 @@ $hcm_districts = array(
                 var name = $('#name').val();
                 var email = $('#email').val();
                 var phone = $('#phone').val();
-                var selectedAddress = $('#district').val(); 
+                var selectedAddress = $('#address').val(); 
                 var comments = $('#comments').val();
                 var data = {
                     'name': name,
