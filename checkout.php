@@ -76,7 +76,6 @@ $hcm_districts = array(
                                 <label class="fw-bold">Ward</label>
                                 <select name="ward" id="ward" class="form-control" required>
                                     <option value="" disabled selected>Select your ward</option>
-                                    <!-- Wards will be populated dynamically using JavaScript based on the selected district -->
                                 </select>
                                 <small class="text-danger ward"></small>
                             </div>
@@ -161,7 +160,7 @@ $hcm_districts = array(
             var name = $('#name').val();
             var email = $('#email').val();
             var phone = $('#phone').val();
-            var selectedAddress = $('#district').val(); // Đổi tên biến thành 'district'
+            var selectedAddress = $('#district').val(); 
             if (name.length == 0) {
                 $('.name').text("*This field is required");
             } else {
@@ -196,7 +195,7 @@ $hcm_districts = array(
                 var name = $('#name').val();
                 var email = $('#email').val();
                 var phone = $('#phone').val();
-                var selectedAddress = $('#district').val(); // Đổi tên biến thành 'district'
+                var selectedAddress = $('#district').val(); 
                 var comments = $('#comments').val();
                 var data = {
                     'name': name,
