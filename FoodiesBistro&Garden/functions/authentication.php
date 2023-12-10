@@ -18,6 +18,7 @@ if (isset($_POST['registerBtn'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
+    $verification_code = sprintf('%06d', mt_rand(0, 999999));
     //check unique email
     $check_email_query = "SELECT email FROM users WHERE email='$email'";
     $check_email_query_run = mysqli_query($conn, $check_email_query);
@@ -26,21 +27,25 @@ if (isset($_POST['registerBtn'])) {
         header('location: ../register.php');
     } else {
         if ($password == $cpassword) {
-            $subject='Registration Successful';
-            $content='Dear ' . $name . ',<br><br>Thank you for registering on our website.';
-            sendRegistrationEmail($name, $email,$subject,$content);
+            // $subject='Registration Successful';
+            // $content='Dear ' . $name . ',<br><br>Thank you for registering on our website.';
+            // sendRegistrationEmail($name, $email,$subject,$content);
                 
-                    echo 'Email sent successfully.';
-                    $insert_query = "INSERT INTO users(name, email, phone, password) VALUES('$name','$email','$phone','$password')";
-                    $insert_query_run = mysqli_query($conn, $insert_query);
-                
+            //         echo 'Email sent successfully.';
+            //         $insert_query = "INSERT INTO users(name, email, phone, password) VALUES('$name','$email','$phone','$password')";
+            //         $insert_query_run = mysqli_query($conn, $insert_query);
+
+            $insert_query = "INSERT INTO users(name, email, phone, password, verification_code) VALUES('$name','$email','$phone','$password','$verification_code')";
+            $insert_query_run = mysqli_query($conn, $insert_query);    
             //insert
           
             if ($insert_query_run) {
-                $_SESSION['message'] = 'Registerd successfully';
+                // $_SESSION['message'] = 'Registerd successfully';
 
-                header('location: ../login.php');
-                exit();
+                // header('location: ../login.php');
+                // exit();
+
+                sendRegistrationEmail("$name", "$email","$verification_code");
                 
             } else {
                 $_SESSION['message'] = 'Something went wrong';

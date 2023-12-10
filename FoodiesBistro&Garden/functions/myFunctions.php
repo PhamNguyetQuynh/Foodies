@@ -1,5 +1,8 @@
 <?php
-session_start();
+// session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 include('../config/dbconn.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -55,7 +58,7 @@ function getOrderHistory()
     return mysqli_query($conn, $query);
 }
 
-function sendRegistrationEmail($name, $email,$subject,$content)
+function sendRegistrationEmail($name, $email, $verification_code)
 {
     $mail = new PHPMailer(true);
     
@@ -75,8 +78,15 @@ function sendRegistrationEmail($name, $email,$subject,$content)
 
         // Content
         $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body    = $content;
+        $mail->Subject = "Email Verification from Foodies";
+        $mail_template = "
+            <h2> You have Registered with Foodies </h2>
+            <h5> Verify your email address to Login with the below given link </h5>
+            <br/><br/>
+            <a href ='http://localhost/IS207/1/emaillll/Foodies/FoodiesBistro&Garden/verifyEmail.php?token=$verification_code'> Click me </a>
+        ";
+
+        $mail->Body = $mail_template;
 
         $mail->send();
         echo 'Email has been sent'; 
