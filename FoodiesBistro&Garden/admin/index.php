@@ -32,15 +32,12 @@ include('./includes/header.php');
                                 die($stmt->error);
                             }
                         }
-
-                        // Products
                         $select_products = $conn->prepare("SELECT * FROM products");
                         handleDatabaseError($select_products);
                         $select_products->execute();
                         $number_of_products = $select_products->get_result()->num_rows;
                         $select_products->close();
                         ?>
-
                         <div class="col-lg-3 col-sm-6">
                             <div class="card mb-2">
                                 <div class="card-header p-3 pt-2">
@@ -100,7 +97,6 @@ include('./includes/header.php');
                                         while ($order_row = $orders_result->fetch_assoc()) {
                                             $total_price += $order_row['total_price'];
                                         }
-
                                         $select_orders->close();
                                         ?>
                                         <p class="text-sm mb-0 text-capitalize">Revenue</p>
@@ -112,7 +108,6 @@ include('./includes/header.php');
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-sm-6">
                             <div class="card">
                                 <div class="card-header p-3 pt-2 bg-transparent">
@@ -155,58 +150,47 @@ include('./includes/header.php');
                                                 <td>012354478</td>
                                                 <td>Ben Tre</td>
                                             </tr>
-
                                             <tr>
                                                 <td>2</td>
                                                 <td>Nguyet Quynh</td>
                                                 <td>5208851520</td>
                                                 <td>Tien Giang</td>
                                             </tr>
-
                                             <tr>
                                                 <td>3</td>
                                                 <td>Vy Ngo</td>
                                                 <td>01254789</td>
                                                 <td>Tien Giang</td>
                                             </tr>
-
                                             <tr>
                                                 <td>4</td>
                                                 <td>Diem Quynh</td>
                                                 <td>024158752</td>
                                                 <td>HCMC</td>
                                             </tr>
-
                                             <tr>
                                                 <td>5</td>
                                                 <td>Mai Chi</td>
                                                 <td>012254867</td>
                                                 <td>HCMC</td>
                                             </tr>
-
                                             <tr>
                                                 <td>6</td>
                                                 <td>Phuong Anh</td>
                                                 <td>011254788</td>
                                                 <td>HCMC</td>
                                             </tr>
-
-
                                             <tr>
                                                 <td>7</td>
                                                 <td>Dang Khoa</td>
                                                 <td>021547852</td>
                                                 <td>HCMC</td>
                                             </tr>
-
-
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="col-lg-5 col-md-12">
                             <div class="card" style="min-height:485px">
                                 <div class="card-header card-header-text">
@@ -227,16 +211,12 @@ include('./includes/header.php');
                                                 <td>1</td>
                                                 <td>Cam Tu</td>
                                                 <td>i need to bla bla</td>
-
                                             </tr>
-
                                             <tr>
                                                 <td>2</td>
                                                 <td>Nguyet Quynh</td>
                                                 <td>dont git me chili</td>
-
                                             </tr>
-
                                             <tr>
                                                 <td>3</td>
                                                 <td>Vy Ngo</td>
@@ -266,18 +246,14 @@ include('./includes/header.php');
             footerElement.innerHTML = newText;
         }
     }
-
-    
     const previousProductCount = 2;
-    const previousUserCount = 3; 
-    const previousRevenue = 1230000; 
+    const previousUserCount = 3;
+    const previousRevenue = 1230000;
 
-    
-    const currentProductCount = 3; 
-    const currentUserCount = 4; 
-    const currentRevenue = 2000000; 
+    const currentProductCount = 3;
+    const currentUserCount = 4;
+    const currentRevenue = 2000000;
 
-    
     updateFooterContent('productfooter', currentProductCount, previousProductCount);
     updateFooterContent('userfooter', currentUserCount, previousUserCount);
     updateFooterContent('revenuefooter', currentRevenue, previousRevenue);
