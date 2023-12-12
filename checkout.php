@@ -10,20 +10,20 @@ if (mysqli_num_rows($cartItems) == 0) {
 $hcm_districts = array(
     'District 1' => array('Ward Ben Nghe', 'Ward Co Giang', 'Ward Ben Thanh', 'Ward Cau Kho', 'Ward Da Kao', 'Ward Cau Ong Lanh', 'Ward Nguyen Thai Binh', 'Ward Nguyen Cu Trinh', 'Ward Pham Ngu Lao', 'Ward Tan Dinh'),
     'District 2' => array('Ward An Khanh', 'Ward An Loi Dong', 'Ward An Phu', 'Ward Binh An', 'Ward Binh Khanh', 'Ward Binh Trung Dong', 'Ward Binh Trung Tay', 'Ward Cat Lai', 'Ward Thanh My Loi', 'Ward Thao Dien', 'Ward Thu Thiem'),
-    'District 3' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 5','Ward 9','Ward 10','Ward 11','Ward 12','Ward 13','Ward 14','Ward Vo Thi Sau',),
-    'District 4' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 6','Ward 8','Ward 9','Ward 10','Ward 13','Ward 14','Ward 15','Ward 16','Ward 18',),
-    'District 5' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 5','Ward 6','Ward 7','Ward 8','Ward 9','Ward 10','Ward 11','Ward 12','Ward 13','Ward 14','Ward 15'),
-    'District 6' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 5','Ward 6','Ward 7','Ward 8','Ward 9','Ward 10','Ward 11','Ward 12','Ward 13','Ward 14'),
-    'District 7' => array('Ward Tan Thuan Dong','Ward Tan Thuan Tay','Ward Tan Kieng','Ward Tan Hung','Ward Tan Quy','Ward Tan Phong','Ward Tan Phu','Ward Binh Thuan','Ward Phu Thuan','Ward Phu My'),
-    'District 8' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 5','Ward 6','Ward 7','Ward 8','Ward 9','Ward 10','Ward 11','Ward 12','Ward 13','Ward 14','Ward 15','Ward 16'),
-    'District 9' => array('Ward Phuoc Long A','Ward Phuoc Long B','Ward Tan Phu','Ward Long Phuoc','Ward Tang Nhon Phu A','Ward Phuoc Binh','Ward Long Binh','Ward Tăng Nhon Phu B','Ward Hiep Phu','Ward Phu Huu','Ward Long Truong','Ward Long Thanh My','Ward My Thanh'),
-    'District 10' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 5','Ward 6','Ward 7','Ward 8','Ward 9','Ward 10','Ward 11','Ward 12','Ward 13','Ward 14','Ward 15'),
-    'District 11' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 5','Ward 6','Ward 7','Ward 8','Ward 9','Ward 10','Ward 11','Ward 12','Ward 13','Ward 14','Ward 15','Ward 16'),
-    'District 12' => array('Ward An Phu Dong','Ward Dong Hung Thuan','Ward Hiep Thanh','Ward Tan Chanh Hiep','Ward Tan Hung Thuan','Ward Tan Thoi Hiep','Ward Tan Thoi Nhat','Ward Thanh Loc','Ward Thanh Xuan','Ward Thoi An','Ward Trung My Tay'),
-    'District Binh Thanh' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 5','Ward 6','Ward 7','Ward 11','Ward 12','Ward 13','Ward 14','Ward 15','Ward 17','Ward 19','Ward 21','Ward 22','Ward 24','Ward 25','Ward 26','Ward 27','Ward 28'),
-    'District Binh Tan' => array('Ward An Lac','Ward An Lac A','Ward Binh Hung Hoa','Ward Binh Hung Hoa A','Ward Binh Hung Hoa B','Ward Binh Tri Dong','Ward Binh Tri Dong A','Ward Binh Tri Dong B','Ward Tan Tao','Ward Tan Tao A'),
-    'District Tan Binh' => array('Ward 1','Ward 2','Ward 3','Ward 4','Ward 5','Ward 6','Ward 7','Ward 8','Ward 9','Ward 10','Ward 11','Ward 12','Ward 13','Ward 14','Ward 15'),
-    'District Thu Duc' => array('Ward Binh Chieu','Ward Binh Tho','Ward Hiep Binh Chanh','Ward Hiep Binh Phuoc','Ward Linh Chieu','Ward Linh Dong','Ward Linh Tay','Ward Linh Trung','Ward Linh Xuan','Ward Tam Binh','Ward Tam Phu','Ward Truong Tho'),
+    'District 3' => array('Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 5', 'Ward 9', 'Ward 10', 'Ward 11', 'Ward 12', 'Ward 13', 'Ward 14', 'Ward Vo Thi Sau',),
+    'District 4' => array('Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 6', 'Ward 8', 'Ward 9', 'Ward 10', 'Ward 13', 'Ward 14', 'Ward 15', 'Ward 16', 'Ward 18',),
+    'District 5' => array('Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 5', 'Ward 6', 'Ward 7', 'Ward 8', 'Ward 9', 'Ward 10', 'Ward 11', 'Ward 12', 'Ward 13', 'Ward 14', 'Ward 15'),
+    'District 6' => array('Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 5', 'Ward 6', 'Ward 7', 'Ward 8', 'Ward 9', 'Ward 10', 'Ward 11', 'Ward 12', 'Ward 13', 'Ward 14'),
+    'District 7' => array('Ward Tan Thuan Dong', 'Ward Tan Thuan Tay', 'Ward Tan Kieng', 'Ward Tan Hung', 'Ward Tan Quy', 'Ward Tan Phong', 'Ward Tan Phu', 'Ward Binh Thuan', 'Ward Phu Thuan', 'Ward Phu My'),
+    'District 8' => array('Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 5', 'Ward 6', 'Ward 7', 'Ward 8', 'Ward 9', 'Ward 10', 'Ward 11', 'Ward 12', 'Ward 13', 'Ward 14', 'Ward 15', 'Ward 16'),
+    'District 9' => array('Ward Phuoc Long A', 'Ward Phuoc Long B', 'Ward Tan Phu', 'Ward Long Phuoc', 'Ward Tang Nhon Phu A', 'Ward Phuoc Binh', 'Ward Long Binh', 'Ward Tăng Nhon Phu B', 'Ward Hiep Phu', 'Ward Phu Huu', 'Ward Long Truong', 'Ward Long Thanh My', 'Ward My Thanh'),
+    'District 10' => array('Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 5', 'Ward 6', 'Ward 7', 'Ward 8', 'Ward 9', 'Ward 10', 'Ward 11', 'Ward 12', 'Ward 13', 'Ward 14', 'Ward 15'),
+    'District 11' => array('Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 5', 'Ward 6', 'Ward 7', 'Ward 8', 'Ward 9', 'Ward 10', 'Ward 11', 'Ward 12', 'Ward 13', 'Ward 14', 'Ward 15', 'Ward 16'),
+    'District 12' => array('Ward An Phu Dong', 'Ward Dong Hung Thuan', 'Ward Hiep Thanh', 'Ward Tan Chanh Hiep', 'Ward Tan Hung Thuan', 'Ward Tan Thoi Hiep', 'Ward Tan Thoi Nhat', 'Ward Thanh Loc', 'Ward Thanh Xuan', 'Ward Thoi An', 'Ward Trung My Tay'),
+    'District Binh Thanh' => array('Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 5', 'Ward 6', 'Ward 7', 'Ward 11', 'Ward 12', 'Ward 13', 'Ward 14', 'Ward 15', 'Ward 17', 'Ward 19', 'Ward 21', 'Ward 22', 'Ward 24', 'Ward 25', 'Ward 26', 'Ward 27', 'Ward 28'),
+    'District Binh Tan' => array('Ward An Lac', 'Ward An Lac A', 'Ward Binh Hung Hoa', 'Ward Binh Hung Hoa A', 'Ward Binh Hung Hoa B', 'Ward Binh Tri Dong', 'Ward Binh Tri Dong A', 'Ward Binh Tri Dong B', 'Ward Tan Tao', 'Ward Tan Tao A'),
+    'District Tan Binh' => array('Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 5', 'Ward 6', 'Ward 7', 'Ward 8', 'Ward 9', 'Ward 10', 'Ward 11', 'Ward 12', 'Ward 13', 'Ward 14', 'Ward 15'),
+    'District Thu Duc' => array('Ward Binh Chieu', 'Ward Binh Tho', 'Ward Hiep Binh Chanh', 'Ward Hiep Binh Phuoc', 'Ward Linh Chieu', 'Ward Linh Dong', 'Ward Linh Tay', 'Ward Linh Trung', 'Ward Linh Xuan', 'Ward Tam Binh', 'Ward Tam Phu', 'Ward Truong Tho'),
 );
 ?>
 
@@ -60,9 +60,11 @@ $hcm_districts = array(
                                 <input type="email" name="email" id="email" required placeholder="Enter your email" class="form-control">
                                 <small class="text-danger email"></small>
                             </div>
+
+
                             <div class="col-md-12 mb-3">
                                 <label class="fw-bold">District</label>
-                                <select name="address" id="address" class="form-control" required onchange="loadWards(this.value)">
+                                <select name="district" id="district" class="form-control" required onchange="loadWards(this.value)">
                                     <option value="" disabled selected>Select your district</option>
                                     <?php
                                     foreach ($hcm_districts as $district => $wards) {
@@ -70,7 +72,7 @@ $hcm_districts = array(
                                     }
                                     ?>
                                 </select>
-                                <small class="text-danger address"></small>
+                                <small class="text-danger district"></small>
                             </div>
 
                             <div class="col-md-12 mb-3">
@@ -81,10 +83,16 @@ $hcm_districts = array(
                                 <small class="text-danger ward"></small>
                             </div>
                             <div class="col-md-12 mb-3">
-                                <label class="fw-bold">House Number and Street Address</label>
+                                <label class="fw-bold">Address</label>
+                                <input type="text" name="address" id="address" required placeholder="Enter your address" class="form-control">
+                                <small class="text-danger address"></small>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="fw-bold">Street Address</label>
                                 <input type="text" name="street_address" id="street_address" required placeholder="Enter your street address" class="form-control">
                                 <small class="text-danger street_address"></small>
                             </div>
+
                             <div class="col-md-12 mb-3">
                                 <label class="fw-bold">Comments</label>
                                 <textarea name="comments" id="comments" class="form-control" rows="3"></textarea>
@@ -145,11 +153,20 @@ $hcm_districts = array(
         var selectedWards = wards[selectedDistrict] || [];
         var wardSelect = document.getElementById('ward');
         wardSelect.innerHTML = "<option value='' disabled selected>Select your ward</option>";
-        selectedWards.forEach(function(ward) {
-            wardSelect.innerHTML += "<option>" + ward + "</option>";
+        selectedWards.forEach(function (ward) {
+            wardSelect.innerHTML += "<option value='" + ward + "'>" + ward + "</option>";
         });
+
+      
+        var addressInput = document.getElementById('address');
+        var streetAddressInput = document.getElementById('street_address');
+        var selectedDistrictInfo = wards[selectedDistrict];
+        var defaultAddress = selectedDistrictInfo.length > 0 ? selectedDistrictInfo[0] : ''; 
+        addressInput.value = defaultAddress;
+        streetAddressInput.value = ''; 
     }
 </script>
+
 
 <?php include('./includes/footer.php') ?>
 
@@ -161,7 +178,7 @@ $hcm_districts = array(
             var name = $('#name').val();
             var email = $('#email').val();
             var phone = $('#phone').val();
-            var selectedAddress = $('#address').val(); 
+            var selectedAddress = $('#address').val();
             if (name.length == 0) {
                 $('.name').text("*This field is required");
             } else {
@@ -196,7 +213,7 @@ $hcm_districts = array(
                 var name = $('#name').val();
                 var email = $('#email').val();
                 var phone = $('#phone').val();
-                var selectedAddress = $('#address').val(); 
+                var selectedAddress = $('#address').val();
                 var comments = $('#comments').val();
                 var data = {
                     'name': name,
