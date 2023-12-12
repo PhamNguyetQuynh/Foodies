@@ -24,6 +24,23 @@ include('./includes/header.php');
                     </div>
 
                     <div class="row">
+                        <?php
+                        // Function to handle database errors
+                        function handleDatabaseError($stmt)
+                        {
+                            if (!$stmt) {
+                                die($stmt->error);
+                            }
+                        }
+
+                        // Products
+                        $select_products = $conn->prepare("SELECT * FROM products");
+                        handleDatabaseError($select_products);
+                        $select_products->execute();
+                        $number_of_products = $select_products->get_result()->num_rows;
+                        $select_products->close();
+                        ?>
+
                         <div class="col-lg-3 col-sm-6">
                             <div class="card mb-2">
                                 <div class="card-header p-3 pt-2">
@@ -31,15 +48,6 @@ include('./includes/header.php');
                                         <i class="material-icons opacity-10">weekend</i>
                                     </div>
                                     <div class="text-end pt-1">
-                                        <?php
-                                        $id = 0;
-                                        $select_products = $conn->prepare("SELECT * FROM products WHERE id= ?");
-                                        $select_products->bind_param("i", $id);
-                                        $select_products->execute();
-                                        $result = $select_products->get_result();
-                                        $number_of_products = $result->num_rows;
-                                        $select_products->close();
-                                        ?>
                                         <p class="text-sm mb-0 text-capitalize">Product Added</p>
                                         <h4 class="mb-0"><?= $number_of_products; ?></h4>
                                     </div>
@@ -57,24 +65,24 @@ include('./includes/header.php');
                                     </div>
                                     <div class="text-end pt-1">
                                         <?php
-                                        $id = 0;
-                                        $select_users = $conn->prepare("SELECT * FROM users WHERE id= ?");
-                                        $select_users->bind_param("i", $id);
+                                        $select_users = $conn->prepare("SELECT * FROM users WHERE role_as <> 1");
+                                        handleDatabaseError($select_users);
                                         $select_users->execute();
-                                        $result = $select_users->get_result();
-                                        $number_of_users = $result->num_rows;
+                                        $number_of_users = $select_users->get_result()->num_rows;
                                         $select_users->close();
                                         ?>
-                                        <p class="text-sm mb-0 text-capitalize">Today's User</p>
+
+                                        <p class="text-sm mb-0 text-capitalize">Total Customers</p>
                                         <h4 class="mb-0"><?= $number_of_users; ?></h4>
                                     </div>
                                 </div>
                                 <hr class="dark horizontal my-0" />
                                 <div class="card-footer p-3" id="userfooter">
-                                    
+
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-3 col-sm-6">
                             <div class="card mb-2">
                                 <div class="card-header p-3 pt-2 bg-transparent">
@@ -83,14 +91,16 @@ include('./includes/header.php');
                                     </div>
                                     <div class="text-end pt-1">
                                         <?php
-                                        $total_price = 0;
-                                        $select_orders = $conn->prepare("SELECT * FROM orders WHERE id= ?");
-                                        $select_orders->bind_param("i", $id);
+                                        $select_orders = $conn->prepare("SELECT * FROM orders");
+                                        handleDatabaseError($select_orders);
                                         $select_orders->execute();
-                                        $result = $select_orders->get_result();
-                                        while ($row = $result->fetch_assoc()) {
-                                            $total_price += $row['total_price'];
-                                        };
+                                        $orders_result = $select_orders->get_result();
+                                        $total_price = 0;
+
+                                        while ($order_row = $orders_result->fetch_assoc()) {
+                                            $total_price += $order_row['total_price'];
+                                        }
+
                                         $select_orders->close();
                                         ?>
                                         <p class="text-sm mb-0 text-capitalize">Revenue</p>
@@ -99,10 +109,10 @@ include('./includes/header.php');
                                 </div>
                                 <hr class="horizontal my-0 dark" />
                                 <div class="card-footer p-3" id="revenuefooter">
-                                    
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-3 col-sm-6">
                             <div class="card">
                                 <div class="card-header p-3 pt-2 bg-transparent">
@@ -201,7 +211,7 @@ include('./includes/header.php');
                             <div class="card" style="min-height:485px">
                                 <div class="card-header card-header-text">
                                     <h4 class="card-title">Message</h4>
-                                    <p class="category">Check it out!git c</p>
+                                    <p class="category">Check it out!</p>
                                 </div>
                                 <div class="card-content table-responsive">
                                     <table class="table table-hover">
@@ -245,26 +255,32 @@ include('./includes/header.php');
     </div>
 </div>
 <script>
-    function updateFooterContent(id, percentageChange) {
+    function updateFooterContent(id, currentValue, previousValue) {
         const footerElement = document.getElementById(id);
         if (footerElement) {
-            const sign = percentageChange >= 0 ? '+' : '-';
-            const percentageText = `${sign}${Math.abs(percentageChange).toFixed(2)}% than yesterday`;
+            const changePercentage = ((currentValue - previousValue) / previousValue) * 100;
+            const sign = changePercentage >= 0 ? '+' : '-';
+            const percentageText = `${sign}${Math.abs(changePercentage).toFixed(2)}% than yesterday`;
             const successText = `<span class="text-success text-sm font-weight-bolder">${percentageText}</span>`;
             const newText = `<p class="mb-0">${successText}</p>`;
             footerElement.innerHTML = newText;
         }
     }
 
-    // Assume you have data for percentage changes
-    const productChange = 1.5; // Replace with actual data
-    const userChange = -2.3; // Replace with actual data
-    const revenueChange = 0.8; // Replace with actual data
+    
+    const previousProductCount = 2;
+    const previousUserCount = 3; 
+    const previousRevenue = 1230000; 
 
-    // Update the content for each footer
-    updateFooterContent('productfooter', productChange);
-    updateFooterContent('userfooter', userChange);
-    updateFooterContent('revenuefooter', revenueChange);
+    
+    const currentProductCount = 3; 
+    const currentUserCount = 4; 
+    const currentRevenue = 2000000; 
+
+    
+    updateFooterContent('productfooter', currentProductCount, previousProductCount);
+    updateFooterContent('userfooter', currentUserCount, previousUserCount);
+    updateFooterContent('revenuefooter', currentRevenue, previousRevenue);
 </script>
 
 <?php
