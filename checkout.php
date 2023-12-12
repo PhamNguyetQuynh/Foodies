@@ -61,7 +61,7 @@ $hcm_districts = array(
                                 <small class="text-danger email"></small>
                             </div>
 
-
+                            <input type="hidden" name="address" id="address" value="">
                             <div class="col-md-12 mb-3">
                                 <label class="fw-bold">District</label>
                                 <select name="district" id="district" class="form-control" required onchange="loadWards(this.value)">
@@ -83,9 +83,9 @@ $hcm_districts = array(
                                 <small class="text-danger ward"></small>
                             </div>
                             <div class="col-md-12 mb-3">
-                                <label class="fw-bold">Address</label>
-                                <input type="text" name="address" id="address" required placeholder="Enter your address" class="form-control">
-                                <small class="text-danger address"></small>
+                                <label class="fw-bold">House Number</label>
+                                <input type="text" name="house_number" id="house_number" required placeholder="Enter your address" class="form-control">
+                                <small class="text-danger house_number"></small>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label class="fw-bold">Street Address</label>
@@ -148,22 +148,31 @@ $hcm_districts = array(
 </div>
 
 <script>
-    function loadWards(selectedDistrict) {
+    function loadWards(selectedDistrict, selectedWard = '') {
         var wards = <?php echo json_encode($hcm_districts); ?>;
         var selectedWards = wards[selectedDistrict] || [];
         var wardSelect = document.getElementById('ward');
         wardSelect.innerHTML = "<option value='' disabled selected>Select your ward</option>";
-        selectedWards.forEach(function (ward) {
+        selectedWards.forEach(function(ward) {
             wardSelect.innerHTML += "<option value='" + ward + "'>" + ward + "</option>";
         });
 
-      
-        var addressInput = document.getElementById('address');
+        if (selectedWard) {
+            wardSelect.value = selectedWard;
+        }
+
         var streetAddressInput = document.getElementById('street_address');
-        var selectedDistrictInfo = wards[selectedDistrict];
-        var defaultAddress = selectedDistrictInfo.length > 0 ? selectedDistrictInfo[0] : ''; 
-        addressInput.value = defaultAddress;
-        streetAddressInput.value = ''; 
+        var houseNumberInput = document.getElementById('house_number');
+
+        var defaultWard = selectedWards.length > 0 ? selectedWards[0] : '';
+        var defaultStreetAddress = ' ';
+        var defaultHouseNumber = ' ';
+        streetAddressInput.value = defaultStreetAddress;
+        houseNumberInput.value = defaultHouseNumber;
+
+        var selectedAddress = defaultHouseNumber + ', ' + defaultStreetAddress + ', ' + defaultWard + ', ' + selectedDistrict;
+        var addressInput = document.getElementById('address');
+        addressInput.value = selectedAddress;
     }
 </script>
 
