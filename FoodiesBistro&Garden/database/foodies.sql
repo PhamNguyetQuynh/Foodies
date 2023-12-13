@@ -217,6 +217,18 @@ INSERT INTO `users` (`id`, `name`, `email`,`phone`, `password`, `role_as`, `crea
 (6, 'admin', 'admin@gmail.com', '2222222', '123', 1, '2023-11-16 13:44:47');
 COMMIT;
 
+DROP TABLE IF EXISTS `reservations`;
+CREATE TABLE IF NOT EXISTS `reservations` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) NOT NULL,
+  `phone` varchar(191) NOT NULL,
+  `adult` int NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `note` varchar(500),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
