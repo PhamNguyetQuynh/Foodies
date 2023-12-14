@@ -30,7 +30,7 @@
               <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'contactUs.php') ? 'active' : ''; ?>" style="width:110px;" href="contactUs.php">Contact Us</a> <!-- Check ref -->
             </li>
             <li class="nav-item">
-              <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'contactUs.php') ? 'active' : ''; ?>" style="width:110px;" href="contactUs.php">Reservation</a> <!-- Thêm ref -->
+              <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'reservation.php') ? 'active' : ''; ?>" style="width:110px;" href="reservation.php">Reservation</a> <!-- Thêm ref -->
             </li>
             <li class="nav-item">
               <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'category.php') ? 'active' : ''; ?>" style="width:100px;" href="category.php">Our Menu </a>
