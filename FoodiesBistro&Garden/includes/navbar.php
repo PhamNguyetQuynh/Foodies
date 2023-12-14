@@ -32,6 +32,10 @@
             <li class="nav-item">
               <a class="nav-link" href="cart.php">Cart</a>
             </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservation.php">Reservation</a>
+            </li>
           </ul>
 
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
