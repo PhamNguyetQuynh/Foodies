@@ -20,6 +20,6 @@ a{
     background-repeat: no-repeat;
     overflow: hidden;
   }
-td {
+/* td {
     display: flex !important;
-}
+} */
