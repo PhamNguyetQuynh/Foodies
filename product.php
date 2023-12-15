@@ -30,7 +30,7 @@ if (isset($_GET['category'])) {
                                             <div class="card bg-brown shadow-lg mb-5 rounded border-0">
                                                 <div class="card-body p-0">
                                                     <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
-                                                    <h5 class="text-center text-white mt-sm-3 mb-sm-3"><?= $item['name'];  ?></h4>
+                                                    <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder" style="color: #8B4513;"><?= $item['name'];  ?></h4>
                                                 </div>
                                             </div>
                                         </a>
