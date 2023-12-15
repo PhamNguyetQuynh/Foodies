@@ -43,7 +43,7 @@
                 <p class="text-break">
                     Welcome to FOODIES, where culinary excellence meets a diverse tapestry of flavors! We are passionate about bringing together a myriad of tastes from around the world to create a gastronomic experience that transcends borders. Our journey began with a simple yet profound idea: to connect people through the universal language of food. Whether you're a seasoned foodie or just beginning your culinary adventure, we invite you to explore the rich and varied offerings that make up our food web.
                 </p>
-                <a href="aboutUs.php" class="btn btn-primary btn btn-danger float-end" role="button" data-bs-toggle="button">Read More</a>
+                <a href="aboutUs.php" class="btn btn-primary btn btn-danger float-end" role="button" >Read More</a>
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
                 <h4 class="text-white">Foodies Bistro & Garden</h4>
                 <div class="underline mb-2"> </div>
                 <a href="index.php" class="text-white">Home</a> <br>
-                <a href="#" class="text-white">About Us</a><br>
+                <a href="aboutUs.php" class="text-white">About Us</a><br>
                 <a href="category.php" class="text-white">Our Menu</a> <br>
             </div>
             <div class="col-md-4">

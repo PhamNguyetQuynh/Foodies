@@ -2,12 +2,15 @@
 include('./functions/userFunctions.php');
 include('./includes/header.php'); ?>
 
-<img class="img-fluid opacity-25 position-absolute" src="uploads/wp10509681.jpg">
+
+<img class=" opacity-25 position-absolute w-100 h-100" src="uploads/wp10509681.jpg" alt="Image">
+
+
 <div class="py-4 position-relative">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Our Menu</h1>
+                <h1 class="display-1 fw-bold text-center" style="color: #957B3F;">Our Menu</h1>
                 <hr>
                 <div class="row">
                     <?php
@@ -20,7 +23,11 @@ include('./includes/header.php'); ?>
                                     <div class="card bg-brown shadow-lg mb-5 rounded border-0">
                                         <div class="card-body p-0">
                                             <img src="uploads/<?= $item['image']; ?>" alt="Category Image" class="w-100">
-                                            <h4 class="text-center text-white mt-sm-3 mb-sm-3"><?= $item['name'];  ?></h4>
+                                            <div>
+                                                <h4 class="fw-bolder d-flex justify-content-center" style="color: #8B4513;"><?= $item['name']; ?></h4>
+
+                                            </div>
+
                                         </div>
                                     </div>
                                 </a>
@@ -41,5 +48,6 @@ include('./includes/header.php'); ?>
         </div>
     </div>
 </div>
+
 
 <?php include('./includes/footer.php') ?>

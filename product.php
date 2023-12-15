@@ -2,7 +2,7 @@
 include('./functions/userFunctions.php');
 include('./includes/header.php');
 ?>
-<img class="img-fluid opacity-25 position-absolute" src="uploads/wp10509681.jpg">
+<img class="img-fluid opacity-25 position-absolute w-100 h-100" src="uploads/wp10509681.jpg">
 <?php
 if (isset($_GET['category'])) {
 
