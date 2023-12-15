@@ -10,10 +10,11 @@ if (!isset($_SESSION['auth'])) {
     exit();
 }
 
+
 // Lấy thông tin người dùng từ session
 $user = $_SESSION['auth_user'];
 $email=$_SESSION['auth_user']['email'];
-
+$image = '';
 
 // Xử lý form cập nhật thông tin
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
