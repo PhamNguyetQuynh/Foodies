@@ -9,7 +9,7 @@ include('./includes/header.php');
             <div class="card">
                 <div class="card-header bg-primary">
                     <h4 class="text-white">
-                        Order History
+                        Reservations History
                         <a href="reservation.php" class="btn btn-warning float-end">Back</a>
                     </h4>
                 </div>
@@ -33,9 +33,9 @@ include('./includes/header.php');
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $orders = getAllReservations();
-                                            if (mysqli_num_rows($orders) > 0) {
-                                                foreach ($orders as $item) {
+                                            $reservations = getAllReservations();
+                                            if (mysqli_num_rows($reservations) > 0) {
+                                                foreach ($reservations as $item) {
                                             ?>
                                                     <tr>
                                                         <td class="align-middle"><?= $item['name']; ?></td>
@@ -65,11 +65,11 @@ include('./includes/header.php');
                                                         }
                                                         else if($item['status']=="0"){?>
                                                             <td class="align-middle text-bold">
-                                                                <span class="badge-sm text-danger">CANCELED</span>
+                                                                <span class="badge-sm text-danger">CANCELLED</span>
                                                             </td>
                                                         <?php
                                                         }?>
-                                                        <td class="align-content-center align-middle justify-content-center "><a href="viewOrderDetail.php?t=<?= $item['tracking_no']; ?>" class="mg-0 btn btn-primary">View Details</a></td>
+                                                        <td class="align-content-center align-middle justify-content-center "><a href="updateReservation.php?id=<?= $item['id']; ?>" class="mg-0 btn btn-success">Update</a></td>
                                                     </tr>
 
                                                 <?php

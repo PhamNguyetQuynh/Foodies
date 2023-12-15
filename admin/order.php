@@ -23,11 +23,10 @@ include('./includes/header.php');
                                             <tr>
                                                 <th class="ps-2">ID</th>
                                                 <th class="ps-2">User Name</th>
-                                                <th class="ps-2">Tracking No</th>
                                                 <th class="ps-2">Total Price</th>
                                                 <th class="ps-2">Date</th>
-                                                <th class="ps-2">Status</th>
-                                                <th class="ps-2">View</th>
+                                                <th class="ps-2 text-center">Status</th>
+                                                <th class="ps-2 text-center">View</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -39,13 +38,12 @@ include('./includes/header.php');
                                                     <tr>
                                                         <td class="align-middle"><?= $item['id']; ?></td>
                                                         <td class="align-middle"><?= $item['name']; ?></td>
-                                                        <td class="align-middle"><?= $item['tracking_no']; ?></td>
                                                         <td class="align-middle"><?= $item['total_price']; ?></td>
                                                         <td class="align-middle"><?= $item['created_at']; ?></td>
-                                                        <td class="align-middle text-bold">
+                                                        <td class="text-center align-middle text-bold">
                                                             <span class="badge-sm text-warning">ON GOING</span>
                                                         </td>
-                                                        <td><a href="viewOrderDetail.php?t=<?= $item['tracking_no']; ?>" class="btn btn-info">View Details</a></td>
+                                                        <td class="text-center align-middle"><a href="viewOrderDetail.php?t=<?= $item['tracking_no']; ?>" class="btn btn-info">View Details</a></td>
 
                                                     </tr>
 

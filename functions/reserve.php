@@ -22,9 +22,8 @@ if (isset($_POST['reserveBtn'])) {
     $date = mysqli_real_escape_string($conn, $_POST['date']);
     $time = mysqli_real_escape_string($conn, $_POST['time']);
     $note = mysqli_real_escape_string($conn, $_POST['note']);
-    $tracking_no = generateUniqueId();
 
-    $insert_query = "INSERT INTO reservations(name, tracking_no, phone, adult, date, time, note) VALUES('$name','$tracking_no','$phone','$adult','$date','$time','$note')";
+    $insert_query = "INSERT INTO reservations(name, phone, adult, date, time, note) VALUES('$name','$phone','$adult','$date','$time','$note')";
     $insert_query_run = mysqli_query($conn, $insert_query);
 
     if ($insert_query_run) {

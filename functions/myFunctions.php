@@ -141,7 +141,7 @@ function sendPasswordResetEmail($get_name, $get_email, $token)
 function getOnGoingReservations()
 {
     global $conn;
-    $query = "SELECT * FROM reservations WHERE status='0' OR status='1'";
+    $query = "SELECT * FROM reservations WHERE status='1' OR status='2'";
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
@@ -151,6 +151,12 @@ function getAllReservations()
     $query = "SELECT * FROM reservations";
     $query_run = mysqli_query($conn, $query);
     return $query_run;
+}
+function checkReservationTrackingNoExist($trackingNo)
+{
+    global $conn;
+    $query="SELECT * FROM reservations WHERE tracking_no='$trackingNo'";
+    return mysqli_query($conn, $query);
 }
 
 

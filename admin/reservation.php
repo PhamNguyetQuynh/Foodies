@@ -33,9 +33,9 @@ include('./includes/header.php');
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $orders = getOnGoingReservations();
-                                            if (mysqli_num_rows($orders) > 0) {
-                                                foreach ($orders as $item) {
+                                            $reservation = getOnGoingReservations();
+                                            if (mysqli_num_rows($reservation) > 0) {
+                                                foreach ($reservation as $item) {
                                             ?>
                                                     <tr>
                                                         <td class="align-middle"><?= $item['name']; ?></td>
@@ -58,7 +58,7 @@ include('./includes/header.php');
                                                         <?php
                                                         }
                                                         ?>
-                                                        <td><a href="viewOrderDetail.php?t=<?= $item['tracking_no']; ?>" class="btn btn-info">View Details</a></td>
+                                                        <td><a href="updateReservation.php?id=<?= $item['id']; ?>" class="mg-0 btn btn-success">Update</a></td>
                                                     </tr>
 
                                                 <?php
