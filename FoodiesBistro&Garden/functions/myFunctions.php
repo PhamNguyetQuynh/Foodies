@@ -89,7 +89,8 @@ function sendRegistrationEmail($name, $email, $verification_code)
         $mail->Body = $mail_template;
 
         $mail->send();
-        echo 'Email has been sent'; 
+        $_SESSION['message'] = "Email has been sent. Please check your email.";
+        header("Location: ../login.php");
         return true;
      
     } catch (Exception $e) {
