@@ -124,8 +124,8 @@ if (isset($_POST['momoQRBtn'])) {
     $orderInfo = "Thanh toán qua mã QR Momo";
     $amount = "10000";
     $orderId = time() . "";
-    $redirectUrl = "http://localhost/Foodies-1/FoodiesBistro&Garden/checkout.php";
-    $ipnUrl = "http://localhost/Foodies-1/FoodiesBistro&Garden/checkout.php";
+    $redirectUrl = "http://localhost:8080/Foodies/checkout.php";
+    $ipnUrl = "http://localhost/Foodies/checkout.php";
     $extraData = "";
 
     $requestId = time() . "";
