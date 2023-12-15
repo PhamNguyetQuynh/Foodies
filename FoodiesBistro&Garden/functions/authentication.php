@@ -94,7 +94,7 @@ if (isset($_POST['registerBtn'])) {
                 redirect("../index.php", "Logged in");
             }
         } else {
-            // Người dùng chưa xác minh email
+            // verify email
             redirect("../login.php", "You need to verify your email first");
         }
     } else {
@@ -165,7 +165,7 @@ if (isset($_POST["updatePasswordBtn"]))
                     {
                         // update verification_code
                         $new_verification_code= sprintf('%06d', mt_rand(0, 999999));
-                        $update_new_verification_code = "UPDATE users SET verification_code= '$new_verification_code' WHERE verification_code='$token' LIMIT 1";
+                        $update_new_verification_code = "UPDATE users SET verification_code= '$new_verification_code', verify_status = '1' WHERE verification_code='$token' LIMIT 1";
                         $update_new_verification_code_run = mysqli_query($conn, $update_new_verification_code);
 
                         $_SESSION['message'] = "New Password Update Successfully!!";
