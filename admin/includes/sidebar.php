@@ -2,25 +2,25 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="./assets/css/custom.css" rel="stylesheet">
-    <link href="./assets/css/owl.theme.default.min.css" rel="stylesheet">
-    <link href="./assets/css/owl.carousel.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- alertify js -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+  <!-- Bootstrap CSS -->
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="./assets/css/custom.css" rel="stylesheet">
+  <link href="./assets/css/owl.theme.default.min.css" rel="stylesheet">
+  <link href="./assets/css/owl.carousel.min.css" rel="stylesheet">
 
-    <title>Foodies Bistro & Garden</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- alertify js -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+
+  <title>Foodies Bistro & Garden</title>
 </head>
 
 
@@ -99,21 +99,22 @@ $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], "/") + 
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white <?= $page == "reservation.php" ? 'active bg-gradient-primary' : ''  ?>" href="reservation.php">
-          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">table_view</i>
-          </div>
-          <span class="nav-link-text ms-1">Reservations</span>
-        </a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link text-white <?= $page == "addReservation.php" ? 'active bg-gradient-primary' : ''  ?>" href="addReservation.php">
           <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">add</i>
           </div>
-          <span class="nav-link-text ms-1">Add new Reservation</span>
+          <span class="nav-link-text ms-1">Add Reservation</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link text-white <?= $page == "reservation.php" ? 'active bg-gradient-primary' : ''  ?>" href="reservation.php">
+          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="material-icons opacity-10">table_view</i>
+          </div>
+          <span class="nav-link-text ms-1">All Reservations</span>
+        </a>
+      </li>
+
     </ul>
   </div>
   <div class="sidenav-footer position-absolute w-100 bottom-0 ">
