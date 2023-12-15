@@ -234,6 +234,24 @@ CREATE TABLE IF NOT EXISTS `messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reservations`
+--
+
+DROP TABLE IF EXISTS `reservations`;
+CREATE TABLE IF NOT EXISTS `reservations` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) NOT NULL,
+  `phone` varchar(191) NOT NULL,
+  `adult` int NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `note` varchar(500),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -248,3 +266,9 @@ UPDATE `users` SET `image` = 'default.jpg' WHERE `image` IS NULL OR `image` = ''
 
 -- Hiển thị cấu trúc và dữ liệu của bảng `users` sau khi thực hiện cập nhật
 SELECT * FROM `users`;
+
+ALTER TABLE `users`
+ADD COLUMN `verification_code` VARCHAR(6) DEFAULT NULL AFTER `image`;
+
+ALTER TABLE `users`
+ADD COLUMN `verify_status` TINYINT(2) DEFAULT 0 COMMENT '0=no, 1=yes' AFTER `verification_code`;
