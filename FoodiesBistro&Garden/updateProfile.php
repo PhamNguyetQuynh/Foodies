@@ -20,7 +20,7 @@ $image = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
-    $image = $_POST["image"];
+    $image = $_FILES['avatar']['name'];
    
 
 
@@ -30,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($conn->query($sql) === TRUE) {
     
-            if (isset($_SESSION['auth'])) {
+            {if (isset($_SESSION['auth'])) {
     
     $_SESSION['message']="Record updated successfully";
-}
+}  
         // Cập nhật thông tin người dùng trong session
         $_SESSION['auth_user']['name'] = $name;
   
@@ -65,12 +65,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 echo "Error: File not found!";
             }
-        }
+        }}
     } else {
         echo "Error updating record: " . $conn->error;
     }
     
 }
+
 
 ?>
 

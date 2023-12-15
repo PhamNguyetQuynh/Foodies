@@ -183,8 +183,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(191) NOT NULL,
   `email` varchar(191) NOT NULL,
   `phone`  varchar(191) NOT NULL,
+  `image` VARCHAR(191) DEFAULT 'default.jpg',
   `password` varchar(191) NOT NULL,
   `role_as` tinyint NOT NULL DEFAULT '0',
+  
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -204,8 +206,7 @@ COMMIT;
 
 /*INSERT IMAGE*/
 -- Thêm trường `image` vào bảng `users`
-ALTER TABLE `users`
-ADD COLUMN `image` VARCHAR(191) DEFAULT 'default.jpg' AFTER `phone`;
+
 
 -- Cập nhật dữ liệu cho người dùng hiện tại
 UPDATE `users` SET `image` = 'default.jpg' WHERE `image` IS NULL OR `image` = '';
