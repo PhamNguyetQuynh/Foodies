@@ -179,6 +179,7 @@ $hcm_districts = array(
 
 <?php include('./includes/footer.php') ?>
 
+<?php include('./includes/footer.php') ?>
 <!-- Replace the "test" client-id value with your client-id -->
 <script src="https://www.paypal.com/sdk/js?client-id=AVz3lHrq_vQjrPadRGvrRswIvHAq2OuJ0qq-ynQS2Y-FjcvtrxrS9Z95HK2BHozkc6FZu0TGgDhlgvMm&currency=USD"></script>
 <script>
@@ -187,49 +188,62 @@ $hcm_districts = array(
             var name = $('#name').val();
             var email = $('#email').val();
             var phone = $('#phone').val();
-            var selectedAddress = $('#address').val();
+            var address = $('#address').val();
             if (name.length == 0) {
+                // alert("name is required");
                 $('.name').text("*This field is required");
             } else {
                 $('.name').text("");
             }
             if (email.length == 0) {
+                // alert("name is required");
                 $('.email').text("*This field is required");
             } else {
                 $('.email').text("");
             }
             if (phone.length == 0) {
+                // alert("name is required");
                 $('.phone').text("*This field is required");
             } else {
                 $('.phone').text("");
             }
-            if (name.length == 0 || email.length == 0 || phone.length == 0 || selectedAddress.length == 0) {
+            if (address.length == 0) {
+                // alert("name is required");
+                $('.address').text("*This field is required");
+            } else {
+                $('.address').text("");
+            }
+            if (name.length == 0 || email.length == 0 || phone.length == 0 || address.length == 0) {
                 return false;
             }
+
         },
+        //set up the transactions when a payment button is clicked
         createOrder: (data, actions) => {
             return actions.order.create({
                 purchase_units: [{
                     amount: {
+                        // value: '<?= $totalPrice ?>'
                         value: '0.1'
                     }
                 }]
             });
         },
+        //finalize the transaction after paer approval
         onApprove: (data, actions) => {
             return actions.order.capture().then(function(orderData) {
                 const transaction = orderData.purchase_units[0].payments.captures[0];
                 var name = $('#name').val();
                 var email = $('#email').val();
                 var phone = $('#phone').val();
-                var selectedAddress = $('#address').val();
-                var comments = $('#comments').val();
+                var address = $('#address').val();
+                var comments = $('#comments').val(); // Include the comments field
                 var data = {
                     'name': name,
                     'email': email,
                     'phone': phone,
-                    'address': selectedAddress,
-                    'comments': comments,
+                    'address': address,
+                    'comments': comments, // Add this line for the comments field
                     'payment_mode': "Paid by PayPal",
                     'payment_id': transaction.id,
                     'placeOrderBtn': true,
@@ -243,7 +257,12 @@ $hcm_districts = array(
                         if (response == 201) {
                             alertify.success("Order Placed Successfully");
                             window.location.href = 'myOrder.php';
+                            $email=email;
+                            $subject='Order Placed Successfully';
+                            $content='Dear our beloved customer, <br><br> Thank you for supporting us. Hope you like it! ';
+                           sendRegistrationEmail($name, $email,$subject,$content);
                         }
+                        
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.error('AJAX Error:', textStatus, errorThrown);
@@ -251,5 +270,9 @@ $hcm_districts = array(
                 });
             });
         }
+
+
+
+
     }).render('#paypal-button-container');
 </script>

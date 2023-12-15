@@ -248,3 +248,9 @@ UPDATE `users` SET `image` = 'default.jpg' WHERE `image` IS NULL OR `image` = ''
 
 -- Hiển thị cấu trúc và dữ liệu của bảng `users` sau khi thực hiện cập nhật
 SELECT * FROM `users`;
+
+ALTER TABLE `users`
+ADD COLUMN `verification_code` VARCHAR(6) DEFAULT NULL AFTER `image`;
+
+ALTER TABLE `users`
+ADD COLUMN `verify_status` TINYINT(2) DEFAULT 0 COMMENT '0=no, 1=yes' AFTER `verification_code`;

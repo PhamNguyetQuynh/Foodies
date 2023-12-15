@@ -1,10 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['auth'])) {
-    $_SESSION['message'] = "You are already logged in";
-    header('location: index.php');
-    exit(); //the page will not continue after this line
-}
+
 include('./includes/header.php') ?>
 <div class="py-5">
     <div class="container">
@@ -21,23 +17,28 @@ include('./includes/header.php') ?>
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>Login</h4>
+                        <h4>Change Password</h4>
                     </div>
                     <div class="card-body">
                         <form action="functions/authentication.php" method="POST">
+
+                            <input type="hidden" name="passwordToken" value="<?php if(isset($_GET['token'])){echo $_GET['token'];} ?>">
+
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email">
+                                <input type="email" name="email" value="<?php if(isset($_GET['email'])){echo $_GET['email'];} ?>" class="form-control" id="exampleInputEmail1" placeholder="Enter your email">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
+                                <label for="InputResetPassword" class="form-label">New Password</label>
+                                <input type="password" name="newPassword" class="form-control" placeholder="Enter your new password">
                             </div>
-                            <button type="submit" name="loginBtn" class="btn btn-primary">Login</button>
-                            <a href="passwordReset.php" class="float-end"> Forgot Password </a>
+                            <div class="mb-3">
+                                <label for="ConfirmNewPassword" class="form-label"> Confirm Password</label>
+                                <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm your new password">
+                            </div>
+                            <button type="submit" name="updatePasswordBtn" class="btn btn-primary">Update Password</button>
                         </form>
                     </div>
-
                 </div>
 
             </div>
