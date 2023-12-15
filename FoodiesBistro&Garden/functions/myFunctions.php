@@ -83,7 +83,7 @@ function sendRegistrationEmail($name, $email, $verification_code)
             <h2> You have Registered with Foodies </h2>
             <h5> Verify your email address to Login with the below given link </h5>
             <br/><br/>
-            <a href ='http://localhost/IS207/1/emaillll/Foodies/FoodiesBistro&Garden/verifyEmail.php?token=$verification_code'> Click me </a>
+            <a href ='http://localhost:8080/Foodies/FoodiesBistro&Garden/verifyEmail.php?token=$verification_code'> Click me </a>
         ";
 
         $mail->Body = $mail_template;
