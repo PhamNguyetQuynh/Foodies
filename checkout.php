@@ -132,7 +132,7 @@ $hcm_districts = array(
                         <h5>Total Price: <span class="float-end mx-5 fw-bold"><?= $totalPrice ?>vnd</span></h5>
                         <div class="">
                             <input type="hidden" name="payment_mode" value="COD">
-                            <button type="submit" name="placeOrderBtn" class="btn btn-success w-100" onclick="return validateAddress();">
+                            <button type="submit" name="placeOrderBtn" class="btn btn-success w-100">
                                 Confirm and place order | COD
                             </button>
                             <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded">
@@ -178,8 +178,6 @@ $hcm_districts = array(
 
 
 <?php include('./includes/footer.php') ?>
-
-<?php include('./includes/footer.php') ?>
 <!-- Replace the "test" client-id value with your client-id -->
 <script src="https://www.paypal.com/sdk/js?client-id=AVz3lHrq_vQjrPadRGvrRswIvHAq2OuJ0qq-ynQS2Y-FjcvtrxrS9Z95HK2BHozkc6FZu0TGgDhlgvMm&currency=USD"></script>
 <script>
@@ -188,7 +186,11 @@ $hcm_districts = array(
             var name = $('#name').val();
             var email = $('#email').val();
             var phone = $('#phone').val();
-            var address = $('#address').val();
+            var houseNumber = $('#house_number').val();
+            var streetAddress = $('#street_address').val();
+            var ward = $('#ward').val();
+            var district = $('#district').val();
+            var address = houseNumber + ', ' + streetAddress + ', ' + ward + ', ' + district;
             if (name.length == 0) {
                 // alert("name is required");
                 $('.name').text("*This field is required");
@@ -229,15 +231,26 @@ $hcm_districts = array(
                 }]
             });
         },
-        //finalize the transaction after paer approval
+        // finalize the transaction after paper approval
         onApprove: (data, actions) => {
             return actions.order.capture().then(function(orderData) {
                 const transaction = orderData.purchase_units[0].payments.captures[0];
+
+                // Get the selected district and ward
+                var selectedDistrict = $('#district').val();
+                var selectedWard = $('#ward').val();
+
+                // Call loadWards function to set the address
+                loadWards(selectedDistrict, selectedWard);
+
+                // Now you can use the updated address
+                var address = $('#address').val();
+
                 var name = $('#name').val();
                 var email = $('#email').val();
                 var phone = $('#phone').val();
-                var address = $('#address').val();
                 var comments = $('#comments').val(); // Include the comments field
+
                 var data = {
                     'name': name,
                     'email': email,
@@ -256,13 +269,13 @@ $hcm_districts = array(
                     success: function(response) {
                         if (response == 201) {
                             alertify.success("Order Placed Successfully");
+
+                            $email = email;
+                            $subject = 'Order Placed Successfully';
+                            $content = 'Dear our beloved customer, <br><br> Thank you for supporting us. Hope you like it! ';
+                            sendRegistrationEmail($name, $email, $subject, $content);
                             window.location.href = 'myOrder.php';
-                            $email=email;
-                            $subject='Order Placed Successfully';
-                            $content='Dear our beloved customer, <br><br> Thank you for supporting us. Hope you like it! ';
-                           sendRegistrationEmail($name, $email,$subject,$content);
                         }
-                        
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.error('AJAX Error:', textStatus, errorThrown);

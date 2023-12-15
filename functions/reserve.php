@@ -13,7 +13,7 @@ if (isset($_POST['reserveBtn'])) {
     $insert_query_run = mysqli_query($conn, $insert_query);
 
     if ($insert_query_run) {
-        $_SESSION['message'] = 'Reserved successfully';
+        $_SESSION['message'] = 'Reserved successfully. We will contact with you in a minute!';
         header('location: ../reservation.php');
     } else {
         $_SESSION['message'] = 'Something went wrong';
