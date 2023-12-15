@@ -50,7 +50,7 @@ include('./includes/header.php');
             <p class="d-flex justify-content-center text-center fw-bolder">Explore our website today and experience the magic of Chef Atonio's cuisine.</p>
         </div>
         <div class="row">
-            <a href="category.php" class="btn btn-danger btn-hover-bg-shade-amount" role="button" data-bs-toggle="button">Explore Our Menu</a>
+            <a href="category.php" class="btn btn-danger btn-hover-bg-shade-amount" role="button">Explore Our Menu</a>
         </div>
     </div>
 </div>
@@ -105,13 +105,13 @@ include('./includes/header.php');
                 <h3 class="fw-bolder d-flex justify-content-center"> Our Mission </h3>
             </div>
             <div class="row">
-            <p class="d-flex justify-content-center text-center">We are committed to providing our guests with a warm and welcoming atmosphere, excellent service, and a menu that features something for everyone. We want our restaurant to be a place where people come to celebrate special occasions, enjoy a meal with family and friends, or simply relax and enjoy a delicious Italian meal.</p>
+                <p class="d-flex justify-content-center text-center">We are committed to providing our guests with a warm and welcoming atmosphere, excellent service, and a menu that features something for everyone. We want our restaurant to be a place where people come to celebrate special occasions, enjoy a meal with family and friends, or simply relax and enjoy a delicious Italian meal.</p>
             </div>
         </div>
         <div class="col-md-7">
             <div class="row"></div>
             <div class="row">
-            <img src="./assets/img/mission.svg" alt="mission">
+                <img src="./assets/img/mission.svg" alt="mission">
             </div>
         </div>
     </div>
