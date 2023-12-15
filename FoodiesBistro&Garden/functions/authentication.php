@@ -66,28 +66,36 @@ if (isset($_POST['registerBtn'])) {
     $login_query_run = mysqli_query($conn, $login_query);
 
     if (mysqli_num_rows($login_query_run) > 0) {
-        $_SESSION['auth'] = true;
+        //$_SESSION['auth'] = true;
         $userdata = mysqli_fetch_array($login_query_run);
 
         
-        $userid = $userdata['id'];
-        $username = $userdata['name'];
-        $useremail = $userdata['email'];
-        $userphone = $userdata['phone'];
-        $role_as = $userdata['role_as'];
+        if ($userdata['verify_status'] == 1) {
+            $_SESSION['auth'] = true;
 
-        $_SESSION['auth_user'] = [
-            'user_id' => $userid,
-            'name' => $username,
-            'email' => $useremail,
-            'phone'=>$userphone
-        ];
-        $_SESSION['role_as'] = $role_as;
-        //1==admin
-        if ($role_as == 1) {
-            redirect("../admin/index.php", "Welcome to dashboard");
+            $userid = $userdata['id'];
+            $username = $userdata['name'];
+            $useremail = $userdata['email'];
+            $userphone = $userdata['phone'];
+            $role_as = $userdata['role_as'];
+
+            $_SESSION['auth_user'] = [
+                'user_id' => $userid,
+                'name' => $username,
+                'email' => $useremail,
+                'phone' => $userphone
+            ];
+            $_SESSION['role_as'] = $role_as;
+
+            // 1==admin
+            if ($role_as == 1) {
+                redirect("../admin/index.php", "Welcome to dashboard");
+            } else {
+                redirect("../index.php", "Logged in");
+            }
         } else {
-            redirect("../index.php", "Logged in");
+            // Người dùng chưa xác minh email
+            redirect("../login.php", "You need to verify your email first");
         }
     } else {
         redirect("../login.php", "Invalid");
