@@ -30,7 +30,9 @@ $user = $_SESSION['auth_user'];
                         <h4 class="mb-0">My Profile</h4>
                     </div>
                     <div class="card-body text-center">
-                        <img src="<?= isset($user['image']) ? './avt-image/' . $user['image'] : './avt-image/avt.jpg'; ?>" alt="Avatar" class="rounded-circle avatar-img mb-4 user-profile-avatar">
+
+
+                        <img src="<?= isset($user['image']) && $user['image'] === 'default.jpg'? './avt-image/avt.jpg':'./avt-image/' . $user['image']  ; ?>" alt="Avatar" class="rounded-circle avatar-img mb-4 user-profile-avatar">
                         <h5 class="card-title"><?= $user['name']; ?></h5>
                     </div>
                     <div class="card-body">
