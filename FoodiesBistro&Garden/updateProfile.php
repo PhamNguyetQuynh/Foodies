@@ -19,6 +19,7 @@ $email=$_SESSION['auth_user']['email'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
+    $image = $_POST["image"];
    
 
 
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "UPDATE users SET name='$name', email='$email', phone='$phone' WHERE id=" . $user['user_id'];
 
     if ($conn->query($sql) === TRUE) {
-        session_start();
+    
             if (isset($_SESSION['auth'])) {
     
     $_SESSION['message']="Record updated successfully";
