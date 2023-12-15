@@ -194,6 +194,43 @@ if (isset($_POST['add_category_btn'])) {
     $update_order_query_run = mysqli_query($conn, $update_order_query);
     redirect("viewOrderDetail.php?t=$track_no", "Order status updated successfully");
 
+} else if (isset($_POST['update_reservation_btn'])) {
+    $id = $_POST['id'];
+
+    $name = $_POST['name'];
+    $adult = $_POST['adult'];
+    $phone = $_POST['phone'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+    $note = $_POST['note'];
+    $status = $_POST['status'];
+
+    $update_reservation_query = "UPDATE reservations SET name='$name',adult='$adult',phone='$phone',date='$date',time='time',
+    note='$note',status='$status' WHERE id='$id'";
+    $update_reservation_query_run = mysqli_query($conn, $update_reservation_query);
+
+    if ($update_reservation_query_run) {
+        redirect("updateReservation.php?id=$id", "Reservation updated successfully");
+    } else {
+        redirect("updateReservation.php?id=$id", "Something went wrong");
+    }
+} else if (isset($_POST['add_reservation_btn'])) {
+
+    $name = $_POST['name'];
+    $adult = $_POST['adult'];
+    $phone = $_POST['phone'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+    $note = $_POST['note'];
+    $status = 2;
+
+    $reservation_query = "INSERT INTO reservations (name,phone,adult,date,time,note,status) VALUES ('$name','$phone','$adult','$date', '$time', '$note', '$status')";
+    $reservation_query_run = mysqli_query($conn, $reservation_query);
+    if ($reservation_query_run) {
+        redirect("reservation.php", "Reservation Added Successfully");
+    } else {
+        redirect("reservation.php", "Something went wrong");
+    }
 } else {
     header('location: ../index.php');
 }

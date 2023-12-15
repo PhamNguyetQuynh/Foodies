@@ -105,7 +105,7 @@ include('./includes/header.php');
                                     <!-- Add more form fields here with appropriate Bootstrap spacing classes -->
                                 </div>
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-warning" name="update_product_btn">Update</button>
+                                    <button type="submit" class="btn btn-warning btn-lg" name="update_product_btn">Update</button>
                                     <a href="product.php" class="btn btn-outline-warning float-end">Back</a>
                                 </div>
                             </form>
