@@ -30,7 +30,8 @@ include('./includes/header.php') ?>
                             </div>
                             <div class="mb-3">
                                 <label for="InputResetPassword" class="form-label">New Password</label>
-                                <input type="password" name="newPassword" class="form-control" placeholder="Enter your new password">
+                                <input type="password" name="newPassword" class="form-control" placeholder="Enter your new password" 
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character">
                             </div>
                             <div class="mb-3">
                                 <label for="ConfirmNewPassword" class="form-label"> Confirm Password</label>

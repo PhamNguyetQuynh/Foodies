@@ -35,7 +35,10 @@ if (isset($_POST['registerBtn'])) {
             //         $insert_query = "INSERT INTO users(name, email, phone, password) VALUES('$name','$email','$phone','$password')";
             //         $insert_query_run = mysqli_query($conn, $insert_query);
 
-            $insert_query = "INSERT INTO users(name, email, phone, password, verification_code) VALUES('$name','$email','$phone','$password','$verification_code')";
+            // Hash the password before storing it in the database
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+            $insert_query = "INSERT INTO users(name, email, phone, password, verification_code) VALUES('$name','$email','$phone','$hashedPassword','$verification_code')";
             $insert_query_run = mysqli_query($conn, $insert_query);    
             //insert
           
@@ -62,42 +65,50 @@ if (isset($_POST['registerBtn'])) {
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
 
-    $login_query = "SELECT* FROM users WHERE email='$email' AND password='$password'";
+    $login_query = "SELECT * FROM users WHERE email='$email'";
     $login_query_run = mysqli_query($conn, $login_query);
+
 
     if (mysqli_num_rows($login_query_run) > 0) {
         //$_SESSION['auth'] = true;
         $userdata = mysqli_fetch_array($login_query_run);
+        $hashedPassword = $userdata['password'];
+        $verifyStatus = $userdata['verify_status'];
 
         
-        if ($userdata['verify_status'] == 1) {
-            $_SESSION['auth'] = true;
+        if (password_verify($password, $hashedPassword)) {
+            if ($verifyStatus == 1) {
+                $_SESSION['auth'] = true;
 
-            $userid = $userdata['id'];
-            $username = $userdata['name'];
-            $useremail = $userdata['email'];
-            $userphone = $userdata['phone'];
-            $role_as = $userdata['role_as'];
+                $userid = $userdata['id'];
+                $username = $userdata['name'];
+                $useremail = $userdata['email'];
+                $userphone = $userdata['phone'];
+                $role_as = $userdata['role_as'];
 
-            $_SESSION['auth_user'] = [
-                'user_id' => $userid,
-                'name' => $username,
-                'email' => $useremail,
-                'phone' => $userphone
-            ];
-            $_SESSION['role_as'] = $role_as;
+                $_SESSION['auth_user'] = [
+                    'user_id' => $userid,
+                    'name' => $username,
+                    'email' => $useremail,
+                    'phone' => $userphone
+                ];
+                $_SESSION['role_as'] = $role_as;
 
-            // 1==admin
-            if ($role_as == 1) {
-                redirect("../admin/index.php", "Welcome to dashboard");
+                // 1==admin
+                if ($role_as == 1) {
+                    redirect("../admin/index.php", "Welcome to the dashboard");
+                } else {
+                    redirect("../index.php", "Logged in");
+                }
             } else {
-                redirect("../index.php", "Logged in");
+                // verify email
+                redirect("../login.php", "You need to verify your email first");
             }
         } else {
-            // verify email
-            redirect("../login.php", "You need to verify your email first");
+            redirect("../login.php", "Something went wrong");
         }
     } else {
+        // invalid
         redirect("../login.php", "Invalid");
     }
 }
@@ -158,7 +169,10 @@ if (isset($_POST["updatePasswordBtn"]))
             {
                 if ($newPassword == $confirmPassword)
                 {
-                    $update_password = "UPDATE users SET password= '$newPassword' WHERE verification_code='$token' LIMIT 1";
+                    // Hash the new password
+                    $hashednewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+                    $update_password = "UPDATE users SET password= '$hashednewPassword' WHERE verification_code='$token' LIMIT 1";
                     $update_password_run = mysqli_query($conn, $update_password);
 
                     if ($update_password_run)
