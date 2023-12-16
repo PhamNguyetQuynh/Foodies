@@ -6,6 +6,8 @@ if (isset($_SESSION['auth'])) {
     exit(); //the page will not continue after this line
 }
 include('./includes/header.php') ?>
+<div style="padding: 200px; padding-top: 10px; position: relative; background-color: rgba(255, 255, 255, 0.75);">
+    <img src="uploads/wp10509681.jpg" alt="Background Image" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;">
 <div class="py-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -21,7 +23,7 @@ include('./includes/header.php') ?>
 
                 <div class="card">
                     <div class="card-header">
-                        <h4>Register</h4>
+                    <h3 class="display-5 fw-bold" style="color:#957B3F;">Register</h3>
                     </div>
                     <div class="card-body">
                         <form action="functions/authentication.php" method="POST">
@@ -59,7 +61,7 @@ include('./includes/header.php') ?>
                                 <input type="password" name="cpassword" class="form-control" placeholder="Confirm password">
                             </div>
 
-                            <button type="submit" name="registerBtn" class="btn btn-primary">Submit</button>
+                            <button type="submit" name="registerBtn" class="btn btn-danger btn-hover-bg-shade-amount" role="button">Submit</button>
                         </form>
                     </div>
 

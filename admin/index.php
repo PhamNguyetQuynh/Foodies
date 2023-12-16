@@ -19,6 +19,11 @@ function getMessages()
 
 ?>
 <style>
+    @media (max-width: 768px) {
+  .sidebar {
+    display: block !important; /* Hiển thị sidebar khi màn hình nhỏ */
+  }
+}
     .table th,
     .table td {
         text-align: left;

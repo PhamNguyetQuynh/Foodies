@@ -180,6 +180,7 @@ $hcm_districts = array(
 <!-- Replace the "test" client-id value with your client-id -->
 <script src="https://www.paypal.com/sdk/js?client-id=AVz3lHrq_vQjrPadRGvrRswIvHAq2OuJ0qq-ynQS2Y-FjcvtrxrS9Z95HK2BHozkc6FZu0TGgDhlgvMm&currency=USD"></script>
 <script>
+    
     paypal.Buttons({
         onClick() {
             var name = $('#name').val();
@@ -268,7 +269,7 @@ $hcm_districts = array(
                     'payment_mode': "Paid by PayPal",
                     'payment_id': orderData.purchase_units[0].payments.captures[0].id,
                     'placeOrderBtn': true,
-                    'address': formattedAddress, // Include the formatted address
+                    'address':  formattedAddress, // Include the formatted address
                 };
 
                 // Send the combined data to the server
