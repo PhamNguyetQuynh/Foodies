@@ -109,6 +109,6 @@ if (isset($_SESSION['auth'])) {
             }
         }   
 } else {
-    echo 401;
+    echo 403;
 }
 }
