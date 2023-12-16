@@ -18,7 +18,6 @@ function generateUniqueId()
 
 if (isset($_SESSION['auth'])) {
     if (isset($_POST['placeOrderBtn'])) {
-
         $name = mysqli_real_escape_string($conn, $_POST['name']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
@@ -82,22 +81,18 @@ if (isset($_SESSION['auth'])) {
 
                 $new_qty = $current_qty - $product_qty;
 
-                $update_productQty_query = "UPDATE products SET qty=? WHERE id=?";
-                $stmt = $conn->prepare($update_productQty_query);
-                $stmt->bind_param('ii', $new_qty, $product_id);
-                $stmt->execute();
+                $update_productQty_query = "UPDATE products SET qty='$new_qty' WHERE id='$product_id' ";
+                $update_productQty_query_run = mysqli_query($conn, $update_productQty_query);
             }
-
-            $delete_cart_query = "DELETE FROM carts WHERE user_id=?";
-            $stmt = $conn->prepare($delete_cart_query);
-            $stmt->bind_param('i', $userID);
-            $stmt->execute();
-
+            // After placing the order, the cart needs to be emptied
+            $delete_cart_query = "DELETE FROM carts WHERE user_id='$userID'";
+            $delete_cart_query_run = mysqli_query($conn, $delete_cart_query);
             if ($payment_mode == "COD") {
                 $_SESSION['message'] = "Order placed successfully";
                 header('location: ../myOrder.php');
                 die();
             } else {
+                // Assume 201 is a success response for PayPal
                 echo 201;
             }
         }

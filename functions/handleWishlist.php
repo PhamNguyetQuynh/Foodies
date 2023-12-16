@@ -3,8 +3,10 @@ session_start();
 include('../config/dbconn.php');
 
 if (isset($_SESSION['auth'])) {
-    if (isset($_POST['scope'])) {
-        $scope = $_POST['scope'];
+    // Check if the user is not an admin (role_as != 1)
+    if ($_SESSION['role_as'] != 1) {
+        if (isset($_POST['scope'])) {
+            $scope = $_POST['scope'];
 
         switch ($scope) {
             case "add":
@@ -15,21 +17,23 @@ if (isset($_SESSION['auth'])) {
                 // $check_existing = "SELECT * FROM wishlist WHERE product_id='$product_id' AND user_id='$user_id'";
                 // $check_existing_run = mysqli_query($conn, $check_existing);
 
+                // Use Prepared Statements to prevent SQL injection
                 $check_existing_query = "SELECT * FROM wishlist WHERE product_id=? AND user_id=?";
-                $stmt = mysqli_prepare($conn, $check_existing_query);
-                mysqli_stmt_bind_param($stmt, 'ii', $product_id, $user_id);
-                mysqli_stmt_execute($stmt);
-                $check_existing_run = mysqli_stmt_get_result($stmt);
-                if (mysqli_num_rows($check_existing_run) > 0) {
+                $check_existing_stmt = $conn->prepare($check_existing_query);
+                $check_existing_stmt->bind_param('ii', $product_id, $user_id);
+                $check_existing_stmt->execute();
+                $check_existing_result = $check_existing_stmt->get_result();
+
+                if ($check_existing_result->num_rows > 0) {
                     echo "existing";
                 } else {
                     // $insert_query = "INSERT INTO wishlist (user_id, product_id, product_qty) VALUES ('$user_id','$product_id','$product_qty')";
                     // $insert_query_run = mysqli_query($conn, $insert_query);
 
                     $insert_query = "INSERT INTO wishlist (user_id, product_id, product_qty) VALUES (?, ?, ?)";
-                    $stmt = mysqli_prepare($conn, $insert_query);
-                    mysqli_stmt_bind_param($stmt, 'iii', $user_id, $product_id, $product_qty);
-                    $insert_query_run = mysqli_stmt_execute($stmt);
+                    $insert_stmt = $conn->prepare($insert_query);
+                    $insert_stmt->bind_param('iii', $user_id, $product_id, $product_qty);
+                    $insert_query_run = $insert_stmt->execute();
 
                     if ($insert_query_run) {
                         echo 201;
@@ -48,18 +52,19 @@ if (isset($_SESSION['auth'])) {
                 // $check_existing_run = mysqli_query($conn, $check_existing);
 
                 $check_existing_query = "SELECT * FROM wishlist WHERE id=? AND user_id=?";
-                $stmt = mysqli_prepare($conn, $check_existing_query);
-                mysqli_stmt_bind_param($stmt, 'ii', $wishlist_id, $user_id);
-                mysqli_stmt_execute($stmt);
-                $check_existing_run = mysqli_stmt_get_result($stmt);
+                $check_existing_stmt = $conn->prepare($check_existing_query);
+                $check_existing_stmt->bind_param('ii', $wishlist_id, $user_id);
+                $check_existing_stmt->execute();
+                $check_existing_result = $check_existing_stmt->get_result();
 
-                if (mysqli_num_rows($check_existing_run) > 0) {
+                if ($check_existing_result->num_rows > 0) {
                     // $delete_query = "DELETE FROM wishlist WHERE id='$wishlist_id'";
                     // $delete_query_run = mysqli_query($conn, $delete_query);
                     $delete_query = "DELETE FROM wishlist WHERE id=?";
-                    $stmt = mysqli_prepare($conn, $delete_query);
-                    mysqli_stmt_bind_param($stmt, 'i', $wishlist_id);
-                    $delete_query_run = mysqli_stmt_execute($stmt);
+                    $delete_stmt = $conn->prepare($delete_query);
+                    $delete_stmt->bind_param('i', $wishlist_id);
+                    $delete_query_run = $delete_stmt->execute();
+
                     if ($delete_query_run) {
                         echo 201;
                     } else {
@@ -72,6 +77,9 @@ if (isset($_SESSION['auth'])) {
             default:
                 echo 500;
         }
+    }
+} else {
+    echo 403; // Forbidden: Admins are not allowed to perform cart actions
     }
 } else {
     echo 401;

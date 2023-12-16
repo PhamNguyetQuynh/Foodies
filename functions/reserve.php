@@ -17,37 +17,32 @@ function generateUniqueId()
 }
 
 if (isset($_POST['reserveBtn'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-    $adult = mysqli_real_escape_string($conn, $_POST['adult']);
-    $date = mysqli_real_escape_string($conn, $_POST['date']);
-    $time = mysqli_real_escape_string($conn, $_POST['time']);
-    $note = mysqli_real_escape_string($conn, $_POST['note']);
+    if ($_SESSION['role_as'] != 1) {
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $adult = $_POST['adult'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+        $note = $_POST['note'];
 
-    // Sử dụng Prepared Statements để ngăn chặn SQL injection
-    $insert_query = "INSERT INTO reservations (name, phone, adult, date, time, note) VALUES (?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($insert_query);
+        // Sử dụng Prepared Statements để ngăn chặn SQL injection
+        $insert_query = "INSERT INTO reservations(name, phone, adult, date, time, note) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($insert_query);
+        $stmt->bind_param('ssssss', $name, $phone, $adult, $date, $time, $note);
 
-    // Kiểm tra lỗi trong quá trình chuẩn bị truy vấn
-    if ($stmt === false) {
-        die('Error during prepare: ' . htmlspecialchars($conn->error));
-    }
+        if ($stmt->execute()) {
+            $_SESSION['message'] = 'Reserved successfully. We will contact with you in a minute!';
+            header('location: ../reservation.php');
+        } else {
+            $_SESSION['message'] = 'Something went wrong';
+            header('location: ../reservation.php');
+        }
 
-    // Bind các giá trị và thực hiện truy vấn
-    $stmt->bind_param('ssisss', $name, $phone, $adult, $date, $time, $note);
-    $insert_query_run = $stmt->execute();
-
-    // Kiểm tra lỗi trong quá trình thực hiện truy vấn
-    if ($insert_query_run) {
-        $_SESSION['message'] = 'Reserved successfully. We will contact with you in a minute!';
-        header('location: ../reservation.php');
+        $stmt->close();
     } else {
-        $_SESSION['message'] = 'Something went wrong';
+        // Admins are not allowed to make reservations
+        $_SESSION['message'] = 'Admins are not allowed to make reservations';
         header('location: ../reservation.php');
     }
-
-    // Đóng statement sau khi sử dụng
-    $stmt->close();
 }
-
 ?>

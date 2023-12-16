@@ -1,8 +1,58 @@
 <?php
 include('../middleware/adminMiddleware.php');
 include('./includes/header.php');
+function getCustomers()
+{
+    global $conn;
+    $query = "SELECT id, name, phone, email FROM users WHERE role_as = 0";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+function getMessages()
+{
+    global $conn;
+    $query = "SELECT id, email, last_name, msg FROM messages";
+    $result = mysqli_query($conn, $query);
+    return $result;
+}
+
 
 ?>
+<style>
+    .table th,
+    .table td {
+        text-align: left;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .sticky-header th {
+        position: sticky;
+        top: 0;
+        background-color: #f8f9fa;
+        padding-left: 5px;
+    }
+
+    .sticky-header th,
+    .sticky-header td {
+        text-align: left;
+        padding-left: 25px;
+    }
+    .card-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-responsive {
+        flex: 1;
+        overflow-y: auto;
+        margin-top: 15px; 
+    }
+</style>
 
 <div class="container">
     <div class="row ">
@@ -24,6 +74,20 @@ include('./includes/header.php');
                     </div>
 
                     <div class="row">
+                        <?php
+                        // Function to handle database errors
+                        function handleDatabaseError($stmt)
+                        {
+                            if (!$stmt) {
+                                die($stmt->error);
+                            }
+                        }
+                        $select_products = $conn->prepare("SELECT * FROM products");
+                        handleDatabaseError($select_products);
+                        $select_products->execute();
+                        $number_of_products = $select_products->get_result()->num_rows;
+                        $select_products->close();
+                        ?>
                         <div class="col-lg-3 col-sm-6">
                             <div class="card mb-2">
                                 <div class="card-header p-3 pt-2">
@@ -31,21 +95,9 @@ include('./includes/header.php');
                                         <i class="material-icons opacity-10">weekend</i>
                                     </div>
                                     <div class="text-end pt-1">
-                                        <?php
-                                        $id = 0;
-                                        $select_products = $conn->prepare("SELECT * FROM products WHERE id= ?");
-                                        $select_products->bind_param("i", $id);
-                                        $select_products->execute();
-                                        $result = $select_products->get_result();
-                                        $number_of_products = $result->num_rows;
-                                        $select_products->close();
-                                        ?>
                                         <p class="text-sm mb-0 text-capitalize">Product Added</p>
                                         <h4 class="mb-0"><?= $number_of_products; ?></h4>
                                     </div>
-                                </div>
-                                <hr class="dark horizontal my-0" />
-                                <div class="card-footer p-3" id="productfooter">
                                 </div>
                             </div>
                         </div>
@@ -57,24 +109,19 @@ include('./includes/header.php');
                                     </div>
                                     <div class="text-end pt-1">
                                         <?php
-                                        $id = 0;
-                                        $select_users = $conn->prepare("SELECT * FROM users WHERE id= ?");
-                                        $select_users->bind_param("i", $id);
+                                        $select_users = $conn->prepare("SELECT * FROM users WHERE role_as <> 1");
+                                        handleDatabaseError($select_users);
                                         $select_users->execute();
-                                        $result = $select_users->get_result();
-                                        $number_of_users = $result->num_rows;
+                                        $number_of_users = $select_users->get_result()->num_rows;
                                         $select_users->close();
                                         ?>
-                                        <p class="text-sm mb-0 text-capitalize">Today's User</p>
+                                        <p class="text-sm mb-0 text-capitalize">Total Customers</p>
                                         <h4 class="mb-0"><?= $number_of_users; ?></h4>
                                     </div>
                                 </div>
-                                <hr class="dark horizontal my-0" />
-                                <div class="card-footer p-3" id="userfooter">
-                                    
-                                </div>
                             </div>
                         </div>
+
                         <div class="col-lg-3 col-sm-6">
                             <div class="card mb-2">
                                 <div class="card-header p-3 pt-2 bg-transparent">
@@ -83,23 +130,20 @@ include('./includes/header.php');
                                     </div>
                                     <div class="text-end pt-1">
                                         <?php
-                                        $total_price = 0;
-                                        $select_orders = $conn->prepare("SELECT * FROM orders WHERE id= ?");
-                                        $select_orders->bind_param("i", $id);
+                                        $select_orders = $conn->prepare("SELECT * FROM orders");
+                                        handleDatabaseError($select_orders);
                                         $select_orders->execute();
-                                        $result = $select_orders->get_result();
-                                        while ($row = $result->fetch_assoc()) {
-                                            $total_price += $row['total_price'];
-                                        };
+                                        $orders_result = $select_orders->get_result();
+                                        $total_price = 0;
+
+                                        while ($order_row = $orders_result->fetch_assoc()) {
+                                            $total_price += $order_row['total_price'];
+                                        }
                                         $select_orders->close();
                                         ?>
                                         <p class="text-sm mb-0 text-capitalize">Revenue</p>
                                         <h4 class="mb-0"><?= $total_price; ?></h4>
                                     </div>
-                                </div>
-                                <hr class="horizontal my-0 dark" />
-                                <div class="card-footer p-3" id="revenuefooter">
-                                    
                                 </div>
                             </div>
                         </div>
@@ -110,129 +154,99 @@ include('./includes/header.php');
                                         <i class="material-icons opacity-10">person_add</i>
                                     </div>
                                     <div class="text-end pt-1">
-                                        <p class="text-sm mb-0 text-capitalize">Message</p>
-                                        <h4 class="mb-0">+91</h4>
+                                        <?php
+                                        $messages = getMessages();
+                                        $number_of_messages = mysqli_num_rows($messages);
+                                        ?>
+                                        <p class="text-sm mb-0 text-capitalize">Total Messages</p>
+                                        <h4 class="mb-0"><?= $number_of_messages; ?></h4>
                                     </div>
-                                </div>
-                                <hr class="horizontal my-0 dark" />
-                                <div class="card-footer p-3">
-                                    <p class="mb-0">Just updated</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row py-4">
-                        <div class="col-lg-7 col-md-12">
-                            <div class="card" style="min-height:485px">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card" style="height:485px">
                                 <div class="card-header card-header-text">
-                                    <h4 class="card-title">Employess Stats</h4>
-                                    <p class="category">New employees on 15th November, 2023</p>
+                                    <h4 class="card-title">Customer's Information</h4>
+                                    <p class="category">All about our customers</p>
                                 </div>
                                 <div class="card-content table-responsive">
-                                    <table class="table table-hover">
+                                    <table class="table table-hover sticky-header">
                                         <thead class="text-primary">
                                             <tr>
-                                                <th>ID</th>
+                                                <th class="text-center">ID</th>
                                                 <th>Name</th>
                                                 <th>Phone No</th>
-                                                <th>City</th>
+                                                <th>Email</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Cam Tu</td>
-                                                <td>012354478</td>
-                                                <td>Ben Tre</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Nguyet Quynh</td>
-                                                <td>5208851520</td>
-                                                <td>Tien Giang</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Vy Ngo</td>
-                                                <td>01254789</td>
-                                                <td>Tien Giang</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Diem Quynh</td>
-                                                <td>024158752</td>
-                                                <td>HCMC</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Mai Chi</td>
-                                                <td>012254867</td>
-                                                <td>HCMC</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Phuong Anh</td>
-                                                <td>011254788</td>
-                                                <td>HCMC</td>
-                                            </tr>
-
-
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Dang Khoa</td>
-                                                <td>021547852</td>
-                                                <td>HCMC</td>
-                                            </tr>
-
-
+                                            <?php
+                                            $customers = getCustomers();
+                                            if (mysqli_num_rows($customers) > 0) {
+                                                foreach ($customers as $item) {
+                                            ?>
+                                                    <tr>
+                                                        <td><?= $item['id']; ?></td>
+                                                        <td><?= $item['name']; ?></td>
+                                                        <td><?= $item['phone']; ?></td>
+                                                        <td><?= $item['email']; ?></td>
+                                                    </tr>
+                                                <?php
+                                                }
+                                            } else {
+                                                ?>
+                                                <tr>
+                                                    <td colspan="4" class="text-center">No customer yet</td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="col-lg-5 col-md-12">
-                            <div class="card" style="min-height:485px">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card" style="height:485px">
                                 <div class="card-header card-header-text">
-                                    <h4 class="card-title">Message</h4>
-                                    <p class="category">Check it out!git c</p>
+                                    <h4 class="card-title">Messages</h4>
+                                    <p class="category">Check it out!</p>
                                 </div>
                                 <div class="card-content table-responsive">
-                                    <table class="table table-hover">
+                                    <table class="table table-hover sticky-header">
                                         <thead class="text-primary">
                                             <tr>
                                                 <th>No</th>
                                                 <th>From</th>
-                                                <th>Message content</th>
+                                                <th>Name</th>
+                                                <th>Message</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Cam Tu</td>
-                                                <td>i need to bla bla</td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Nguyet Quynh</td>
-                                                <td>dont git me chili</td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Vy Ngo</td>
-                                                <td>can you grab it for me now</td>
-
-                                            </tr>
+                                            <?php
+                                            $messages = getMessages();
+                                            if (mysqli_num_rows($messages) > 0) {
+                                                while ($message = mysqli_fetch_assoc($messages)) {
+                                            ?>
+                                                    <tr>
+                                                        <td><?= $message['id']; ?></td>
+                                                        <td><?= $message['email']; ?></td>
+                                                        <td><?= $message['last_name']; ?></td>
+                                                        <td><?= $message['msg']; ?></td>
+                                                    </tr>
+                                                <?php
+                                                }
+                                            } else {
+                                                ?>
+                                                <tr>
+                                                    <td colspan="3">No messages yet</td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -243,30 +257,6 @@ include('./includes/header.php');
             </div>
         </div>
     </div>
-</div>
-<script>
-    function updateFooterContent(id, percentageChange) {
-        const footerElement = document.getElementById(id);
-        if (footerElement) {
-            const sign = percentageChange >= 0 ? '+' : '-';
-            const percentageText = `${sign}${Math.abs(percentageChange).toFixed(2)}% than yesterday`;
-            const successText = `<span class="text-success text-sm font-weight-bolder">${percentageText}</span>`;
-            const newText = `<p class="mb-0">${successText}</p>`;
-            footerElement.innerHTML = newText;
-        }
-    }
-
-    // Assume you have data for percentage changes
-    const productChange = 1.5; // Replace with actual data
-    const userChange = -2.3; // Replace with actual data
-    const revenueChange = 0.8; // Replace with actual data
-
-    // Update the content for each footer
-    updateFooterContent('productfooter', productChange);
-    updateFooterContent('userfooter', userChange);
-    updateFooterContent('revenuefooter', revenueChange);
-</script>
-
-<?php
-include('./includes/footer.php');
-?>
+    <?php
+    include('./includes/footer.php');
+    ?>
