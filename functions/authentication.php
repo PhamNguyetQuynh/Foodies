@@ -23,13 +23,6 @@ if (isset($_POST['registerBtn'])) {
     $check_email_query = "SELECT email FROM users WHERE email='$email'";
     $check_email_query_run = mysqli_query($conn, $check_email_query);
 
-    // insert expire_time ( 3 minute)
-    $expiry_time = date('Y-m-d H:i:s', strtotime('+3 minutes'));
-    $update_link_expiry = "UPDATE users SET link_expiry_time = ? WHERE email=?";
-    $stmt = mysqli_prepare($conn, $update_link_expiry);
-    mysqli_stmt_bind_param($stmt, "ss", $expiry_time, $email);
-    $update_link_expiry_run = mysqli_stmt_execute($stmt);
-
     if (mysqli_num_rows($check_email_query_run) > 0) {
         $_SESSION['message'] = "Email has already existed";
         header('location: ../register.php');
