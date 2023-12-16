@@ -1,6 +1,8 @@
 $(document).ready(function () {
   $(document).on("click", ".increment-btn", function (e) {
     e.preventDefault();
+    // Check if the user is not an admin (role_as != 1)
+    if ($_SESSION['role_as'] != 1) {
     //fetch the value
     var qty = $(this).closest(".product_data").find(".input-qty").val();
     var value = parseInt(qty, 10);
@@ -11,10 +13,12 @@ $(document).ready(function () {
       value++;
       var qty = $(this).closest(".product_data").find(".input-qty").val(value);
     }
-  });
+  }});
 
   $(document).on("click", ".decrement-btn", function (e) {
     e.preventDefault();
+    // Check if the user is not an admin (role_as != 1)
+    if ($_SESSION['role_as'] != 1) {
     var qty = $(this).closest(".product_data").find(".input-qty").val();
     var value = parseInt(qty, 10);
     //not a number -> assign 0 on value
@@ -24,7 +28,7 @@ $(document).ready(function () {
       value--;
       var qty = $(this).closest(".product_data").find(".input-qty").val(value);
     }
-  });
+  }});
 
   $(document).on("click", ".addToCartBtn", function (e) {
     e.preventDefault();
