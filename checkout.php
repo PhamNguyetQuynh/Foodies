@@ -4,7 +4,7 @@ include('./includes/header.php');
 include('authenticate.php');
 $cartItems = getCartItems();
 if (mysqli_num_rows($cartItems) == 0) {
-    header('Location: index.php');
+    echo '<script>window.location.href = "category.php";</script>';
 }
 
 $hcm_districts = array(
