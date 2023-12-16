@@ -2,6 +2,7 @@
 include('./functions/userFunctions.php');
 include('./includes/header.php');
 ?>
+
 <style>
     .bg-image {
         background: url(./assets/img/aboutUs.png);
@@ -50,7 +51,7 @@ include('./includes/header.php');
             <p class="d-flex justify-content-center text-center fw-bolder">Explore our website today and experience the magic of Chef Atonio's cuisine.</p>
         </div>
         <div class="row">
-            <a href="category.php" class="btn btn-danger btn-hover-bg-shade-amount" role="button" data-bs-toggle="button">Explore Our Menu</a>
+            <a href="category.php" class="btn btn-danger btn-hover-bg-shade-amount"role="button" >Explore Our Menu</a>
         </div>
     </div>
 </div>

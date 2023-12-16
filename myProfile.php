@@ -27,7 +27,7 @@ $user = $_SESSION['auth_user'];
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-warning text-white text-center">
-                        <h4 class="mb-0">My Profile</h4>
+                        <h5>My Profile</h5>
                     </div>
                     <div class="card-body text-center">
 
@@ -45,7 +45,7 @@ $user = $_SESSION['auth_user'];
                     </div>
                     <div class="card-footer d-flex justify-content-between">
                         <a href="index.php" class="btn btn-secondary">Go Back</a>
-                        <a href="updateProfile.php" class="btn btn-warning">Update Profile</a>
+                        <a href="updateProfile.php" class="btn btn-danger btn-hover-bg-shade-amount" role="button">Update Profile</a>
                     </div>
                 </div>
             </div>

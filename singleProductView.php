@@ -9,7 +9,7 @@ if (isset($_GET['product'])) {
 
     if ($product) {
 ?>
-        <img class="img-fluid opacity-25 position-absolute" src="uploads/wp10509681.jpg">
+        <img class="img-fluid opacity-25 position-absolute w-100 h-100" src="uploads/wp10509681.jpg">
         <div class="py-4 position-relative">
             <div class="container product_data mt-5">
                 <div class="row">
@@ -47,8 +47,8 @@ if (isset($_GET['product'])) {
                                     <i class="fa fa-shopping-cart me-2 "></i>Add to Cart</button>
                             </div>
                             <div class="col-auto">
-                                <button class="btn  btn-danger px-4">
-                                    <i class="fa fa-heart me-2"></i>Add to Wishlist
+                                <button class="btn  btn-danger px-4 addToWishlistBtn" value="<?= $product['id']; ?>">
+                                    <i class="fa fa-heart me-2"></i>Add to Wishlist</button>
                                 </button>
                             </div>
                         </div>

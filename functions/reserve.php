@@ -1,6 +1,20 @@
 <?php
 session_start();
 include('../config/dbconn.php');
+function generateUniqueId()
+{
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charLength = strlen($characters);
+    $uniqueId = '';
+
+    for ($i = 0; $i < 20; $i++) {
+        $randomIndex = mt_rand(0, $charLength - 1);
+        $uniqueId .= $characters[$randomIndex];
+    }
+
+    return $uniqueId;
+}
+
 if (isset($_POST['reserveBtn'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);

@@ -4,19 +4,7 @@ include('./includes/header.php');
 include('authenticate.php');
 
 ?>
-<div class="py-3 bg-primary">
-    <div class="container">
-
-        <h6 class="text-white">
-            <a class="text-white" href="index.php">
-                Home /
-            </a>
-            <a class="text-white" href="myOrder.php">
-                My Orders
-            </a>
-        </h6>
-    </div>
-</div>
+<img class="img-fluid opacity-25 position-absolute w-100 h-100" src="uploads/wp10509681.jpg">
 <div class="py-5">
     <div class="container">
         <div class="card card-body shadow">

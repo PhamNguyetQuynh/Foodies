@@ -137,8 +137,26 @@ function sendPasswordResetEmail($get_name, $get_email, $token)
      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
      return false;
     }
-   
-    
+}
+function getOnGoingReservations()
+{
+    global $conn;
+    $query = "SELECT * FROM reservations WHERE status='1' OR status='2'";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
+function getAllReservations()
+{
+    global $conn;
+    $query = "SELECT * FROM reservations";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
+function checkReservationTrackingNoExist($trackingNo)
+{
+    global $conn;
+    $query="SELECT * FROM reservations WHERE tracking_no='$trackingNo'";
+    return mysqli_query($conn, $query);
 }
 
 
