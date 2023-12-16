@@ -31,7 +31,7 @@ include('./includes/header.php');
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $orders = getOnGoingOrders();
+                                            $orders = getAllOrders();
                                             if (mysqli_num_rows($orders) > 0) {
                                                 foreach ($orders as $item) {
                                             ?>
