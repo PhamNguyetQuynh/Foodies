@@ -4,44 +4,29 @@ include('../config/dbconn.php');
 
 if (isset($_POST['sendMsgBtn'])) {
     if ($_SESSION['role_as'] != 1) {
-    $firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
-    $lastName = mysqli_real_escape_string($conn, $_POST['lastName']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $msg = mysqli_real_escape_string($conn, $_POST['msg']);
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $email = $_POST['email'];
+        $msg = $_POST['msg'];
 
-    // Sử dụng Prepared Statements để ngăn chặn SQL injection
-    $insert_query = "INSERT INTO messages (first_name, last_name, email, msg) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($insert_query);
+        // Sử dụng Prepared Statements để ngăn chặn SQL injection
+        $insert_query = "INSERT INTO messages(first_name, last_name, email, msg) VALUES (?, ?, ?, ?)";
+        $stmt = $conn->prepare($insert_query);
+        $stmt->bind_param('ssss', $firstName, $lastName, $email, $msg);
 
-    // Kiểm tra lỗi trong quá trình chuẩn bị truy vấn
-    if ($stmt === false) {
-        die('Error during prepare: ' . htmlspecialchars($conn->error));
-    }
+        if ($stmt->execute()) {
+            $_SESSION['message'] = 'Message sent successfully';
+            header('location: ../contactUs.php');
+        } else {
+            $_SESSION['message'] = 'Something went wrong';
+            header('location: ../contactUs.php');
+        }
 
-    // Bind các giá trị và thực hiện truy vấn
-    $stmt->bind_param('ssss', $firstName, $lastName, $email, $msg);
-    $insert_query_run = $stmt->execute();
-
-    // Kiểm tra lỗi trong quá trình thực hiện truy vấn
-    if ($insert_query_run) {
-        $_SESSION['message'] = 'Message sent successfully';
-        header('location: ../contactUs.php');
+        $stmt->close();
     } else {
-        $_SESSION['message'] = 'Something went wrong';
+        // Admins are not allowed to send messages
+        $_SESSION['message'] = 'Admins are not allowed to send messages';
         header('location: ../contactUs.php');
     }
-<<<<<<< HEAD
-
-    // Đóng statement sau khi sử dụng
-    $stmt->close();
 }
-
-=======
-} else {
-    // Admins are not allowed to send messages
-    $_SESSION['message'] = 'Admins are not allowed to send messages';
-    header('location: ../contactUs.php');
-}
-}
->>>>>>> b939961cfdfaaac691cff8faa9e13d4c80485e05
 ?>

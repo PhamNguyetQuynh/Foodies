@@ -81,22 +81,12 @@ if (isset($_SESSION['auth'])) {
 
                 $new_qty = $current_qty - $product_qty;
 
-                $update_productQty_query = "UPDATE products SET qty=? WHERE id=?";
-                $stmt = $conn->prepare($update_productQty_query);
-                $stmt->bind_param('ii', $new_qty, $product_id);
-                $stmt->execute();
+                $update_productQty_query = "UPDATE products SET qty='$new_qty' WHERE id='$product_id' ";
+                $update_productQty_query_run = mysqli_query($conn, $update_productQty_query);
             }
-
-<<<<<<< HEAD
-            $delete_cart_query = "DELETE FROM carts WHERE user_id=?";
-            $stmt = $conn->prepare($delete_cart_query);
-            $stmt->bind_param('i', $userID);
-            $stmt->execute();
-=======
+            // After placing the order, the cart needs to be emptied
             $delete_cart_query = "DELETE FROM carts WHERE user_id='$userID'";
             $delete_cart_query_run = mysqli_query($conn, $delete_cart_query);
->>>>>>> b939961cfdfaaac691cff8faa9e13d4c80485e05
-
             if ($payment_mode == "COD") {
                 $_SESSION['message'] = "Order placed successfully";
                 header('location: ../myOrder.php');

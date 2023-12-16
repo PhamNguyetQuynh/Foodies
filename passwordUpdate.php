@@ -22,15 +22,11 @@ include('./includes/header.php') ?>
                     <div class="card-body">
                         <form action="functions/authentication.php" method="POST">
 
-                            <input type="hidden" name="passwordToken" value="<?php if (isset($_GET['token'])) {
-                                                                                    echo $_GET['token'];
-                                                                                } ?>">
+                            <input type="hidden" name="passwordToken" value="<?php if (isset($_GET['token'])) {echo $_GET['token'];} ?>">
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" name="email" value="<?php if (isset($_GET['email'])) {
-                                                                            echo $_GET['email'];
-                                                                        } ?>" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" readonly>
+                                <input type="email" name="email" value="<?php if (isset($_GET['email'])) {echo $_GET['email'];} ?>" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="InputResetPassword" class="form-label">New Password</label>
