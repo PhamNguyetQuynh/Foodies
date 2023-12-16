@@ -7,11 +7,8 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-info">
-                    <h4 class="text-white">
-                        Orders
-                        <a href="orderHistory.php" class="btn btn-warning float-end">Order History</a>
-                    </h4>
+                <div class="card-header bg-primary">
+                    <h4 class="font-weight-bold text-white mb-0">Orders</h4>
                 </div>
                 <div class="card-body" id="order_table">
                     <div class="container">
@@ -43,8 +40,9 @@ include('./includes/header.php');
                                                         <td class="text-center align-middle text-bold">
                                                             <span class="badge-sm text-warning">ON GOING</span>
                                                         </td>
-                                                        <td class="text-center align-middle"><a href="viewOrderDetail.php?t=<?= $item['tracking_no']; ?>" class="btn btn-info">View Details</a></td>
-
+                                                        <td class="text-center align-middle">
+                                                            <a href="viewOrderDetail.php?t=<?= $item['tracking_no']; ?>" class="btn" style="background-color: #E4326F; color: white;">View Details</a>
+                                                        </td>
                                                     </tr>
 
                                                 <?php

@@ -8,9 +8,12 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                        <div class="card-header bg-warning">
-                            <h4 class="font-weight-bold mb-0 text-white">Add Reservation</h4>
-                        </div>
+                <div class="card-header bg-primary">
+                    <h4 class="text-white">
+                        Add Reseverations
+
+                    </h4>
+                </div>
                 <div class="card-body">
                     <form action="code.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
@@ -39,14 +42,14 @@ include('./includes/header.php');
                                         <input type="date" name="date" class="form-control" id="date-reserve" required>
                                     </div>
                                 </div>
-                            </div>   
-                        </div>  
+                            </div>
+                        </div>
                         <div class="mb-3">
                             <label for="note" class="form-label">Note:</label>
                             <input type="text" name="note" class="form-control" id="note"></textarea>
-                        </div>                           
+                        </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary float-end" name="add_reservation_btn">Submit</button>
+                            <button type="submit" class="btn btn-warning float-end" name="add_reservation_btn">Submit</button>
                         </div>
                     </form>
                 </div>
