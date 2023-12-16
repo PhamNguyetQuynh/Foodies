@@ -11,7 +11,7 @@ function getCustomers()
 function getMessages()
 {
     global $conn;
-    $query = "SELECT id, email, msg FROM messages";
+    $query = "SELECT id, email, last_name, msg FROM messages";
     $result = mysqli_query($conn, $query);
     return $result;
 }
@@ -19,10 +19,41 @@ function getMessages()
 
 ?>
 <style>
-    .table th, .table td {
+    .table th,
+    .table td {
         text-align: left;
     }
+
+    .table-responsive {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .sticky-header th {
+        position: sticky;
+        top: 0;
+        background-color: #f8f9fa;
+        padding-left: 5px;
+    }
+
+    .sticky-header th,
+    .sticky-header td {
+        text-align: left;
+        padding-left: 25px;
+    }
+    .card-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-responsive {
+        flex: 1;
+        overflow-y: auto;
+        margin-top: 15px; 
+    }
 </style>
+
 <div class="container">
     <div class="row ">
         <div class="col-md-12">
@@ -68,9 +99,6 @@ function getMessages()
                                         <h4 class="mb-0"><?= $number_of_products; ?></h4>
                                     </div>
                                 </div>
-                                <hr class="dark horizontal my-0" />
-                                <div class="card-footer p-3" id="productfooter">
-                                </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
@@ -87,14 +115,9 @@ function getMessages()
                                         $number_of_users = $select_users->get_result()->num_rows;
                                         $select_users->close();
                                         ?>
-
                                         <p class="text-sm mb-0 text-capitalize">Total Customers</p>
                                         <h4 class="mb-0"><?= $number_of_users; ?></h4>
                                     </div>
-                                </div>
-                                <hr class="dark horizontal my-0" />
-                                <div class="card-footer p-3" id="userfooter">
-
                                 </div>
                             </div>
                         </div>
@@ -122,9 +145,6 @@ function getMessages()
                                         <h4 class="mb-0"><?= $total_price; ?></h4>
                                     </div>
                                 </div>
-                                <hr class="horizontal my-0 dark" />
-                                <div class="card-footer p-3" id="revenuefooter">
-                                </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6">
@@ -134,29 +154,29 @@ function getMessages()
                                         <i class="material-icons opacity-10">person_add</i>
                                     </div>
                                     <div class="text-end pt-1">
-                                        <p class="text-sm mb-0 text-capitalize">Message</p>
-                                        <h4 class="mb-0">+91</h4>
+                                        <?php
+                                        $messages = getMessages();
+                                        $number_of_messages = mysqli_num_rows($messages);
+                                        ?>
+                                        <p class="text-sm mb-0 text-capitalize">Total Messages</p>
+                                        <h4 class="mb-0"><?= $number_of_messages; ?></h4>
                                     </div>
-                                </div>
-                                <hr class="horizontal my-0 dark" />
-                                <div class="card-footer p-3">
-                                    <p class="mb-0">Just updated</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row py-4">
                         <div class="col-lg-6 col-md-12">
-                            <div class="card" style="min-height:485px">
+                            <div class="card" style="height:485px">
                                 <div class="card-header card-header-text">
                                     <h4 class="card-title">Customer's Information</h4>
                                     <p class="category">All about our customers</p>
                                 </div>
                                 <div class="card-content table-responsive">
-                                    <table class="table table-hover">
+                                    <table class="table table-hover sticky-header">
                                         <thead class="text-primary">
                                             <tr>
-                                                <th>ID</th>
+                                                <th class="text-center">ID</th>
                                                 <th>Name</th>
                                                 <th>Phone No</th>
                                                 <th>Email</th>
@@ -179,7 +199,7 @@ function getMessages()
                                             } else {
                                                 ?>
                                                 <tr>
-                                                    <td colspan="5">No customer yet</td>
+                                                    <td colspan="4" class="text-center">No customer yet</td>
                                                 </tr>
                                             <?php
                                             }
@@ -190,17 +210,18 @@ function getMessages()
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
-                            <div class="card" style="min-height:485px">
+                            <div class="card" style="height:485px">
                                 <div class="card-header card-header-text">
                                     <h4 class="card-title">Messages</h4>
                                     <p class="category">Check it out!</p>
                                 </div>
                                 <div class="card-content table-responsive">
-                                    <table class="table table-hover">
+                                    <table class="table table-hover sticky-header">
                                         <thead class="text-primary">
                                             <tr>
                                                 <th>No</th>
                                                 <th>From</th>
+                                                <th>Name</th>
                                                 <th>Message</th>
                                             </tr>
                                         </thead>
@@ -213,6 +234,7 @@ function getMessages()
                                                     <tr>
                                                         <td><?= $message['id']; ?></td>
                                                         <td><?= $message['email']; ?></td>
+                                                        <td><?= $message['last_name']; ?></td>
                                                         <td><?= $message['msg']; ?></td>
                                                     </tr>
                                                 <?php
@@ -235,31 +257,6 @@ function getMessages()
             </div>
         </div>
     </div>
-    <script>
-        function updateFooterContent(id, currentValue, previousValue) {
-            const footerElement = document.getElementById(id);
-            if (footerElement) {
-                const changePercentage = ((currentValue - previousValue) / previousValue) * 100;
-                const sign = changePercentage >= 0 ? '+' : '-';
-                const percentageText = `${sign}${Math.abs(changePercentage).toFixed(2)}% than yesterday`;
-                const successText = `<span class="text-success text-sm font-weight-bolder">${percentageText}</span>`;
-                const newText = `<p class="mb-0">${successText}</p>`;
-                footerElement.innerHTML = newText;
-            }
-        }
-        const previousProductCount = 2;
-        const previousUserCount = 3;
-        const previousRevenue = 1230000;
-
-        const currentProductCount = 3;
-        const currentUserCount = 4;
-        const currentRevenue = 2000000;
-
-        updateFooterContent('productfooter', currentProductCount, previousProductCount);
-        updateFooterContent('userfooter', currentUserCount, previousUserCount);
-        updateFooterContent('revenuefooter', currentRevenue, previousRevenue);
-    </script>
-
     <?php
     include('./includes/footer.php');
     ?>
