@@ -17,12 +17,11 @@ function generateUniqueId()
 
 if (isset($_SESSION['auth'])) {
     if (isset($_POST['placeOrderBtn'])) {
-
         $name = mysqli_real_escape_string($conn, $_POST['name']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
         $address = mysqli_real_escape_string($conn, $_POST['house_number'] . ', ' . $_POST['street_address'] . ', ' . $_POST['ward'] . ', ' . $_POST['district']);
-        $comments = mysqli_real_escape_string($conn, $_POST['comments']); // Add comments
+        $comments = mysqli_real_escape_string($conn, $_POST['comments']);
         $payment_mode = mysqli_real_escape_string($conn, $_POST['payment_mode']);
         $payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']);
 
@@ -72,14 +71,16 @@ if (isset($_SESSION['auth'])) {
                 $update_productQty_query = "UPDATE products SET qty='$new_qty' WHERE id='$product_id' ";
                 $update_productQty_query_run = mysqli_query($conn, $update_productQty_query);
             }
-            // After placing the order, the cart needs to be emptied
+
             $delete_cart_query = "DELETE FROM carts WHERE user_id='$userID'";
             $delete_cart_query_run = mysqli_query($conn, $delete_cart_query);
+
             if ($payment_mode == "COD") {
                 $_SESSION['message'] = "Order placed successfully";
                 header('location: ../myOrder.php');
                 die();
             } else {
+                // Assume 201 is a success response for PayPal
                 echo 201;
             }
         }

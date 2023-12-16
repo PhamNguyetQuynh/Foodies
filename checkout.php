@@ -4,7 +4,7 @@ include('./includes/header.php');
 include('authenticate.php');
 $cartItems = getCartItems();
 if (mysqli_num_rows($cartItems) == 0) {
-    header('Location: index.php');
+    echo '<script>window.location.href = "category.php";</script>';
 }
 
 $hcm_districts = array(
@@ -153,14 +153,13 @@ $hcm_districts = array(
         var selectedWards = wards[selectedDistrict] || [];
         var wardSelect = document.getElementById('ward');
         wardSelect.innerHTML = "<option value='' disabled selected>Select your ward</option>";
-        selectedWards.forEach(function(ward) {
+        selectedWards.forEach(function (ward) {
             wardSelect.innerHTML += "<option value='" + ward + "'>" + ward + "</option>";
         });
 
         if (selectedWard) {
             wardSelect.value = selectedWard;
         }
-
         var streetAddressInput = document.getElementById('street_address');
         var houseNumberInput = document.getElementById('house_number');
 
@@ -186,11 +185,21 @@ $hcm_districts = array(
             var name = $('#name').val();
             var email = $('#email').val();
             var phone = $('#phone').val();
+            var selectedDistrict = $('#district').val();
+            var selectedWard = $('#ward').val();
+
+            // Call loadWards function to set the address
+            loadWards(selectedDistrict, selectedWard);
+
+            // Now you can use the updated address components
+            var district = selectedDistrict;
+            var ward = selectedWard;
             var houseNumber = $('#house_number').val();
             var streetAddress = $('#street_address').val();
-            var ward = $('#ward').val();
-            var district = $('#district').val();
-            var address = houseNumber + ', ' + streetAddress + ', ' + ward + ', ' + district;
+
+            // Combine components to create the address
+            var formattedAddress = district + ' ' + ward + ' ' + houseNumber + ' ' + streetAddress;
+
             if (name.length == 0) {
                 // alert("name is required");
                 $('.name').text("*This field is required");
@@ -209,13 +218,13 @@ $hcm_districts = array(
             } else {
                 $('.phone').text("");
             }
-            if (address.length == 0) {
-                // alert("name is required");
-                $('.address').text("*This field is required");
-            } else {
-                $('.address').text("");
-            }
-            if (name.length == 0 || email.length == 0 || phone.length == 0 || address.length == 0) {
+            // if (formattedAddress.length == 0) {
+            //     // alert("name is required");
+            //     $('.formattedAddress').text("*This field is required");
+            // } else {
+            //     $('.formattedAddress').text("");
+            // }
+            if (name.length == 0 || email.length == 0 || phone.length == 0) {
                 return false;
             }
 
@@ -233,9 +242,7 @@ $hcm_districts = array(
         },
         // finalize the transaction after paper approval
         onApprove: (data, actions) => {
-            return actions.order.capture().then(function(orderData) {
-                const transaction = orderData.purchase_units[0].payments.captures[0];
-
+            return actions.order.capture().then((orderData) => {
                 // Get the selected district and ward
                 var selectedDistrict = $('#district').val();
                 var selectedWard = $('#ward').val();
@@ -243,37 +250,42 @@ $hcm_districts = array(
                 // Call loadWards function to set the address
                 loadWards(selectedDistrict, selectedWard);
 
-                // Now you can use the updated address
-                var address = $('#address').val();
+                // Now you can use the updated address components
+                var district = selectedDistrict;
+                var ward = selectedWard;
+                var houseNumber = $('#house_number').val();
+                var streetAddress = $('#street_address').val();
 
-                var name = $('#name').val();
-                var email = $('#email').val();
-                var phone = $('#phone').val();
-                var comments = $('#comments').val(); // Include the comments field
+                // Combine components to create the address
+                var formattedAddress = district + ' ' + ward + ' ' + houseNumber + ' ' + streetAddress;
 
-                var data = {
-                    'name': name,
-                    'email': email,
-                    'phone': phone,
-                    'address': address,
-                    'comments': comments, // Add this line for the comments field
+                // Additional data to be sent to the server
+                var additionalData = {
+                    'name': $('#name').val(),
+                    'email': $('#email').val(),
+                    'phone': $('#phone').val(),
+                    'comments': $('#comments').val(),
                     'payment_mode': "Paid by PayPal",
-                    'payment_id': transaction.id,
+                    'payment_id': orderData.purchase_units[0].payments.captures[0].id,
                     'placeOrderBtn': true,
+                    'address': formattedAddress, // Include the formatted address
                 };
 
+                // Send the combined data to the server
                 $.ajax({
                     method: "POST",
                     url: "functions/placeOrder.php",
-                    data: data,
+                    data: additionalData,
                     success: function(response) {
                         if (response == 201) {
                             alertify.success("Order Placed Successfully");
 
-                            $email = email;
+                            $email = $('#email').val();
                             $subject = 'Order Placed Successfully';
                             $content = 'Dear our beloved customer, <br><br> Thank you for supporting us. Hope you like it! ';
-                            sendRegistrationEmail($name, $email, $subject, $content);
+                            sendRegistrationEmail($('#name').val(), $email, $subject, $content);
+
+                            // Redirect the user after the order is placed
                             window.location.href = 'myOrder.php';
                         }
                     },
@@ -283,9 +295,7 @@ $hcm_districts = array(
                 });
             });
         }
-
-
-
-
     }).render('#paypal-button-container');
 </script>
+
+<?php include('./includes/footer.php') ?>
