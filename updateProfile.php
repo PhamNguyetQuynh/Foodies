@@ -23,14 +23,14 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     if ($row['role_as'] == 1) {
-        $_SESSION['message'] = "Admins are not allowed to update their profile";
+        $_SESSION['message'] = "Admins are not allowed to update profile";
         echo '<script>window.location.href = "myProfile.php";</script>';
         exit();
     }
 } else {
     // Handle the case where the user is not found in the database
     $_SESSION['message'] = "Error: User not found";
-    header('location: myProfile.php');
+    echo '<script>window.location.href = "myProfile.php";</script>';
     exit();
 }
 $email = $_SESSION['auth_user']['email'];
