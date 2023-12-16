@@ -13,7 +13,6 @@ if (!isset($_SESSION['auth'])) {
 // Lấy thông tin người dùng từ session
 $user = $_SESSION['auth_user'];
 $email = $_SESSION['auth_user']['email'];
-$image = '';
 
 // Xử lý form cập nhật thông tin
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -58,6 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $_SESSION['message'] = "Record updated successfully";
+
+        echo '<script>window.location.href = "myProfile.php";</script>';
+        exit();
     } else {
         echo "Error updating record: " . $stmt->error;
     }
@@ -88,7 +90,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="mb-3">
                                 <label for="avatar" class="form-label">Avatar</label>
                                 <div class="d-flex align-items-center">
-                                    <img src="<?= isset($user['image']) && $user['image'] === 'default.jpg' ? './avt-image/avt.jpg' : './avt-image/' . $user['image'] ?>" alt="Avatar Preview" class="avatar-preview mr-2">
+                                    <?php if (isset($user['image'])) : ?>
+                                        <img src="<?= $user['image'] === 'default.jpg' ? './avt-image/avt.jpg' : './avt-image/' . $user['image'] ?>" alt="Avatar Preview" class="avatar-preview mr-2">
+                                    <?php else : ?>
+                                        <img src="./avt-image/avt.jpg" alt="Default Avatar" class="avatar-preview mr-2">
+                                    <?php endif; ?>
                                     <input type="file" class="form-control" id="avatar" name="avatar">
                                 </div>
                             </div>
