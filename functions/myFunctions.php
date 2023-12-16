@@ -13,20 +13,27 @@ require_once('../PHPMailer-master/src/Exception.php');
 require_once('../PHPMailer-master/src/PHPMailer.php');
 require_once('../PHPMailer-master/src/SMTP.php');
 
-
+// use Prepared Statements to prevent sql injection
 function getAll($table)
 {
     global $conn;
     $query = "SELECT* FROM $table";
-    $query_run = mysqli_query($conn, $query);
-    return $query_run;
+    // $query_run = mysqli_query($conn, $query);
+    // return $query_run;
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result;
 }
 function getByID($table, $id)
 {
     global $conn;
-    $query = "SELECT* FROM $table WHERE id='$id'";
-    $query_run = mysqli_query($conn, $query);
-    return $query_run;
+    $query = "SELECT * FROM $table WHERE id=?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $id); // i is interger
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result;
 }
 
 function redirect($url, $message)
@@ -35,8 +42,9 @@ function redirect($url, $message)
     header('location:' . $url);
     exit();
 }
-function getOnGoingOrders()
+function getAllOrders()
 {
+    // nếu chỉ lấy đơn hàng bằng 0 thì giữ cx được không thì dùng $stmt
     global $conn;
     $query = "SELECT * FROM orders WHERE status='0'";
     $query_run = mysqli_query($conn, $query);
@@ -45,16 +53,28 @@ function getOnGoingOrders()
 function checkTrackingNoExist($trackingNo)
 {
     global $conn;
-    $query="SELECT * FROM orders WHERE tracking_no='$trackingNo'";
-    return mysqli_query($conn, $query);
+   
+    //$query="SELECT * FROM orders WHERE tracking_no='$trackingNo'";
+    //return mysqli_query($conn, $query);
+    $query = "SELECT * FROM orders WHERE tracking_no=?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $trackingNo);  // s is string
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result;
 }
 
-function getAllOrders()
+function getOrderHistory()
 {
     global $conn;
    
-    $query="SELECT * FROM orders";
-    return mysqli_query($conn, $query);
+    //$query="SELECT * FROM orders WHERE status != '0'";
+    //return mysqli_query($conn, $query);
+    $query = "SELECT * FROM orders WHERE status != '0'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result;
 }
 // verify email registration
 function sendRegistrationEmail($name, $email, $verification_code)
@@ -82,7 +102,7 @@ function sendRegistrationEmail($name, $email, $verification_code)
             <h2> You have Registered with Foodies </h2>
             <h5> Verify your email address to Login with the below given link </h5>
             <br/><br/>
-            <a href ='http://localhost:8080/Foodies/verifyEmail.php?token=$verification_code'> Click me </a>
+            <a href ='http://localhost/foodies/verifyEmail.php?token=$verification_code'> Click me </a>
         ";
 
         $mail->Body = $mail_template;
@@ -124,7 +144,7 @@ function sendPasswordResetEmail($get_name, $get_email, $token)
             <h2> Hello </h2>
             <h5> You are receiving this email because we received a password reset request for your account </h5>
             <br/><br/>
-            <a href ='http://localhost:8080/Foodies/passwordUpdate.php?token=$token&email=$get_email'> Click me </a>
+            <a href ='http://localhost/foodies/passwordUpdate.php?token=$token&email=$get_email'> Click me </a>
         ";
 
         $mail->Body = $mail_template;
@@ -137,26 +157,6 @@ function sendPasswordResetEmail($get_name, $get_email, $token)
      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
      return false;
     }
-}
-function getOnGoingReservations()
-{
-    global $conn;
-    $query = "SELECT * FROM reservations WHERE status='1' OR status='2'";
-    $query_run = mysqli_query($conn, $query);
-    return $query_run;
-}
-function getAllReservations()
-{
-    global $conn;
-    $query = "SELECT * FROM reservations";
-    $query_run = mysqli_query($conn, $query);
-    return $query_run;
-}
-function checkReservationTrackingNoExist($trackingNo)
-{
-    global $conn;
-    $query="SELECT * FROM reservations WHERE tracking_no='$trackingNo'";
-    return mysqli_query($conn, $query);
 }
 
 

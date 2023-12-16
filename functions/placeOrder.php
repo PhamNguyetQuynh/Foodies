@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../config/dbconn.php');
+
 function generateUniqueId()
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -22,7 +23,7 @@ if (isset($_SESSION['auth'])) {
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
         $address = mysqli_real_escape_string($conn, $_POST['house_number'] . ', ' . $_POST['street_address'] . ', ' . $_POST['ward'] . ', ' . $_POST['district']);
-        $comments = mysqli_real_escape_string($conn, $_POST['comments']); // Add comments
+        $comments = mysqli_real_escape_string($conn, $_POST['comments']);
         $payment_mode = mysqli_real_escape_string($conn, $_POST['payment_mode']);
         $payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']);
 
@@ -36,45 +37,62 @@ if (isset($_SESSION['auth'])) {
         $query = "SELECT carts.id as cid, carts.product_qty, products.id as pid, products.name, products.image, products.selling_price 
         FROM carts, products
         WHERE carts.product_id=products.id
-        AND carts.user_id='$userID'
+        AND carts.user_id=?
         ORDER BY carts.id DESC";
-        $query_run = mysqli_query($conn, $query);
+
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('i', $userID);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
         $totalPrice = 0;
-        foreach ($query_run as $citem) {
+        foreach ($result as $citem) {
             $totalPrice += $citem['selling_price'] * $citem['product_qty'];
         }
 
         $tracking_no = generateUniqueId();
 
         $insert_query = "INSERT INTO orders (tracking_no, user_id, name, email, phone, address, comments, total_price, payment_mode, payment_id)
-        VALUES('$tracking_no', '$userID', '$name', '$email', '$phone', '$address', '$comments', '$totalPrice', '$payment_mode', '$payment_id')";
-        $insert_query_run = mysqli_query($conn, $insert_query);
+        VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        $stmt = $conn->prepare($insert_query);
+        $stmt->bind_param('sissisdsis', $tracking_no, $userID, $name, $email, $phone, $address, $comments, $totalPrice, $payment_mode, $payment_id);
+        $insert_query_run = $stmt->execute();
 
         if ($insert_query_run) {
             $order_id = mysqli_insert_id($conn);
-            foreach ($query_run as $citem) {
+            foreach ($result as $citem) {
                 $product_id = $citem['pid'];
                 $product_qty = $citem['product_qty'];
                 $price = $citem['selling_price'];
                 $insert_items_query = "INSERT INTO order_items (order_id, product_id, qty, price) 
-                VALUES ('$order_id','$product_id', '$product_qty', '$price')";
-                $insert_items_query_run = mysqli_query($conn, $insert_items_query);
+                VALUES (?, ?, ?, ?)";
+                $stmt = $conn->prepare($insert_items_query);
+                $stmt->bind_param('iiid', $order_id, $product_id, $product_qty, $price);
+                $stmt->execute();
 
-                $product_fetch_query = "SELECT * FROM products WHERE id='$product_id' LIMIT 1";
-                $product_fetch_query_run = mysqli_query($conn, $product_fetch_query);
+                $product_fetch_query = "SELECT * FROM products WHERE id=? LIMIT 1";
+                $stmt = $conn->prepare($product_fetch_query);
+                $stmt->bind_param('i', $product_id);
+                $stmt->execute();
+                $product_fetch_query_run = $stmt->get_result();
 
                 $productData = mysqli_fetch_array($product_fetch_query_run);
                 $current_qty = $productData['qty'];
 
                 $new_qty = $current_qty - $product_qty;
 
-                $update_productQty_query = "UPDATE products SET qty='$new_qty' WHERE id='$product_id' ";
-                $update_productQty_query_run = mysqli_query($conn, $update_productQty_query);
+                $update_productQty_query = "UPDATE products SET qty=? WHERE id=?";
+                $stmt = $conn->prepare($update_productQty_query);
+                $stmt->bind_param('ii', $new_qty, $product_id);
+                $stmt->execute();
             }
-            // After placing the order, the cart needs to be emptied
-            $delete_cart_query = "DELETE FROM carts WHERE user_id='$userID'";
-            $delete_cart_query_run = mysqli_query($conn, $delete_cart_query);
+
+            $delete_cart_query = "DELETE FROM carts WHERE user_id=?";
+            $stmt = $conn->prepare($delete_cart_query);
+            $stmt->bind_param('i', $userID);
+            $stmt->execute();
+
             if ($payment_mode == "COD") {
                 $_SESSION['message'] = "Order placed successfully";
                 header('location: ../myOrder.php');
@@ -84,11 +102,9 @@ if (isset($_SESSION['auth'])) {
             }
         }
     }
-}
-if (isset($_POST['momoQRBtn'])) {
+} elseif (isset($_POST['momoQRBtn'])) {
 
     header('Content-type: text/html; charset=utf-8');
-
 
     function execPostRequest($url, $data)
     {
@@ -113,9 +129,7 @@ if (isset($_POST['momoQRBtn'])) {
         return $result;
     }
 
-
     $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
-
 
     $partnerCode = 'MOMOBKUN20180529';
     $accessKey = 'klm05TvNBzhg7h7j';
@@ -130,8 +144,7 @@ if (isset($_POST['momoQRBtn'])) {
 
     $requestId = time() . "";
     $requestType = "captureWallet";
-    //$extraData = ($_POST["extraData"] ? $_POST["extraData"] : "");
-    //before sign HMAC SHA256 signature
+
     $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
     $signature = hash_hmac("sha256", $rawHash, $secretKey);
     $data = array(
@@ -150,11 +163,10 @@ if (isset($_POST['momoQRBtn'])) {
         'signature' => $signature
     );
     $result = execPostRequest($endpoint, json_encode($data));
-    $jsonResult = json_decode($result, true);  // decode json
-
-    //Just a example, please check more in there
+    $jsonResult = json_decode($result, true);
 
     header('Location: ' . $jsonResult['payUrl']);
 } else {
     header('location: ../index.php');
 }
+?>
