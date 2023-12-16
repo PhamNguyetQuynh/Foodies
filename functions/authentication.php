@@ -123,7 +123,7 @@ if (isset($_POST['registerBtn'])) {
 
                 if ($update_token_run) {
                     sendPasswordResetEmail($get_name, $get_email, $token);
-                    $_SESSION['message'] = 'We have sent you a Resert Password email';
+                    $_SESSION['message'] = 'We have sent you a Reset Password email';
                     header('location: ../passwordReset.php');
                     exit(0);
                 } else {
