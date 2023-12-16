@@ -82,7 +82,7 @@ function sendRegistrationEmail($name, $email, $verification_code)
             <h2> You have Registered with Foodies </h2>
             <h5> Verify your email address to Login with the below given link </h5>
             <br/><br/>
-            <a href ='http://localhost:8012/Foodies/verifyEmail.php?token=$verification_code'> Click me </a>
+            <a href ='http://localhost:8080/Foodies/verifyEmail.php?token=$verification_code'> Click me </a>
         ";
 
         $mail->Body = $mail_template;
@@ -124,7 +124,7 @@ function sendPasswordResetEmail($get_name, $get_email, $token)
             <h2> Hello </h2>
             <h5> You are receiving this email because we received a password reset request for your account </h5>
             <br/><br/>
-            <a href ='http://localhost:8012/Foodies/passwordUpdate.php?token=$token&email=$get_email'> Click me </a>
+            <a href ='http://localhost:8080/Foodies/passwordUpdate.php?token=$token&email=$get_email'> Click me </a>
         ";
 
         $mail->Body = $mail_template;
