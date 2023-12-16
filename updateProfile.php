@@ -12,6 +12,27 @@ if (!isset($_SESSION['auth'])) {
 
 // Lấy thông tin người dùng từ session
 $user = $_SESSION['auth_user'];
+
+// Check if the user is an admin (role_as = 1)
+$query = "SELECT role_as FROM users WHERE id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param('i', $user['user_id']);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    if ($row['role_as'] == 1) {
+        $_SESSION['message'] = "Admins are not allowed to update their profile";
+        echo '<script>window.location.href = "myProfile.php";</script>';
+        exit();
+    }
+} else {
+    // Handle the case where the user is not found in the database
+    $_SESSION['message'] = "Error: User not found";
+    header('location: myProfile.php');
+    exit();
+}
 $email = $_SESSION['auth_user']['email'];
 
 // Xử lý form cập nhật thông tin
