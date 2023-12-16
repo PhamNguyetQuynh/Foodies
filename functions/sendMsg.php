@@ -3,6 +3,7 @@ session_start();
 include('../config/dbconn.php');
 
 if (isset($_POST['sendMsgBtn'])) {
+    if ($_SESSION['role_as'] != 1) {
     $firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
     $lastName = mysqli_real_escape_string($conn, $_POST['lastName']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -29,9 +30,18 @@ if (isset($_POST['sendMsgBtn'])) {
         $_SESSION['message'] = 'Something went wrong';
         header('location: ../contactUs.php');
     }
+<<<<<<< HEAD
 
     // Đóng statement sau khi sử dụng
     $stmt->close();
 }
 
+=======
+} else {
+    // Admins are not allowed to send messages
+    $_SESSION['message'] = 'Admins are not allowed to send messages';
+    header('location: ../contactUs.php');
+}
+}
+>>>>>>> b939961cfdfaaac691cff8faa9e13d4c80485e05
 ?>

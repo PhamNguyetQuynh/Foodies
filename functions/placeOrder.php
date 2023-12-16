@@ -18,7 +18,6 @@ function generateUniqueId()
 
 if (isset($_SESSION['auth'])) {
     if (isset($_POST['placeOrderBtn'])) {
-
         $name = mysqli_real_escape_string($conn, $_POST['name']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
@@ -88,16 +87,22 @@ if (isset($_SESSION['auth'])) {
                 $stmt->execute();
             }
 
+<<<<<<< HEAD
             $delete_cart_query = "DELETE FROM carts WHERE user_id=?";
             $stmt = $conn->prepare($delete_cart_query);
             $stmt->bind_param('i', $userID);
             $stmt->execute();
+=======
+            $delete_cart_query = "DELETE FROM carts WHERE user_id='$userID'";
+            $delete_cart_query_run = mysqli_query($conn, $delete_cart_query);
+>>>>>>> b939961cfdfaaac691cff8faa9e13d4c80485e05
 
             if ($payment_mode == "COD") {
                 $_SESSION['message'] = "Order placed successfully";
                 header('location: ../myOrder.php');
                 die();
             } else {
+                // Assume 201 is a success response for PayPal
                 echo 201;
             }
         }

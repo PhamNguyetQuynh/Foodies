@@ -133,6 +133,7 @@ else if (isset($_POST["ResetBtn"])) {
             $row = $result->fetch_assoc();
             $get_name = $row["name"];
             $get_email = $row["email"];
+            $role_as = $row["role_as"];
 
             //$update_token = "UPDATE users SET verification_code= '$token' WHERE email = '$get_email' LIMIT 1";
             //$update_token_run = mysqli_query($conn, $update_token);

@@ -17,6 +17,7 @@ function generateUniqueId()
 }
 
 if (isset($_POST['reserveBtn'])) {
+    if ($_SESSION['role_as'] != 1) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $adult = mysqli_real_escape_string($conn, $_POST['adult']);
@@ -45,9 +46,18 @@ if (isset($_POST['reserveBtn'])) {
         $_SESSION['message'] = 'Something went wrong';
         header('location: ../reservation.php');
     }
+<<<<<<< HEAD
 
     // Đóng statement sau khi sử dụng
     $stmt->close();
 }
 
+=======
+} else {
+    // Admins are not allowed to make reservations
+    $_SESSION['message'] = 'Admins are not allowed to make reservations';
+    header('location: ../reservation.php');
+}
+}
+>>>>>>> b939961cfdfaaac691cff8faa9e13d4c80485e05
 ?>

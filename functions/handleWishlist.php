@@ -3,8 +3,10 @@ session_start();
 include('../config/dbconn.php');
 
 if (isset($_SESSION['auth'])) {
-    if (isset($_POST['scope'])) {
-        $scope = $_POST['scope'];
+    // Check if the user is not an admin (role_as != 1)
+    if ($_SESSION['role_as'] != 1) {
+        if (isset($_POST['scope'])) {
+            $scope = $_POST['scope'];
 
         switch ($scope) {
             case "add":
@@ -72,6 +74,9 @@ if (isset($_SESSION['auth'])) {
             default:
                 echo 500;
         }
+    }
+} else {
+    echo 403; // Forbidden: Admins are not allowed to perform cart actions
     }
 } else {
     echo 401;
