@@ -7,7 +7,7 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-            <div class="card-header bg-prigmary">
+            <div class="card-header bg-primary">
                 <h4 class="text-white">
                     Categories
                 </h4>
