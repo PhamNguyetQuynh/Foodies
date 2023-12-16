@@ -22,6 +22,7 @@ if (isset($_POST['registerBtn'])) {
     //check unique email
     $check_email_query = "SELECT email FROM users WHERE email='$email'";
     $check_email_query_run = mysqli_query($conn, $check_email_query);
+
     if (mysqli_num_rows($check_email_query_run) > 0) {
         $_SESSION['message'] = "Email has already existed";
         header('location: ../register.php');
