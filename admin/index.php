@@ -267,6 +267,3 @@ include('./includes/header.php');
     updateFooterContent('revenuefooter', revenueChange);
 </script>
 
-<?php
-include('./includes/footer.php');
-?>

@@ -5,7 +5,7 @@ if (isset($_GET['t'])) {
     $tracking_no = $_GET['t'];
     $orderData = checkTrackingNoExist($tracking_no);
     if (mysqli_num_rows($orderData) < 0) {
-    ?>
+?>
         <h4>Something went wrong</h4>
     <?php
         die();
@@ -136,10 +136,3 @@ $data = mysqli_fetch_array($orderData);
         </div>
     </div>
 </div>
-
-
-
-
-
-
-<?php include('./includes/footer.php') ?>
