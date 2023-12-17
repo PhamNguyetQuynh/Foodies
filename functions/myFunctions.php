@@ -160,3 +160,40 @@ function sendPasswordResetEmail($get_name, $get_email, $token)
 }
 
 
+// send email when order successfully
+function sendOrderConfirmationEmail($name, $email, $tracking_no)
+{
+    $mail = new PHPMailer(true);
+
+    try {
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'foodiesbistrongarden@gmail.com';
+        $mail->Password   = 'hbrb cmvj taxm qzak'; 
+        $mail->SMTPSecure = 'tls';
+        $mail->Port       = 587;
+
+        // Người nhận
+        $mail->setFrom('foodiesbistrongarden@gmail.com', 'Foodies');
+        $mail->addAddress($email, $name);
+
+        // Nội dung
+        $mail->isHTML(true);
+        $mail->Subject = "Order Placed Successfully";
+        $mail_template = "
+            <h2>Dear our beloved customer</h2>
+            <h5>Your order has been placed successfully with tracking code: $tracking_no</h5>
+            <br/><br/>
+            <p>Thank you for supporting us. Hope you like it!</p>
+        ";
+
+        $mail->Body = $mail_template;
+
+        $mail->send();
+        return true;
+    } catch (Exception $e) {
+        echo "Không thể gửi thông điệp. Lỗi Mailer: {$mail->ErrorInfo}";
+        return false;
+    }
+}

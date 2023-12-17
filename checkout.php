@@ -279,8 +279,7 @@ $hcm_districts = array(
                             $email = $('#email').val();
                             $subject = 'Order Placed Successfully';
                             $content = 'Dear our beloved customer, <br><br> Thank you for supporting us. Hope you like it! ';
-                            sendRegistrationEmail($('#name').val(), $email, $subject, $content);
-
+                            sendOrderConfirmationEmail($('#name').val(), $email, $tracking_no);
                             // Redirect the user after the order is placed
                             window.location.href = 'myOrder.php';
                         }

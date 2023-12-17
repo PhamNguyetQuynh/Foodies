@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../config/dbconn.php');
+include('./myFunctions.php');
 
 function generateUniqueId()
 {
@@ -24,7 +25,8 @@ if (isset($_SESSION['auth'])) {
         $address = mysqli_real_escape_string($conn, $_POST['house_number'] . ', ' . $_POST['street_address'] . ', ' . $_POST['ward'] . ', ' . $_POST['district']);
         $comments = mysqli_real_escape_string($conn, $_POST['comments']);
         $payment_mode = mysqli_real_escape_string($conn, $_POST['payment_mode']);
-        $payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']);
+        //$payment_id = mysqli_real_escape_string($conn, $_POST['payment_id']);
+        $payment_id = isset($_POST['payment_id']) ? mysqli_real_escape_string($conn, $_POST['payment_id']) : '';
 
         if ($name == "" || $email == "" || $phone == "" || $address == "") {
             $_SESSION['message'] = "All fields are mandatory";
@@ -84,6 +86,8 @@ if (isset($_SESSION['auth'])) {
                 $update_productQty_query = "UPDATE products SET qty='$new_qty' WHERE id='$product_id' ";
                 $update_productQty_query_run = mysqli_query($conn, $update_productQty_query);
             }
+            // Gọi hàm để gửi email xác nhận đặt hàng
+            sendOrderConfirmationEmail($name, $email, $tracking_no);
             // After placing the order, the cart needs to be emptied
             $delete_cart_query = "DELETE FROM carts WHERE user_id='$userID'";
             $delete_cart_query_run = mysqli_query($conn, $delete_cart_query);
