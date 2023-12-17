@@ -197,3 +197,17 @@ function sendOrderConfirmationEmail($name, $email, $tracking_no)
         return false;
     }
 }
+function getOnGoingReservations()
+{
+    global $conn;
+    $query = "SELECT * FROM reservations WHERE status='1' OR status='2'";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
+function getAllReservations()
+{
+    global $conn;
+    $query = "SELECT * FROM reservations";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
