@@ -7,10 +7,10 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-primary">
+                <div class="card-header bg-warning">
                     <h4 class="text-white">
                         Reservations
-                        <a href="reservationHistory.php" class="btn btn-warning float-end">Reservation History</a>
+                        <a href="reservationHistory.php" class="btn bg-gradient-light float-end">Reservation History</a>
                     </h4>
                 </div>
                 <div class="card-body" id="order_table">

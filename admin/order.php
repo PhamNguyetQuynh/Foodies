@@ -7,10 +7,10 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-info">
+                <div class="card-header bg-warning">
                     <h4 class="text-white">
                         Orders
-                        <a href="orderHistory.php" class="btn btn-warning float-end">Order History</a>
+                        <a href="orderHistory.php" class="btn bg-gradient-light float-end">Order History</a>
                     </h4>
                 </div>
                 <div class="card-body" id="order_table">
