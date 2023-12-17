@@ -19,9 +19,9 @@
                         <div class="item">
                             <a href="singleProductView.php?product=<?= $item['slug']; ?>">
                                 <div class="card shadow">
-                                    <div class="card-body" style="height: 400px">
+                                    <div class="card-body" style="height: 470px">
                                         <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
-                                        <h6 class="text-center text-dark mt-2 fw-bold"><?= $item['name'];  ?></h6>
+                                        <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder" style="color: #8B4513;"><?= $item['name'];  ?></h5>
                                     </div>
                                 </div>
                             </a>
@@ -74,27 +74,28 @@
     <div class="text-end">
         <div class="mb-0 me-3 text-white">All rights reserved. Copy right @Foodies Bistro & Garden - <?= date('Y'); ?> </div>
     </div>
-
-    </div>
-    <?php include('./includes/footer.php') ?>
-    <script>
-        $(document).ready(function() {
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 5
-                    }
+</div>
+<?php include('./includes/footer.php') ?>
+<script>
+    $(document).ready(function() {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            navClass: ['owl-prev', 'owl-next'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
                 }
-            })
+            }
         })
-    </script>
+    })
+</script>
+
 

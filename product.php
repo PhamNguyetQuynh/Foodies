@@ -27,10 +27,10 @@ if (isset($_GET['category'])) {
                             ?>
                                     <div class="col-md-3 mb-2">
                                         <a href="singleProductView.php?product=<?= $item['slug']; ?>">
-                                            <div class="card bg-brown shadow-lg mb-5 rounded border-0">
+                                            <div class="card shadow-lg mb-5 rounded border-0">
                                                 <div class="card-body p-0">
                                                     <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
-                                                    <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder" style="color: #8B4513;"><?= $item['name'];  ?></h4>
+                                                    <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder" style="color: #8B4513;"><?= $item['name'];  ?></h5>
                                                 </div>
                                             </div>
                                         </a>
@@ -72,16 +72,16 @@ if (isset($_GET['key'])) {
                             if (mysqli_num_rows($products) > 0) {
                                 foreach ($products as $item) {
                         ?>
-                                <div class="col-md-3 mb-2">
-                                    <a href="singleProductView.php?product=<?= $item['slug']; ?>">
-                                        <div class="card bg-brown shadow-lg mb-5 rounded border-0">
-                                            <div class="card-body p-0">
-                                                <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
-                                                <h5 class="text-center text-white mt-sm-3 mb-sm-3"><?= $item['name'];  ?></h4>
+                                    <div class="col-md-3 mb-2">
+                                        <a href="singleProductView.php?product=<?= $item['slug']; ?>">
+                                            <div class="card shadow-lg mb-5 rounded border-0">
+                                                <div class="card-body p-0">
+                                                    <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
+                                                    <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder"><?= $item['name'];  ?></h5>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                        </a>
+                                    </div>
                             <?php
                                 }
                             } else {
