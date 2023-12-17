@@ -43,6 +43,7 @@ include('./includes/header.php');
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="name" class="form-label">Name</label>
+                                        <input type="hidden" name="product_id" value="<?= $data['id'] ?>">
                                         <input type="text" name="name" required value="<?= $data['name'] ?>" placeholder="Enter Product Name" class="form-control">
                                     </div>
                                     <div class="col-md-6 mb-3">

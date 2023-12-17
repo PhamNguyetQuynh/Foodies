@@ -159,7 +159,7 @@ if (isset($_POST['add_category_btn'])) {
 
     $update_product_query = "UPDATE products SET name=?, slug=?, small_description=?, description=?, original_price=?, selling_price=?, qty=?, meta_title=?, meta_description=?, meta_keywords=?, status=?, trending=?, image=? WHERE id=?";
     $stmt_update_product = $conn->prepare($update_product_query);
-    $stmt_update_product->bind_param('ssssssssssssi', $name, $slug, $small_description, $description, $original_price, $selling_price, $qty, $meta_title, $meta_description, $meta_keywords, $status, $trending, $update_filename, $product_id);
+    $stmt_update_product->bind_param('sssssssssssssi', $name, $slug, $small_description, $description, $original_price, $selling_price, $qty, $meta_title, $meta_description, $meta_keywords, $status, $trending, $update_filename, $product_id);
 
     if ($stmt_update_product->execute()) {
         if ($_FILES['image']['name'] != "") {
