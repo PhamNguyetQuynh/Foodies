@@ -9,8 +9,8 @@ include('./includes/header.php');
             <div class="card">
                 <div class="card-header bg-primary">
                     <h4 class="text-white">
-                        Reseverations
-                        <a href="reservationHistory.php" class="btn btn-warning float-end">Reserveration History</a>
+                        Reservations
+                        <a href="reservationHistory.php" class="btn btn-warning float-end">Reservation History</a>
                     </h4>
                 </div>
                 <div class="card-body" id="order_table">
