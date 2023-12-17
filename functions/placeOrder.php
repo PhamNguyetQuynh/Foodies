@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../config/dbconn.php');
+include('./myFunctions.php');
 function generateUniqueId()
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -74,6 +75,7 @@ if (isset($_SESSION['auth'])) {
                 $update_productQty_query = "UPDATE products SET qty='$new_qty' WHERE id='$product_id' ";
                 $update_productQty_query_run = mysqli_query($conn, $update_productQty_query);
             }
+            sendOrderConfirmationEmail($name, $email, $tracking_no);
             //after place order -> cart need to be empty
             $delete_cart_query = "DELETE FROM carts WHERE user_id='$userID'";
             $delete_cart_query_run = mysqli_query($conn, $delete_cart_query);

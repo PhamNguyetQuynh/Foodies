@@ -240,17 +240,21 @@ $hcm_districts = array(
         onApprove: (data, actions) => {
             return actions.order.capture().then((orderData) => {
                 // Get the selected district and ward
+                var houseNumber = $('#house_number').val();
+                var streetAddress = $('#street_address').val();
+                loadWards(selectedDistrict, selectedWard);
+               
                 var selectedDistrict = $('#district').val();
+         
                 var selectedWard = $('#ward').val();
 
-                // Call loadWards function to set the address
-                loadWards(selectedDistrict, selectedWard);
+                // // Call loadWards function to set the address
+                // loadWards(selectedDistrict, selectedWard);
 
                 // Now you can use the updated address components
                 var district = selectedDistrict;
                 var ward = selectedWard;
-                var houseNumber = $('#house_number').val();
-                var streetAddress = $('#street_address').val();
+               
 
                 // Combine components to create the address
                 var formattedAddress = district + ' ' + ward + ' ' + houseNumber + ' ' + streetAddress;
@@ -275,13 +279,15 @@ $hcm_districts = array(
                     success: function(response) {
                         if (response == 201) {
                             alertify.success("Order Placed Successfully");
-
+                            window.location.href = 'myOrder.php';
                             $email = $('#email').val();
                             $subject = 'Order Placed Successfully';
                             $content = 'Dear our beloved customer, <br><br> Thank you for supporting us. Hope you like it! ';
                             sendOrderConfirmationEmail($('#name').val(), $email, $tracking_no);
                             // Redirect the user after the order is placed
-                            window.location.href = 'myOrder.php';
+                            // window.location.href = 'myOrder.php';
+                            // actions.redirect('myOrder.php');
+                            header('location: ../myOrder.php');
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
