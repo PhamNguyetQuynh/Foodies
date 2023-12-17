@@ -27,14 +27,7 @@ $hcm_districts = array(
 );
 ?>
 
-<div class="py-3 bg-primary">
-    <div class="container">
-        <h6 class="text-white">
-            <a class="text-white" href="index.php">Home /</a>
-            <a class="text-white" href="checkout.php">Checkout</a>
-        </h6>
-    </div>
-</div>
+
 
 <div class="py-5">
     <div class="container">
@@ -42,7 +35,9 @@ $hcm_districts = array(
             <form action="functions/placeOrder.php" method="POST">
                 <div class="row">
                     <div class="col-md-6">
-                        <h5>Basic Details</h5>
+                   
+                    <h3 class="display-6 fw-bold" style="color:#957B3F;">Basic detail</h3>
+                  
                         <hr>
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -101,7 +96,7 @@ $hcm_districts = array(
                         </div>
                     </div>
                     <div class="col-md-6 overflow-auto">
-                        <h5>Order Details</h5>
+                    <h3 class="display-6 fw-bold" style="color:#957B3F;">Order Detail</h3>
                         <hr>
                         <?php
                         $items = getCartItems();

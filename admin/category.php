@@ -7,7 +7,7 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-            <div class="card-header bg-warning">
+            <div class="card-header bg-primary">
                 <h4 class="text-white">
                     Categories
                 </h4>
@@ -37,7 +37,7 @@ include('./includes/header.php');
                                             <td class="text-center"> <img src="../uploads/<?= $item['image']; ?>" width="50px" height="50px" alt="<?= $item['name']; ?>"></td>
                                             <td class="text-center"> <?= $item['status'] == "0" ? "Visible" : "Hidden"; ?></td>
                                             <td class="text-center">
-                                                <a href="editCategory.php?id=<?= $item['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="editCategory.php?id=<?= $item['id']; ?>" class="btn btn-primary btn-sm">Edit</a>
                                             </td>
                                             <td class="text-center">
                                                 <!-- <form action="code.php" method="POST">
@@ -64,6 +64,3 @@ include('./includes/header.php');
     </div>
 </div>
 
-<?php
-include('./includes/footer.php');
-?>

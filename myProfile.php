@@ -27,7 +27,7 @@ $user = $_SESSION['auth_user'];
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-warning text-white text-center">
-                        <h5>My Profile</h5>
+                    <h3 class="display-6 fw-bold" style="color:#957B3F;">My Profile</h3>
                     </div>
                     <div class="card-body text-center">
 

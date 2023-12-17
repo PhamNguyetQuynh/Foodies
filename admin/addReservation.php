@@ -8,7 +8,7 @@ include('./includes/header.php');
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                        <div class="card-header bg-warning">
+                        <div class="card-header bg-primary">
                             <h4 class="font-weight-bold mb-0 text-white">Add Reservation</h4>
                         </div>
                 <div class="card-body">
@@ -55,6 +55,3 @@ include('./includes/header.php');
     </div>
 </div>
 
-<?php
-include('./includes/footer.php');
-?>
