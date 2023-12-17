@@ -10,7 +10,7 @@ include('./includes/header.php'); ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="display-1 fw-bold text-center" style="color: #957B3F;">Our Menu</h1>
+                <h1 class="display-4 fw-bold text-center" style="color: #957B3F;">Our Menu</h1>
                 <hr>
                 <div class="row">
                     <?php

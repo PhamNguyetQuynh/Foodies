@@ -20,7 +20,7 @@ if (isset($_GET['product'])) {
                     </div>
                     <div class="col-md-8">
                         <div class="row">
-                            <h3 class="fw-bold col-md-8"><?= $product['name']?></h3> 
+                            <h2 class="fw-bold col-md-8"><?= $product['name']?></h2> 
                             <span class="text-danger col-md-4 text-end h4 fw-bold"><?php if ($product['trending']) {echo "Trending";} ?></span>
                             <p><?= $product['small_description']; ?></p>
                             <hr>
@@ -53,7 +53,7 @@ if (isset($_GET['product'])) {
                             </div>
                         </div>
                         <hr>
-                        <h6>Product Description</h6>
+                        <h5>Product Description</h5>
                         <p><?= $product['description']; ?></p>
 
                     </div>
