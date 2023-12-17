@@ -2,7 +2,7 @@
 include('./functions/userFunctions.php');
 include('./includes/header.php');
 ?>
-<img class="img-fluid opacity-25 position-absolute w-100 h-100" src="uploads/wp10509681.jpg">
+<img class="d-flex img-fluid opacity-25 position-absolute w-100" src="uploads/wp10509681.jpg">
 <?php
 if (isset($_GET['category'])) {
 
@@ -62,7 +62,7 @@ if (isset($_GET['key'])) {
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Your search result:&nbsp;<span class="fst-italic"><?= $key; ?></span></h1>
+                    <h1>Your search result for:&nbsp;<span class="fst-italic"><?= $key; ?></span></h1>
                     <hr>
                     <div class="row">
                         <?php
@@ -74,10 +74,10 @@ if (isset($_GET['key'])) {
                         ?>
                                     <div class="col-md-3 mb-2">
                                         <a href="singleProductView.php?product=<?= $item['slug']; ?>">
-                                            <div class="card shadow-lg mb-5 rounded border-0">
+                                        <div class="card shadow-lg mb-5 rounded border-0">
                                                 <div class="card-body p-0">
                                                     <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
-                                                    <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder"><?= $item['name'];  ?></h5>
+                                                    <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder" style="color: #8B4513;"><?= $item['name'];  ?></h5>
                                                 </div>
                                             </div>
                                         </a>

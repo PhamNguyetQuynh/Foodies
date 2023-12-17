@@ -26,7 +26,7 @@ include('./includes/header.php');
     <h1 class="display-1 fw-bold">About Us</h1>
 </div>
 
-<div class="py-5 bg-f2f2f2 ">
+<div class="py-5 bg-f2f2f2 mb-2">
     <div class="container">
         <div class="row">
             <h3 class="fw-bolder d-flex justify-content-center"> Our Story </h3>
@@ -38,6 +38,8 @@ include('./includes/header.php');
             <p class="d-flex justify-content-center text-center">We believe that food is more than just sustenance. It is a way to bring people together and to celebrate life. We invite you to come and experience the magic of Italian dining at our restaurant. We will welcome you with open arms and treat you like family.</p>
         </div>
     </div>
+    <br>
+    <div class="underline mb-3" style="width: 15%; margin: auto; background-color: #8B4513;"></div>
 </div>
 <div class="p-5 bg-masterchef d-flex justify-content-center text center ">
     <div class="container">
@@ -51,27 +53,34 @@ include('./includes/header.php');
             <p class="d-flex justify-content-center text-center fw-bolder">Explore our website today and experience the magic of Chef Atonio's cuisine.</p>
         </div>
         <div class="row">
-            <a href="category.php" class="btn btn-danger btn-hover-bg-shade-amount"role="button" >Explore Our Menu</a>
+            <a href="category.php" class="btn text-white btn-hover-bg-shade-amount" style="background-color: #8B4513;" role="button" >Explore Our Menu</a>
         </div>
     </div>
 </div>
-<div class="py-5 bg-f2f2f2 ">
+<div class="py-5 bg-f2f2f2 pb-4">
+    <div class="underline mt-3 m-auto" style="width: 15%; background-color: #8B4513;"></div>
     <div class="container">
         <div class="row">
-            <h3 class="fw-bolder d-flex justify-content-center"> Testimalnial </h3>
-
+            <div class="col-md-9">
+            </div>
+            <div class="col-md-3">
+                <h3 class="fw-bolder d-flex justify-content-evenly p-3"> Testimalnial </h3>
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-9">
-                <p class="d-flex justify-content-center text-center">Chef Antonio was born and raised in the small town of Amalfi, Italy, where he grew up surrounded by the fresh seafood and seasonal produce that have become the hallmarks of his cuisine. His passion for cooking began at a young age, when he would spend hours in his grandmother's kitchen learning the secrets of traditional Italian recipes. Chef Antonio is passionate about creating a warm and welcoming dining experience for his guests. He invites you to come and taste the authentic flavors of Amalfi at his restaurant, where he will take you on a culinary journey through the heart of Southern Italy. </p>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <p class="d-flex justify-content-center text-end">Chef Antonio was born and raised in the small town of Amalfi, Italy, where he grew up surrounded by the fresh seafood and seasonal produce that have become the hallmarks of his cuisine. His passion for cooking began at a young age, when he would spend hours in his grandmother's kitchen learning the secrets of traditional Italian recipes. Chef Antonio is passionate about creating a warm and welcoming dining experience for his guests. He invites you to come and taste the authentic flavors of Amalfi at his restaurant, where he will take you on a culinary journey through the heart of Southern Italy. </p>
             </div>
             <div class="col-md-3">
                 <img src="./assets/img/testimalnial.png" alt="testimalnial">
             </div>
         </div>
     </div>
+    <div class="underline mt-5 m-auto" style="width: 15%; background-color: #8B4513;"></div>
 </div>
-<div class="p-5 bg-standard d-flex justify-content-center text center ">
+<div class="p-4 bg-standard d-flex justify-content-center text-center">
     <div class="container">
         <div class="row">
             <h3 class="fw-bolder d-flex justify-content-center"> Our Standard </h3>
@@ -99,7 +108,8 @@ include('./includes/header.php');
         </div>
     </div>
 </div>
-<div class="py-5 bg-f2f2f2 ">
+<div class="py-4 bg-f2f2f2 ">
+    <div class="underline mt-0 mb-5 m-auto" style="width: 15%; background-color: #8B4513;"></div>
     <div class="container">
         <div class="col-md-5">
             <div class="row">

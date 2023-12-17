@@ -3,14 +3,14 @@ include('./functions/userFunctions.php');
 include('./includes/header.php'); ?>
 
 
-<img class=" opacity-25 position-absolute w-100 h-100" src="uploads/wp10509681.jpg" alt="Image">
+<img class="d-flex img-fluid opacity-25 position-absolute w-100" style="max-height: 110vh;" src="uploads/wp10509681.jpg">
 
 
 <div class="py-4 position-relative">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="display-4 fw-bold text-center" style="color: #957B3F;">Our Menu</h1>
+                <h2 class="display-4 fw-bold text-center" style="color: #957B3F;">Our Menu</h2>
                 <hr>
                 <div class="row">
                     <?php

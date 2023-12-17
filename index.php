@@ -8,7 +8,7 @@
         <div class="container">
             <div class="col-md-12">
                 <h4 class="fw-bolder">Trending Now</h4>
-                <div class="underline mb-3" style="width: 200px"> </div>
+                <div class="underline mb-3" style="width: 200px; background-color: #8B4513"> </div>
 
                 <div class="owl-carousel">
                     <?php
@@ -39,7 +39,7 @@
         <div class="container">
             <div class="col-md-12">
                 <h4 class="fw-bolder">About Us</h4>
-                <div class="underline mb-2"></div>
+                <div class="underline mb-3"  style="background-color: #8B4513"></div>
                 <p class="text-break">
                     Welcome to FOODIES, where culinary excellence meets a diverse tapestry of flavors! We are passionate about bringing together a myriad of tastes from around the world to create a gastronomic experience that transcends borders. Our journey began with a simple yet profound idea: to connect people through the universal language of food. Whether you're a seasoned foodie or just beginning your culinary adventure, we invite you to explore the rich and varied offerings that make up our food web.
                 </p>
@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-md-3">
                 <h4 class="text-white">Foodies Bistro & Garden</h4>
-                <div class="underline mb-2"> </div>
+                <div class="underline mb-2" style="background-color: #8B4513"> </div>
                 <a href="index.php" class="text-white">Home</a> <br>
                 <a href="aboutUs.php" class="text-white">About Us</a><br>
                 <a href="category.php" class="text-white">Our Menu</a> <br>
@@ -70,7 +70,7 @@
         </div>
     </div>
 </div>
-<div class="py-2 bg-danger">
+<div class="py-2" style="background-color: #8B4513">
     <div class="text-end">
         <div class="mb-0 me-3 text-white">All rights reserved. Copy right @Foodies Bistro & Garden - <?= date('Y'); ?> </div>
     </div>

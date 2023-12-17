@@ -9,7 +9,7 @@ if (isset($_GET['product'])) {
 
     if ($product) {
 ?>
-        <img class="img-fluid opacity-25 position-absolute w-100 h-100" src="uploads/wp10509681.jpg">
+        <img class="d-flex img-fluid opacity-25 position-absolute w-100" style="max-height: 110vh;" src="uploads/wp10509681.jpg">
         <div class="py-4 position-relative">
             <div class="container product_data mt-5">
                 <div class="row">
@@ -20,7 +20,7 @@ if (isset($_GET['product'])) {
                     </div>
                     <div class="col-md-8">
                         <div class="row">
-                            <h2 class="fw-bold col-md-8"><?= $product['name']?></h2> 
+                            <h1 class="fw-bold col-md-8"><?= $product['name']?></h1> 
                             <span class="text-danger col-md-4 text-end h4 fw-bold"><?php if ($product['trending']) {echo "Trending";} ?></span>
                             <p><?= $product['small_description']; ?></p>
                             <hr>
@@ -53,7 +53,7 @@ if (isset($_GET['product'])) {
                             </div>
                         </div>
                         <hr>
-                        <h5>Product Description</h5>
+                        <h5 class="fw-bold">Product Description</h5>
                         <p><?= $product['description']; ?></p>
 
                     </div>
