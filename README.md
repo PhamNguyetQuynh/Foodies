@@ -2,7 +2,9 @@
 Final project of IS207 class- Uinversity of Information Technology 
 ## 1. Features
 Foodies Bistro & Garden website has various features listed below:
+
 **Customer Side:**
+
 - Login and Register.
 - Product quantity increment/decrement before adding to cart.
 - Add to Cart
@@ -17,7 +19,9 @@ Foodies Bistro & Garden website has various features listed below:
 - View orders and order status
 - View and edit profile information (User’s image, name, phone, password)
 - View reservation and reservation status
+- 
 **Admin Side:**
+  
 - Category CRUD
 - Product CRUD
 - Control the visibility of product and category (Hide/Show)
@@ -26,11 +30,16 @@ Foodies Bistro & Garden website has various features listed below:
 - Update Order Status
 - View Reservation and Reservation details
 - Update Reservation status
+- 
 **Non-Functional Requirements:**
+  
 * Performance:
+  
 - Fast Page Loading: The website needs to be optimized for fast loading and quick
 responsiveness to provide a good user experience.
+
 * Security:
+  
 - Data Encryption: This requirement is out of scope for this project.
 - Authentication and Authorization: User authentication must be secure and include
 role-based access controls, limiting access to specific functionalities based on user
@@ -38,7 +47,9 @@ roles (admin, customer).
 - SQL Injection Prevention: Implement measures, such as parameterized queries and
 input validation, to prevent SQL injection attacks and ensure the security of the
 database.
+
 * Scalability:
+  
 This requirement is out of scope for this project
 ## 3. How to run this project
 - Download the .zip file and extract the files from it.
