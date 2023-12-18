@@ -96,6 +96,7 @@ if (isset($_GET['key'])) {
             </div>
         </div>
     </div>
+    
 <?php
 } else {
     echo '<p class="ms-1">' . "Something went wrong" . '</p>';}
