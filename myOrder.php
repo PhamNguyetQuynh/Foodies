@@ -11,14 +11,14 @@ include('authenticate.php');
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered table-striped">
-
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Tracking No</th>
                                 <th>Total Price</th>
                                 <th>Date</th>
-                                <th>View</th>
+                                <th class="text-center ps-2">Status</th>
+                                <th class="text-center ps-2">View</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,7 +32,26 @@ include('authenticate.php');
                                         <td><?= $item['tracking_no']; ?></td>
                                         <td><?= $item['total_price']; ?></td>
                                         <td><?= $item['created_at']; ?></td>
-                                        <td><a href="viewOrderDetail.php?t=<?= $item['tracking_no']; ?>" class="btn btn-danger btn-hover-bg-shade-amount" role="button">View Details</a></td>
+                                        <?php
+                                        if($item['status']=="0"){?>
+                                            <td class="text-center align-middle text-bold">
+                                                <span class="badge-sm text-warning fw-bold">ON GOING</span>
+                                            </td>
+                                        <?php
+                                        }
+                                        else if($item['status']=="1"){?>
+                                            <td class="text-center align-middle text-bold">
+                                                <span class="badge-sm text-success fw-bold">COMPLETED</span>
+                                            </td>
+                                        <?php
+                                        }
+                                        else if($item['status']=="2"){?>
+                                            <td class="text-center align-middle text-bold">
+                                                <span class="badge-sm text-danger fw-bold">CANCELED</span>
+                                            </td>
+                                        <?php
+                                        }?>
+                                        <td class="text-center"><a href="viewOrderDetail.php?t=<?= $item['tracking_no']; ?>" class="btn btn-danger btn-hover-bg-shade-amount" role="button">View Details</a></td>
 
                                     </tr>
 
