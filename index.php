@@ -18,8 +18,8 @@
                     ?>
                         <div class="item">
                             <a href="singleProductView.php?product=<?= $item['slug']; ?>">
-                                <div class="card shadow">
-                                    <div class="card-body" style="height: 470px">
+                                <div class="card shadow w-lg-100">
+                                    <div class="card-body w-100" style="height: 470px">
                                         <img src="uploads/<?= $item['image']; ?>" alt="Product Image" class="w-100 center-cropped">
                                         <h5 class="text-center mt-sm-3 mb-sm-3 fw-bolder" style="color: #8B4513;"><?= $item['name'];  ?></h5>
                                     </div>
@@ -88,10 +88,10 @@
                     items: 1
                 },
                 600: {
-                    items: 3
+                    items: 2
                 },
                 1000: {
-                    items: 5
+                    items: 4
                 }
             }
         })
