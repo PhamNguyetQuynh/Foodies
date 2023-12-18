@@ -35,22 +35,25 @@ Foodies Bistro & Garden website has various features listed below:
   
 * Performance:
   
-- Fast Page Loading: The website needs to be optimized for fast loading and quick
+  -Fast Page Loading: The website needs to be optimized for fast loading and quick
 responsiveness to provide a good user experience.
 
 * Security:
   
-- Data Encryption: This requirement is out of scope for this project.
-- Authentication and Authorization: User authentication must be secure and include
+  -Data Encryption: This requirement is out of scope for this project.
+  
+  -Authentication and Authorization: User authentication must be secure and include
 role-based access controls, limiting access to specific functionalities based on user
 roles (admin, customer).
-- SQL Injection Prevention: Implement measures, such as parameterized queries and
+
+  -SQL Injection Prevention: Implement measures, such as parameterized queries and
 input validation, to prevent SQL injection attacks and ensure the security of the
 database.
 
 * Scalability:
   
--This requirement is out of scope for this project
+  -This requirement is out of scope for this project
+
 ## 3. How to run this project
 - Download the .zip file and extract the files from it.
 - Install Wampp/Xampp.
