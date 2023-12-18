@@ -121,6 +121,7 @@ $hcm_districts = array(
                             </div>
                         <?php
                             $totalPrice += $citem['selling_price'] * $citem['product_qty'];
+                            $convertDollar = $totalPrice / 25000;
                         }
                         ?>
                         <hr>
@@ -230,8 +231,8 @@ $hcm_districts = array(
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        // value: '<?= $totalPrice ?>'
-                        value: '0.1'
+                        value: '<?= $convertDollar ?>'
+                        // value: '0.1'
                     }
                 }]
             });
