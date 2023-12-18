@@ -64,6 +64,11 @@ database.
 Import the .sql file in your database.
 - Open your browser and paste "localhost:8080/Foodies/" in the browser, your
 project will be running successfully
+
+## 4. Admin account to test
+Email: phamnguyetquynh0307@gmail.com
+
+Password: 123456789Aa**
 ## 4. Authors
 - **1. [Pham Nguyet Quynh](https://github.com/PhamNguyetQuynh)**
 - **2. [Le Nguyen Diem Quynh](https://github.com/LeNguyenDiemQuynhn)**
