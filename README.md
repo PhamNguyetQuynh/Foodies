@@ -50,7 +50,7 @@ database.
 
 * Scalability:
   
-This requirement is out of scope for this project
+-This requirement is out of scope for this project
 ## 3. How to run this project
 - Download the .zip file and extract the files from it.
 - Install Wampp/Xampp.
