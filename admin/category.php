@@ -41,7 +41,7 @@ include('./includes/header.php');
                                             </td>
                                             <td class="text-center">
                                                 <!-- <form action="code.php" method="POST">
-                                                    need to give an id in order to delete inside this form
+                                                    need to give an id in order to delete inside this form 
                                                     <input type="hidden" name="category_id" value="<?= $item['id']; ?>">
                                                     <button type="submit" class="btn btn-danger btn-sm" name="delete_category_btn">Delete</button>
                                                 </form> -->

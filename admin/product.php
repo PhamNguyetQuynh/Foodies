@@ -40,12 +40,12 @@ include('./includes/header.php');
                                                 <a href="editProduct.php?id=<?= $item['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
                                             </td>
                                             <td class="text-center">
-                                                <!-- <td>
-                                                    <form action="code.php" method="POST">
+                                              
+                                                    <!-- <form action="code.php" method="POST">
                                                         <input type="hidden" name="product_id" value="<?= $item['id']; ?>">
                                                         <button type="submit" class="btn btn-danger btn-sm" name="delete_product_btn">Delete</button>
-                                                    </form>
-                                                </td> -->
+                                                    </form> -->
+                                              
                                                 <button type="button" class="btn btn-sm btn-outline-warning delete_product_btn" value="<?= $item['id']; ?>">Delete</button>
                                             </td>
                                         </tr>

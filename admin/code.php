@@ -180,11 +180,13 @@ if (isset($_POST['add_category_btn'])) {
         if (file_exists("../uploads/" . $image)) {
             unlink("../uploads/" . $image);
         }
-        // redirect("product.php", "Product deleted successfully");
         echo 200;
+        // redirect("product.php", "Product deleted successfully");
+        
     } else {
-        // redirect("product.php", "Something went wrong");
         echo 500;
+        // redirect("product.php", "Something went wrong");
+       
     }
 } else if (isset($_POST['update_order_btn'])) {
     $track_no = $_POST['tracking_no'];

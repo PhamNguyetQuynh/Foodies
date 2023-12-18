@@ -60,12 +60,12 @@
             </div>
             <div class="col-md-4">
                 <h4 class="text-white">Address</h4>
-                <p class="text-white">42 Nguyen Hue Street, District 1, Ho Chi Minh City, Viet Nam</p>
+                <p class="text-white">65 Xuân Thủy, Thảo Điền, Quận 2, Thành phố Hồ Chí Minh, Việt Nam</p>
                 <a href="tel: +84989598472" class="text-white"><i class="fa fa-phone"></i> +(84) 98 95 98 472</a><br>
                 <a href="mailto:xyz@gmail.com" class="text-white"><i class="fa fa-envelope"></i> foddiesbistroandgarden@gmail.com</a>
             </div>
             <div class="col-md-5">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.547984513965!2d106.69074697405321!3d10.76927748937904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fc8702ecc0b%3A0x4e830dc2c0483582!2sDaybyDay%20-%20Kitchen%20%26%20Bar!5e0!3m2!1svi!2s!4v1700565681506!5m2!1svi!2s" class="w-100" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0981234431147!2d106.73096857405383!3d10.803796389346632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317526198a4d887d%3A0x1b459a5fe9c1c3b7!2zNjUgWHXDom4gVGjhu6d5LCBUaOG6o28gxJBp4buBbiwgUXXhuq1uIDIsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1702875935138!5m2!1svi!2s" class="w-100" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
