@@ -19,7 +19,7 @@ Foodies Bistro & Garden website has various features listed below:
 - View orders and order status
 - View and edit profile information (User’s image, name, phone, password)
 - View reservation and reservation status
-- 
+  
 **Admin Side:**
   
 - Category CRUD
@@ -30,7 +30,7 @@ Foodies Bistro & Garden website has various features listed below:
 - Update Order Status
 - View Reservation and Reservation details
 - Update Reservation status
-- 
+  
 **Non-Functional Requirements:**
   
 * Performance:
