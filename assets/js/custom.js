@@ -48,8 +48,7 @@ $(document).ready(function () {
           alertify.success("Login to continue");
         } else if (response == 500) {
           alertify.success("Something went wrong");
-        } else if (response == 403)
-        {
+        } else if (response == 403) {
           alertify.success("Admins are not allowed to perform this action");
         }
       },
@@ -118,8 +117,7 @@ $(document).on("click", ".addToWishlistBtn", function (e) {
         alertify.success("Login to continue");
       } else if (response == 500) {
         alertify.success("Something went wrong");
-      } else if (response == 403)
-      {
+      } else if (response == 403) {
         alertify.success("Admins are not allowed to perform this action");
       }
     },

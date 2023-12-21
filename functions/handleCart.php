@@ -17,9 +17,11 @@ if (isset($_SESSION['auth'])) {
                     $check_existing = "SELECT * FROM carts WHERE product_id='$product_id' AND user_id='$user_id'";
                     $check_existing_run = mysqli_query($conn, $check_existing);
 
+                   
                     if (mysqli_num_rows($check_existing_run) > 0) {
                         echo "existing";
-                    } else {
+                    
+                    }else {
                         $insert_query = "INSERT INTO carts(user_id, product_id, product_qty) VALUES ('$user_id','$product_id','$product_qty')";
                         $insert_query_run = mysqli_query($conn, $insert_query);
 
