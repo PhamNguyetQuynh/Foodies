@@ -88,71 +88,83 @@ if (isset($_SESSION['auth'])) {
             }
         }
     } else if (isset($_POST['momoQRBtn'])) {
-        header('location: ../checkout.php');
-        $_SESSION['message'] = 'This feature will be coming soon';
+        // header('location: ../checkout.php');
+        // $_SESSION['message'] = 'This feature will be coming soon';
 
-        // header('Content-type: text/html; charset=utf-8');
+        header('Content-type: text/html; charset=utf-8');
 
-        // function execPostRequest($url, $data)
-        // {
-        //     $ch = curl_init($url);
-        //     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        //     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        //     curl_setopt(
-        //         $ch,
-        //         CURLOPT_HTTPHEADER,
-        //         array(
-        //             'Content-Type: application/json',
-        //             'Content-Length: ' . strlen($data)
-        //         )
-        //     );
-        //     curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-        //     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-        //     //execute post
-        //     $result = curl_exec($ch);
-        //     //close connection
-        //     curl_close($ch);
-        //     return $result;
-        // }
+        function execPostRequest($url, $data)
+        {
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt(
+                $ch,
+                CURLOPT_HTTPHEADER,
+                array(
+                    'Content-Type: application/json',
+                    'Content-Length: ' . strlen($data)
+                )
+            );
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+            //execute post
+            $result = curl_exec($ch);
+            //close connection
+            curl_close($ch);
+            return $result;
+        }
+        $userID = $_SESSION['auth_user']['user_id'];
+        $query = "SELECT carts.id as cid, carts.product_qty, products.id as pid, products.name, products.image, products.selling_price 
+        FROM carts, products
+        WHERE carts.product_id=products.id
+        AND carts.user_id='$userID'
+        ORDER BY carts.id DESC";
+        $query_run = mysqli_query($conn, $query);
 
-        // $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
 
-        // $partnerCode = 'MOMOBKUN20180529';
-        // $accessKey = 'klm05TvNBzhg7h7j';
-        // $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
+        $totalPrice = 0;
+        foreach ($query_run as $citem) {
+            $totalPrice += $citem['selling_price'] * $citem['product_qty'];
+        }
+        $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
 
-        // $orderInfo = "Thanh toán qua mã QR Momo";
-        // $amount = "10000";
-        // $orderId = time() . "";
-        // $redirectUrl = "http://localhost:8080/Foodies/checkout.php";
-        // $ipnUrl = "http://localhost:8080/Foodies/checkout.php";
-        // $extraData = "";
+        $partnerCode = 'MOMOBKUN20180529';
+        $accessKey = 'klm05TvNBzhg7h7j';
+        $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
 
-        // $requestId = time() . "";
-        // $requestType = "captureWallet";
+        $orderInfo = "Thanh toán qua mã QR Momo";
+        $amount = $_POST['totalPrice'];
+        $orderId = time() . "";
+        $redirectUrl = "http://localhost:8080/Foodies/checkout.php";
+        $ipnUrl = "http://localhost:8080/Foodies/checkout.php";
+        $extraData = "";
 
-        // $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
-        // $signature = hash_hmac("sha256", $rawHash, $secretKey);
-        // $data = array(
-        //     'partnerCode' => $partnerCode,
-        //     'partnerName' => "Test",
-        //     "storeId" => "MomoTestStore",
-        //     'requestId' => $requestId,
-        //     'amount' => $amount,
-        //     'orderId' => $orderId,
-        //     'orderInfo' => $orderInfo,
-        //     'redirectUrl' => $redirectUrl,
-        //     'ipnUrl' => $ipnUrl,
-        //     'lang' => 'vi',
-        //     'extraData' => $extraData,
-        //     'requestType' => $requestType,
-        //     'signature' => $signature
-        // );
-        // $result = execPostRequest($endpoint, json_encode($data));
-        // $jsonResult = json_decode($result, true);
+        $requestId = time() . "";
+        $requestType = "captureWallet";
 
-        // header('Location: ' . $jsonResult['payUrl']);
+        $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
+        $signature = hash_hmac("sha256", $rawHash, $secretKey);
+        $data = array(
+            'partnerCode' => $partnerCode,
+            'partnerName' => "Test",
+            "storeId" => "MomoTestStore",
+            'requestId' => $requestId,
+            'amount' => $amount,
+            'orderId' => $orderId,
+            'orderInfo' => $orderInfo,
+            'redirectUrl' => $redirectUrl,
+            'ipnUrl' => $ipnUrl,
+            'lang' => 'vi',
+            'extraData' => $extraData,
+            'requestType' => $requestType,
+            'signature' => $signature
+        );
+        $result = execPostRequest($endpoint, json_encode($data));
+        $jsonResult = json_decode($result, true);
+
+        header('Location: ' . $jsonResult['payUrl']);
     }
 } else {
     header('location: ../index.php');

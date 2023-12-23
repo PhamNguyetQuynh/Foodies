@@ -131,7 +131,8 @@ $hcm_districts = array(
                             <button type="submit" name="placeOrderBtn" class="btn btn-success w-100">
                                 Confirm and place order | COD
                             </button>
-                            <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded">
+                            <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./functions/placeOrder.php">
+                                <input type="hidden" value="<?php echo $totalPrice ?>" name="totalPrice">
                                 <input type="submit" name="momoQRBtn" value="MOMO QR Code" class="btn btn-danger w-100" style="background-color: #C62E86;">
                             </form>
                             <div id="paypal-button-container" class="mt-3"></div>
