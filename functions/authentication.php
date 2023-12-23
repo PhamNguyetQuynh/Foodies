@@ -108,11 +108,11 @@ if (isset($_POST['registerBtn'])) {
                 redirect("../login.php", "You need to verify your email first");
             }
         } else {
-            redirect("../login.php", "Something went wrong");
+            redirect("../login.php", "Invalid!");
         }
     } else {
         // invalid
-        redirect("../login.php", "Invalid");
+        redirect("../login.php", "Don't have an account yet? Register right at the top right!");
     }
     $stmt->close();
 } else if (isset($_POST["ResetBtn"])) {
